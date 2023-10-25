@@ -1,6 +1,19 @@
 <h4>List</h4>
 <ul class="list-group">
-  <li *ngFor="let char of charList" class="list-group-item">
-    {{ char.name }} - <strong>Power:</strong> {{ char.power }}
+  <li
+    class="list-group-item"
+    *ngFor="
+      let char of charList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+  >
+    <span class="text-primary">{{ i + 1 }}. </span>
+    <span>{{ char.name }} - </span>
+    <strong>Power:</strong>
+    <span>{{ char.power }} </span>
   </li>
 </ul>
