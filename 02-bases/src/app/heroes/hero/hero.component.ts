@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-heroes-hero',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
 export class HeroComponent {
   public name: string = 'ironman';
   public age: number = 45;
+
+  get capitalizedName(): string {
+    return _.capitalize(this.name);
+  }
 }
