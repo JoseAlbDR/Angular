@@ -1,7 +1,6 @@
 <h4>List</h4>
 <ul class="list-group">
   <li
-    class="list-group-item"
     *ngFor="
       let char of charList;
       let i = index;
@@ -10,6 +9,11 @@
       let isEven = even;
       let isOdd = odd
     "
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-dark': isLast,
+      ' list-group-item-primary': isEven
+    }"
   >
     <span class="text-primary">{{ i + 1 }}. </span>
     <span>{{ char.name }} - </span>
