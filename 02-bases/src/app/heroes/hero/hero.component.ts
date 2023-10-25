@@ -13,4 +13,12 @@ export class HeroComponent {
   get capitalizedName(): string {
     return _.capitalize(this.name);
   }
+
+  private getHeroDescription(): string {
+    return `${this.capitalizedName} ${this.age}`;
+  }
+
+  get heroDescription(): string {
+    return this.getHeroDescription();
+  }
 }
