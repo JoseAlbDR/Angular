@@ -16,6 +16,8 @@ export class ListComponent {
     'Ant Man',
   ];
 
+  public deletedHero?: string;
+
   resetHeros(): void {
     this.heroName = [
       'Spiderman',
@@ -26,9 +28,11 @@ export class ListComponent {
       'Blak Widow',
       'Ant Man',
     ];
+
+    this.deletedHero = '';
   }
 
   deleteLastHero(): void {
-    this.heroName.pop();
+    this.deletedHero = this.heroName.pop();
   }
 }
