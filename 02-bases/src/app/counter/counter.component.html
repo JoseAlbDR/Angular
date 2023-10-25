@@ -1,0 +1,17 @@
+<h3>Counter: {{ counter }}</h3>
+<div>
+  <label for="value">Value</label>
+  <input
+    type="number"
+    name="value"
+    id="value"
+    value="{{ value }}"
+    (change)="setValue(this.value)"
+  />
+</div>
+
+<div class="counter-btns">
+  <button (click)="increaseCounter()">+{{ value }}</button>
+  <button (click)="resetCounter()">Reset</button>
+  <button (click)="decreaseCounter()">-{{ value }}</button>
+</div>
