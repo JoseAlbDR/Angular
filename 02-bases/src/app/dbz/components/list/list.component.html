@@ -1,5 +1,6 @@
 <h4>List</h4>
 <ul class="list-group">
-  <li class="list-group-item">Krillin - 500</li>
-  <li class="list-group-item">Gokuy - 10000</li>
+  <li *ngFor="let char of charList" class="list-group-item">
+    {{ char.name }} - <strong>Power:</strong> {{ char.power }}
+  </li>
 </ul>
