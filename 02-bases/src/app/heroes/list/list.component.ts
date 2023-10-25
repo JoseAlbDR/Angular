@@ -15,4 +15,20 @@ export class ListComponent {
     'Blak Widow',
     'Ant Man',
   ];
+
+  resetHeros(): void {
+    this.heroName = [
+      'Spiderman',
+      'Ironman',
+      'Hulk',
+      'She Hulk',
+      'Thor',
+      'Blak Widow',
+      'Ant Man',
+    ];
+  }
+
+  deleteLastHero(): void {
+    this.heroName.pop();
+  }
 }
