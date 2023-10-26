@@ -1,6 +1,16 @@
 <h4>Add Character</h4>
 <form class="row">
-  <input class="form-control mb-2" type="text" placeholder="Name" />
-  <input class="form-control mb-2" type="number" placeholder="Power" />
+  <input
+    [(ngModel)]="character.name"
+    class="form-control mb-2"
+    type="text"
+    placeholder="Name"
+  />
+  <input
+    [(ngModel)]="character.power"
+    class="form-control mb-2"
+    type="number"
+    placeholder="Power"
+  />
   <button type="submit" class="btn btn-primary">Add</button>
 </form>
