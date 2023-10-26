@@ -6,6 +6,6 @@
     <dbz-list [charList]="characters"></dbz-list>
   </div>
   <div class="col">
-    <dbz-add-form></dbz-add-form>
+    <dbz-add-form (onNewCharacter)="onNewCharacter($event)"></dbz-add-form>
   </div>
 </div>
