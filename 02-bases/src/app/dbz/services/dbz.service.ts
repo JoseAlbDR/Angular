@@ -15,12 +15,12 @@ export class DbzService {
   ];
 
   public onNewCharacter(character: Character): void {
-    character.id = uuid4();
+    const newChar = { ...character, id: uuid4() };
 
-    this.characters.push({ ...character });
+    this.characters.push({ ...newChar });
   }
 
-  public onDeleteCharacter(id: string): void {
+  public onDeleteCharacterById(id: string): void {
     this.characters = this.characters.filter((char) => char.id !== id);
   }
 }
