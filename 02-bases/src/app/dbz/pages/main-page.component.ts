@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../interfaces/character.interface';
 import { DbzService } from '../services/dbz.service';
 
@@ -7,5 +7,17 @@ import { DbzService } from '../services/dbz.service';
   templateUrl: 'main-page.component.html',
 })
 export class MainPageComponent {
-  constructor(public dbzService: DbzService) {}
+  constructor(private dbzService: DbzService) {}
+
+  get characters(): Character[] {
+    return [...this.dbzService.characters];
+  }
+
+  deleteCharacterById(id: string): void {
+    this.dbzService.deleteCharacterById(id);
+  }
+
+  addCharacter(character: Character): void {
+    this.dbzService.addCharacter(character);
+  }
 }

@@ -14,13 +14,13 @@ export class DbzService {
     { id: uuid4(), name: 'Vegeta', power: 7500 },
   ];
 
-  public onNewCharacter(character: Character): void {
+  public addCharacter(character: Character): void {
     const newChar = { ...character, id: uuid4() };
 
     this.characters.push({ ...newChar });
   }
 
-  public onDeleteCharacterById(id: string): void {
+  public deleteCharacterById(id: string): void {
     this.characters = this.characters.filter((char) => char.id !== id);
   }
 }
