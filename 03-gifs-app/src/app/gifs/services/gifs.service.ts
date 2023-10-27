@@ -16,6 +16,7 @@ export class GifsService {
 
   constructor(private http: HttpClient) {
     this._tagsHistory = this.loadLocalStorage();
+    this.searchTag(this._tagsHistory[0] || '');
   }
 
   get tagsHistory(): string[] {
