@@ -3,6 +3,7 @@
   <hr class="text-white" />
   <div class="list-group list-reset">
     <button
+      (click)="searchTag(tag)"
       *ngFor="let tag of tags"
       class="list-group-item list-group-item-action"
     >
