@@ -30,6 +30,9 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this._tagsHistory.splice(0, 10);
+  }
+
+  private updateLocalStorage(): void {
     localStorage.setItem('tagHistory', JSON.stringify(this._tagsHistory));
   }
 
@@ -37,6 +40,7 @@ export class GifsService {
     if (tag === '') return;
 
     this.organizeHistory(tag);
+    this.updateLocalStorage();
 
     const params = new HttpParams()
       .set('api_key', GIPHY_API_KEY)
@@ -48,5 +52,10 @@ export class GifsService {
       .subscribe((resp) => {
         this.gifList = resp.data;
       });
+  }
+
+  public deleteTag(tag: string): void {
+    this._tagsHistory = this._tagsHistory.filter((oldTag) => oldTag !== tag);
+    this.updateLocalStorage();
   }
 }
