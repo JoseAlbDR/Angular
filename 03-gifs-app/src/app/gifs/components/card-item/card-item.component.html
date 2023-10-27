@@ -3,11 +3,11 @@
   class="card mb-2 text-center bg-dark"
   target="_blank"
 >
-  <img
-    [src]="gif.images.downsized_medium.url"
-    [alt]="gif.title"
-    class="card-img-top"
-  />
+  <gif-card-image
+    [url]="gif.images.downsized_medium.url"
+    [title]="gif.title"
+  ></gif-card-image>
+
   <div class="card-body text-white" [ngClass]="{ 'd-none': !gif.title }">
     <p class="card-text">{{ gif.title }}</p>
   </div>
