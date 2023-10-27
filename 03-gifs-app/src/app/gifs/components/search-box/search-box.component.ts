@@ -5,22 +5,21 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'gifs-search-box',
   templateUrl: './search-box.component.html',
 })
 export class SearchBoxComponent {
+  constructor(private gifsService: GifsService) {}
   @ViewChild('queryInput')
   public searchInput!: ElementRef<HTMLInputElement>;
-
-  @Output()
-  public onNewSearch = new EventEmitter<string>();
 
   public newSearch() {
     const newQuery = this.searchInput.nativeElement.value;
 
-    this.onNewSearch.emit(newQuery);
+    this.gifsService.searchTag(newQuery);
 
     this.searchInput.nativeElement.value = '';
   }
