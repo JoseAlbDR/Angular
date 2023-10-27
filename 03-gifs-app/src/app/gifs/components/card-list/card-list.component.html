@@ -1,7 +1,11 @@
 <div class="row">
   <div *ngFor="let gif of itemList" class="col-md-3 col-sm-6">
     <div class="card mb-2 text-center bg-dark">
-      <img src="{{ gif.images.preview_gif.url }}" alt="" class="w-100" />
+      <img
+        [src]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+        class="w-100"
+      />
       <div class="card-body text-white">
         <p class="card-text">{{ gif.title }}</p>
       </div>
