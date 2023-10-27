@@ -13,6 +13,8 @@ export class GifsService {
   }
 
   public searchTag(tag: string): void {
+    if (tag === '') return;
+
     this._tagsHistory.unshift(tag);
   }
 }

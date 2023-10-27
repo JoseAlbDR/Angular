@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, Output, ViewChild } from '@angular/core';
 import { GifsService } from '../../services/gifs.service';
 
 @Component({
