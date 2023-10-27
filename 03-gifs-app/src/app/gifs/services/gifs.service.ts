@@ -10,7 +10,9 @@ const GIPHY_API_KEY = 'fmVyq1YAuR1lIk2C04153599hBoLOjw6';
 export class GifsService {
   public gifList: Gif[] = [];
 
-  private _tagsHistory: string[] = [];
+  private _tagsHistory: string[] =
+    JSON.parse(localStorage.getItem('tagHistory')!) || [];
+
   private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
 
   constructor(private http: HttpClient) {}
@@ -28,6 +30,7 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this._tagsHistory.splice(0, 10);
+    localStorage.setItem('tagHistory', JSON.stringify(this._tagsHistory));
   }
 
   public searchTag(tag: string): void {
