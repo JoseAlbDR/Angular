@@ -1,10 +1,9 @@
 <div class="row">
-  <div class="col-md-3 col-sm-6">
+  <div *ngFor="let gif of gifs" class="col-md-3 col-sm-6">
     <div class="card mb-2 text-center bg-dark">
-      <!-- TODO: Create image -->
-
+      <img src="{{ gif.images.preview_gif.url }}" alt="" class="w-100" />
       <div class="card-body text-white">
-        <div class="card-text">Hola Mundo</div>
+        <p class="card-text">{{ gif.title }}</p>
       </div>
     </div>
   </div>
