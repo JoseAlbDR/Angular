@@ -10,11 +10,13 @@ const GIPHY_API_KEY = 'fmVyq1YAuR1lIk2C04153599hBoLOjw6';
 export class GifsService {
   public gifList: Gif[] = [];
 
-  private _tagsHistory: string[] = this.loadLocalStorage();
+  private _tagsHistory: string[] = [];
 
   private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this._tagsHistory = this.loadLocalStorage();
+  }
 
   get tagsHistory(): string[] {
     return [...this._tagsHistory];
