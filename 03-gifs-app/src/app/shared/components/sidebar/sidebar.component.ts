@@ -16,4 +16,8 @@ export class SidebarComponent {
   public searchTag(tag: string): void {
     this.gifsService.searchTag(tag);
   }
+
+  public deleteTag(tag: string): void {
+    this.gifsService.deleteTag(tag);
+  }
 }

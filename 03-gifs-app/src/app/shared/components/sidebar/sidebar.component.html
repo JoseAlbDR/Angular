@@ -5,9 +5,14 @@
     <button
       (click)="searchTag(tag)"
       *ngFor="let tag of tags"
-      class="list-group-item list-group-item-action"
+      class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
     >
       {{ tag | titlecase }}
+      <span
+        ><button (click)="deleteTag(tag)" class="btn btn-danger zindex-fixed">
+          X
+        </button></span
+      >
     </button>
   </div>
 </div>
