@@ -1,11 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'gif-card-image',
   templateUrl: 'card-image.component.html',
 })
-export class CardImageComponent {
+export class CardImageComponent implements OnInit {
   @Input()
   public url!: string;
-  public title!: string;
+
+  @Input()
+  public alt: string = 'Gif Image';
+
+  ngOnInit(): void {
+    if (!this.url) throw new Error('URL property is required');
+  }
 }
