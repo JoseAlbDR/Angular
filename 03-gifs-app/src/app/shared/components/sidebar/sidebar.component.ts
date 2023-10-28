@@ -9,6 +9,8 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
 export class SidebarComponent {
   constructor(private gifsService: GifsService) {}
 
+  public isDeleted: boolean = false;
+
   get tags(): string[] {
     return this.gifsService.tagsHistory;
   }
@@ -19,5 +21,6 @@ export class SidebarComponent {
 
   public deleteTag(tag: string): void {
     this.gifsService.deleteTag(tag);
+    this.isDeleted = true;
   }
 }
