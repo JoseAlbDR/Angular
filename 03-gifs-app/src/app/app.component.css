@@ -1,4 +1,5 @@
-.d-flex {
+.main-content {
+  overflow-x: hidden;
 }
 
 @media (width< 560px) {

@@ -1,11 +1,10 @@
 #sidebar {
-  height: 100vh;
+  height: 100%;
   width: 250px;
 }
 
 @media (width < 560px) {
   #sidebar {
-    height: 100%;
     width: 100%;
   }
 }
