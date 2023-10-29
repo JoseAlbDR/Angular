@@ -16,7 +16,7 @@ export class GifsService {
 
   constructor(private http: HttpClient) {
     this._tagsHistory = this.loadLocalStorage();
-
+    console.log(this._tagsHistory);
     this.searchTag(this._tagsHistory?.[0] || '');
   }
 
@@ -26,7 +26,7 @@ export class GifsService {
 
   private organizeHistory(tag: string): void {
     tag = tag.toLowerCase();
-
+    console.log(tag);
     if (this._tagsHistory.includes(tag)) {
       this._tagsHistory = this._tagsHistory.filter((item) => item !== tag);
     }
@@ -40,8 +40,6 @@ export class GifsService {
   }
 
   private loadLocalStorage() {
-    if (!localStorage.getItem('tagHistory')) return;
-
     const history = JSON.parse(localStorage.getItem('tagHistory')!) || [];
 
     return history;
