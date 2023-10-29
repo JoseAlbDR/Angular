@@ -7,7 +7,8 @@
 }
 
 @media (width > 560px) {
-  .d-flex {
-    flex-direction: row;
+  .main-content {
+    display: grid !important;
+    grid-template-columns: 0.2fr 1fr;
   }
 }

@@ -5,6 +5,7 @@
 @media (width > 560px) {
   #sidebar {
     height: 100%;
-    width: 250px;
+    width: 100%;
+    min-width: 250px;
   }
 }
