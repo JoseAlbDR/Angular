@@ -2,3 +2,10 @@
   height: 100vh;
   width: 250px;
 }
+
+@media (width < 560px) {
+  #sidebar {
+    height: 100%;
+    width: 100%;
+  }
+}

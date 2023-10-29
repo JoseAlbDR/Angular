@@ -1,0 +1,8 @@
+.d-flex {
+}
+
+@media (width< 560px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
