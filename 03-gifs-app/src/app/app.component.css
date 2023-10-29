@@ -2,8 +2,12 @@
   overflow-x: hidden;
 }
 
-@media (width< 560px) {
+.d-flex {
+  flex-direction: column;
+}
+
+@media (width > 560px) {
   .d-flex {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
