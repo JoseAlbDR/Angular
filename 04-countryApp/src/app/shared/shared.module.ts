@@ -8,8 +8,18 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 @NgModule({
-  declarations: [AboutPageComponent, HomePageComponent, SidebarComponent, ContactPageComponent],
+  declarations: [
+    AboutPageComponent,
+    HomePageComponent,
+    SidebarComponent,
+    ContactPageComponent,
+  ],
   imports: [CommonModule, RouterModule],
-  exports: [HomePageComponent, AboutPageComponent, SidebarComponent],
+  exports: [
+    HomePageComponent,
+    AboutPageComponent,
+    SidebarComponent,
+    ContactPageComponent,
+  ],
 })
 export class SharedModule {}
