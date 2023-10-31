@@ -21,8 +21,8 @@ export class SearchBoxComponent {
   @Output()
   public onSearch: EventEmitter<string> = new EventEmitter();
 
-  searchByCapital(): void {
-    const term: string = this.searchInput.nativeElement.value;
+  emitQuery(value: string): void {
+    const term: string = value;
 
     if (term === '') return;
 
