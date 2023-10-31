@@ -7,6 +7,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     ContactPageComponent,
     SearchBoxComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   exports: [
     AboutPageComponent,
     ContactPageComponent,
