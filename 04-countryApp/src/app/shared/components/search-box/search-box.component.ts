@@ -19,14 +19,14 @@ export class SearchBoxComponent {
   public placeholder: string = '';
 
   @Output()
-  public onValue: EventEmitter<string> = new EventEmitter();
+  public onSearch: EventEmitter<string> = new EventEmitter();
 
   searchByCapital(): void {
     const term: string = this.searchInput.nativeElement.value;
 
     if (term === '') return;
 
-    this.onValue.emit(term);
+    this.onSearch.emit(term);
 
     this.searchInput.nativeElement.value = '';
   }
