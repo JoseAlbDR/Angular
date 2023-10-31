@@ -11,17 +11,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12 mt-4">
+<div class="row mt-4">
+  <div class="col">
     Results:
     <hr />
   </div>
-  <div class="card col-md-3 col-sm-6" *ngFor="let country of countries">
-    <div class="card-body">
-      <div class="card-title">
-        {{ country.capital }}
-      </div>
-      <div class="card-text">Population: {{ country.population }}</div>
-    </div>
-  </div>
 </div>
+
+<countries-table class="row" [countries]="countries"></countries-table>
