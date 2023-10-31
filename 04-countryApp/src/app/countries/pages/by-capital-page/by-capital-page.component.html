@@ -16,7 +16,12 @@
     Results:
     <hr />
   </div>
-  <div class="col-md-3 col-sm-6" *ngFor="let country of countries">
-    {{ country.capital }}
+  <div class="card col-md-3 col-sm-6" *ngFor="let country of countries">
+    <div class="card-body">
+      <div class="card-title">
+        {{ country.capital }}
+      </div>
+      <div class="card-text">Population: {{ country.population }}</div>
+    </div>
   </div>
 </div>
