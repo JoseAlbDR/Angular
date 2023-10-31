@@ -9,7 +9,7 @@ export class CountriesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public searchQuery(query: string, type: string): Observable<Country[]> {
+  public searchBy(type: string, query: string): Observable<Country[]> {
     return this.httpClient.get<Country[]>(
       `${this.serviceUrl}/${type}/${query}`
     );
