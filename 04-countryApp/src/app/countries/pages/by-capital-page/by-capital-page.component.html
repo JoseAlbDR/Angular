@@ -12,9 +12,11 @@
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-12 mt-4">
+    Results:
     <hr />
-    <!-- Results -->
-    Results
+  </div>
+  <div class="col-md-3 col-sm-6" *ngFor="let country of countries">
+    {{ country.capital }}
   </div>
 </div>
