@@ -22,11 +22,9 @@ export class SearchBoxComponent {
   public onSearch: EventEmitter<string> = new EventEmitter();
 
   emitQuery(value: string): void {
-    const term: string = value;
+    if (value === '') return;
 
-    if (term === '') return;
-
-    this.onSearch.emit(term);
+    this.onSearch.emit(value);
 
     this.searchInput.nativeElement.value = '';
   }
