@@ -1,9 +1,9 @@
 <li class="list-group-item">
-  <ng-container *ngIf="!link; else link">
+  <ng-container *ngIf="!link; else linkTemp">
     <strong>{{ name }}: </strong>{{ content }}
   </ng-container>
 
-  <ng-template #link>
+  <ng-template #linkTemp>
     <strong>{{ name }}: </strong>
     <a [href]="link" target="_blank">{{ content }}</a>
   </ng-template>
