@@ -9,6 +9,7 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class SearchByComponent {
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   constructor(private countriesService: CountriesService) {}
 
@@ -16,8 +17,12 @@ export class SearchByComponent {
   public type: string = '';
 
   searchBy(term: string): void {
+    this.isLoading = true;
     const type = this.type.toLowerCase();
     const data = this.countriesService.searchBy(type, term);
-    data.subscribe((countries) => (this.countries = countries));
+    data.subscribe((countries) => {
+      this.countries = countries;
+      this.isLoading = false;
+    });
   }
 }

@@ -1,8 +1,4 @@
-<ng-template #loading>
-  <shared-loading-spinner></shared-loading-spinner>
-</ng-template>
-
-<div *ngIf="country; else loading">
+<div *ngIf="country">
   <ul class="list-group">
     <h3>More Info</h3>
 
