@@ -1,0 +1,56 @@
+<ng-template #loading>
+  <shared-loader></shared-loader>
+</ng-template>
+
+<div *ngIf="country; else loading">
+  <ul class="list-group">
+    <h3>More Info</h3>
+    <li class="list-group-item">
+      <strong>Alt. Spellings:</strong>
+      <span>
+        {{ country.altSpellings.join(", ") }}
+      </span>
+    </li>
+    <li class="list-group-item">
+      <strong>Lat/Lng: </strong>
+      {{ country.latlng[0] }}, {{ country.latlng[1] }}
+    </li>
+    <li class="list-group-item">
+      <strong>Timezones: </strong>
+      {{ country.timezones.join(", ") }}
+    </li>
+    <li class="list-group-item">
+      <strong>Maps: </strong>
+      <a class="link-info m-1" [href]="country.maps.googleMaps" target="_blank"
+        >Google Map</a
+      >
+      <span> - </span>
+      <a class="link-info" [href]="country.maps.openStreetMaps" target="_blank"
+        >Open Street Map</a
+      >
+    </li>
+    <li class="list-group-item">
+      <strong>Idependent:</strong>
+      {{ country.independent ? "Yes" : "No" }}
+    </li>
+    <li class="list-group-item">
+      <strong>Languajes: </strong>
+      <span
+        class="badge bg-info bg-gradient m-1"
+        *ngFor="let value of getObjectValues(country.languages)"
+        class="badge bg-info m-1"
+        >{{ value }}</span
+      >
+    </li>
+    <li class="list-group-item">
+      <strong>Currencies: </strong>
+      <span
+        *ngFor="let key of getObjectKeys(country.currencies)"
+        class="badge bg-info m-1"
+        >{{ country.currencies[key].name }}-{{
+          country.currencies[key].symbol
+        }}</span
+      >
+    </li>
+  </ul>
+</div>

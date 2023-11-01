@@ -12,6 +12,7 @@ import { SearchByComponent } from './components/search-by/search-by.component';
 import { RouterModule } from '@angular/router';
 import { CountryDetailComponent } from './components/country-detail/country-detail.component';
 import { CountryInfoComponent } from './components/country-info/country-info.component';
+import { CountryMoreInfoComponent } from './components/country-more-info/country-more-info.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CountryInfoComponent } from './components/country-info/country-info.com
     SearchByComponent,
     CountryDetailComponent,
     CountryInfoComponent,
+    CountryMoreInfoComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule, SharedModule, RouterModule],
 })

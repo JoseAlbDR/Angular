@@ -29,6 +29,7 @@
       <hr />
     </div>
   </div>
+
   <div class="row mt-2 flex-column flex-lg-row gap-3">
     <div id="coat-of-arms" class="col-4 d-flex flex-column w-100">
       <h3>Coat of arms</h3>
@@ -37,65 +38,13 @@
         [url]="country.coatOfArms.svg!"
       ></shared-lazy-image>
     </div>
-    <div class="col">
-      <ul class="list-group">
-        <h3>More Info</h3>
-        <li class="list-group-item">
-          <strong>Alt. Spellings:</strong>
-          <span>
-            {{ country.altSpellings.join(", ") }}
-          </span>
-        </li>
-        <li class="list-group-item">
-          <strong>Lat/Lng: </strong>
-          {{ country.latlng[0] }}, {{ country.latlng[1] }}
-        </li>
-        <li class="list-group-item">
-          <strong>Timezones: </strong>
-          {{ country.timezones.join(", ") }}
-        </li>
-        <li class="list-group-item">
-          <strong>Maps: </strong>
-          <a
-            class="link-info m-1"
-            [href]="country.maps.googleMaps"
-            target="_blank"
-            >Google Map</a
-          >
-          <span> - </span>
-          <a
-            class="link-info"
-            [href]="country.maps.openStreetMaps"
-            target="_blank"
-            >Open Street Map</a
-          >
-        </li>
-        <li class="list-group-item">
-          <strong>Idependent:</strong>
-          {{ country.independent ? "Yes" : "No" }}
-        </li>
-        <li class="list-group-item">
-          <strong>Languajes: </strong>
-          <span
-            class="badge bg-info bg-gradient m-1"
-            *ngFor="let value of getObjectValues(country.languages)"
-            class="badge bg-info m-1"
-            >{{ value }}</span
-          >
-        </li>
-        <li class="list-group-item">
-          <strong>Currencies: </strong>
-          <span
-            *ngFor="let key of getObjectKeys(country.currencies)"
-            class="badge bg-info m-1"
-            >{{ country.currencies[key].name }}-{{
-              country.currencies[key].symbol
-            }}</span
-          >
-        </li>
-      </ul>
-    </div>
+
+    <countries-country-more-info
+      class="col"
+      [country]="country"
+    ></countries-country-more-info>
   </div>
+
   <div class="row mt-2">
     <div class="col">
       <h3>Translations</h3>
