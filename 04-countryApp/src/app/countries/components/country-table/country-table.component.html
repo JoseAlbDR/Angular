@@ -10,38 +10,36 @@
 </div>
 
 <ng-template #table>
-  <div *ngIf="countries; else loading">
-    <div
-      class="col col-sm-6 col-lg-4 col-xxl-3 my-2"
-      *ngFor="let country of countries; let i = index"
-    >
-      <div class="card h-100 shadow-sm">
-        <img
-          [src]="country.flags.svg"
-          [alt]="country.name.common"
-          class="card-img-top h-50 border-bottom"
-        />
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li class="d-flex justify-content-between alignt-items-center">
-              <div>
-                <span class="m-2">#{{ i + 1 }}</span>
-                <span>{{ country.flag }}</span>
-              </div>
-              <h5 class="card-title text-center">{{ country.capital }}</h5>
-            </li>
-            <li class="list-group-item">Name: {{ country.name.common }}</li>
-            <li class="list-group-item">
-              Population: {{ country.population | number }}
-            </li>
-            <a
-              class="btn btn-primary w-100 mt-2"
-              [routerLink]="['/countries/by/', country.cca3]"
-            >
-              See More
-            </a>
-          </ul>
-        </div>
+  <div
+    class="col col-sm-6 col-lg-4 col-xxl-3 my-2"
+    *ngFor="let country of countries; let i = index"
+  >
+    <div class="card h-100 shadow-sm">
+      <img
+        [src]="country.flags.svg"
+        [alt]="country.name.common"
+        class="card-img-top h-50 border-bottom"
+      />
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="d-flex justify-content-between alignt-items-center">
+            <div>
+              <span class="m-2">#{{ i + 1 }}</span>
+              <span>{{ country.flag }}</span>
+            </div>
+            <h5 class="card-title text-center">{{ country.capital }}</h5>
+          </li>
+          <li class="list-group-item">Name: {{ country.name.common }}</li>
+          <li class="list-group-item">
+            Population: {{ country.population | number }}
+          </li>
+          <a
+            class="btn btn-primary w-100 mt-2"
+            [routerLink]="['/countries/by/', country.cca3]"
+          >
+            See More
+          </a>
+        </ul>
       </div>
     </div>
   </div>
