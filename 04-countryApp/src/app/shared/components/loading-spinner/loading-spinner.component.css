@@ -1,6 +1,6 @@
 .spinner-container {
   position: fixed;
-  bottom: 15px;
+  top: 15px;
   right: 15px;
   background-color: #0d6efd;
   color: #fff;
