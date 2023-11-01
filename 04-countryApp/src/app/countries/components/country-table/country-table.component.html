@@ -26,9 +26,11 @@
             <h5 class="card-title text-center">{{ country.capital }}</h5>
           </li>
           <li class="list-group-item">Name: {{ country.name.common }}</li>
-          <li class="list-group-item">Population: {{ country.population }}</li>
           <li class="list-group-item">
-            <a href="#" class="btn btn-primary w-100">See More</a>
+            Population: {{ country.population | number }}
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="btn btn-primary w-100 mt-2">See More</a>
           </li>
         </ul>
       </div>
