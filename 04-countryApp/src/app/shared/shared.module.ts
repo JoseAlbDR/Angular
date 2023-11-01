@@ -7,6 +7,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     SidebarComponent,
     ContactPageComponent,
     SearchBoxComponent,
+    LazyImageComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -23,6 +25,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     HomePageComponent,
     SearchBoxComponent,
     SidebarComponent,
+    LazyImageComponent,
   ],
 })
 export class SharedModule {}

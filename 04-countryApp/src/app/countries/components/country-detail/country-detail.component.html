@@ -1,5 +1,10 @@
 <ng-template #loading>
-  <div class="alert alert-info text-center">Wait please</div>
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="alert alert-info text-center">
+      <p>Wait Please</p>
+      <img src="assets/loader.svg" alt="loader" />
+    </div>
+  </div>
 </ng-template>
 
 <div *ngIf="country; else loading">
@@ -12,14 +17,13 @@
     </div>
   </div>
 
-  <div class="row flex-column flex-lg-row">
+  <div class="row flex-column flex-lg-row gap-3">
     <div id="flag" class="col-4 d-flex flex-column w-100">
       <h3>Flag</h3>
-      <img
-        [src]="country.flags.svg"
+      <shared-lazy-image
         [alt]="country.name.common"
-        class="img-thumbnail flex-fill"
-      />
+        [url]="country.flags.svg"
+      ></shared-lazy-image>
     </div>
     <div class="col">
       <ul class="list-group">
@@ -54,15 +58,13 @@
       <hr />
     </div>
   </div>
-  <div class="row mt-2 flex-column flex-lg-row">
+  <div class="row mt-2 flex-column flex-lg-row gap-3">
     <div id="coat-of-arms" class="col-4 d-flex flex-column w-100">
       <h3>Coat of arms</h3>
-      <img
-        [src]="country.coatOfArms.svg"
+      <shared-lazy-image
         [alt]="country.name.common"
-        class="img-thumbnail"
-        onerror="this.src='../../assets/Image_not_available.png'"
-      />
+        [url]="country.coatOfArms.svg!"
+      ></shared-lazy-image>
     </div>
     <div class="col">
       <ul class="list-group">
