@@ -36,12 +36,14 @@
         <li class="list-group-item">
           <strong>Region: </strong> {{ country.region }}
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" *ngIf="country.borders">
           <strong>Borders: </strong>
-          <span
-            class="badge bg-info bg-gradient m-1"
-            *ngFor="let border of country.borders"
-            >{{ border }}</span
+          <span *ngFor="let border of country.borders"
+            ><a
+              class="badge bg-info bg-gradient m-1"
+              [routerLink]="['/countries/by/', border]"
+              >{{ border }}</a
+            ></span
           >
         </li>
       </ul>
@@ -59,6 +61,7 @@
         [src]="country.coatOfArms.svg"
         [alt]="country.name.common"
         class="img-thumbnail"
+        onerror="this.src='../../assets/Image_not_available.png'"
       />
     </div>
     <div class="col">
@@ -126,7 +129,7 @@
       <div class="d-flex flex-wrap">
         <span
           *ngFor="let key of getObjectKeys(country.translations)"
-          class="badge bg-info m-1"
+          class="badge bg-primary m-1"
           >{{ country.translations[key].common }}</span
         >
       </div>
