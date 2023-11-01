@@ -11,6 +11,7 @@ import { CountryTableComponent } from './components/country-table/country-table.
 import { SearchByComponent } from './components/search-by/search-by.component';
 import { RouterModule } from '@angular/router';
 import { CountryDetailComponent } from './components/country-detail/country-detail.component';
+import { CountryInfoComponent } from './components/country-info/country-info.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CountryDetailComponent } from './components/country-detail/country-deta
     CountryTableComponent,
     SearchByComponent,
     CountryDetailComponent,
+    CountryInfoComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule, SharedModule, RouterModule],
 })
