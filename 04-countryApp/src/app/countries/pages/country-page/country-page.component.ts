@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'countries-country-page',
@@ -17,10 +18,8 @@ export class CountryPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({ id }) => {
-      this.countriesService
-        .searchBy('alpha', id)
-        .subscribe((countries) => (this.countries = countries));
-    });
+    this.activatedRoute.params
+      .pipe(switchMap(({ id }) => this.countriesService.searchBy('alpha', id)))
+      .subscribe((country) => (this.countries = country));
   }
 }
