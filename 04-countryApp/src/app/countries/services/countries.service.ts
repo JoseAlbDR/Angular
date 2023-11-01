@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Country } from '../interfaces/country';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, delay, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
@@ -12,6 +12,9 @@ export class CountriesService {
   public searchBy(type: string, query: string): Observable<Country[]> {
     const url: string = `${this.serviceUrl}/${type}/${query}`;
 
-    return this.httpClient.get<Country[]>(url).pipe(catchError(() => of([])));
+    return this.httpClient.get<Country[]>(url).pipe(
+      catchError(() => of([])),
+      delay(2000)
+    );
   }
 }
