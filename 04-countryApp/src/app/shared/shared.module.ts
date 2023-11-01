@@ -4,23 +4,25 @@ import { RouterModule } from '@angular/router';
 
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { CustomListComponent } from './components/custom-list/custom-list.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { CustomListComponent } from './components/custom-list/custom-list.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AboutPageComponent,
     ContactPageComponent,
+    CustomListComponent,
     HomePageComponent,
     LazyImageComponent,
     LoaderComponent,
+    LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
-    CustomListComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -29,6 +31,7 @@ import { CustomListComponent } from './components/custom-list/custom-list.compon
     HomePageComponent,
     LazyImageComponent,
     LoaderComponent,
+    LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
   ],
