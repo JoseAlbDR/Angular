@@ -10,7 +10,7 @@ import { switchMap } from 'rxjs';
   styles: [],
 })
 export class CountryPageComponent implements OnInit {
-  public countries: Country[] = [];
+  public country?: Country;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,10 +21,18 @@ export class CountryPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.countriesService.searchBy('alpha', id)))
-      .subscribe((country) => {
-        if (country.length === 0) this.router.navigateByUrl('');
-        console.log(country);
-        this.countries = country;
+      .subscribe((countries) => {
+        if (countries.length === 0) this.router.navigateByUrl('');
+        console.log(countries);
+        this.country = countries[0];
       });
+  }
+
+  public getObjectKeys(obj: { [key: string]: any }): string[] {
+    return Object.keys(obj);
+  }
+
+  public getObjectValues(obj: { [key: string]: string }) {
+    return Object.values(obj);
   }
 }
