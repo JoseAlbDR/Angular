@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CustomListComponent } from './components/custom-list/custom-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     LoaderComponent,
     SearchBoxComponent,
     SidebarComponent,
+    CustomListComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
