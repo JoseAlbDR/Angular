@@ -29,8 +29,12 @@
           <li class="list-group-item">
             Population: {{ country.population | number }}
           </li>
-          <li class="list-group-item">
-            <a href="#" class="btn btn-primary w-100 mt-2">See More</a>
+          <li
+            class="list-group-item"
+            class="btn btn-primary w-100 mt-2"
+            [routerLink]="'countries/by/' + country.fifa"
+          >
+            See More
           </li>
         </ul>
       </div>

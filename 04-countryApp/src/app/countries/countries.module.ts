@@ -9,6 +9,7 @@ import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { SearchByComponent } from './components/search-by/search-by.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,6 @@ import { SearchByComponent } from './components/search-by/search-by.component';
     CountryTableComponent,
     SearchByComponent,
   ],
-  imports: [CommonModule, CountriesRoutingModule, SharedModule],
+  imports: [CommonModule, CountriesRoutingModule, SharedModule, RouterModule],
 })
 export class CountriesModule {}
