@@ -20,19 +20,25 @@ export class CountryPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isLoading = true;
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.countriesService.searchBy('alpha', id)),
-        map((countries) => {
-          return countries;
+        // Cancel previous subscription and activate new subscription
+        // each time that activateRoute.params changes
+        switchMap(({ id }) => {
+          this.isLoading = true;
+          return this.countriesService.searchBy('alpha', id);
         })
+        // Changes data format or estructure
+        // map((countries) => {
+        //   return countries;
+        // })
       )
       .subscribe((countries) => {
         if (countries.length === 0) this.router.navigateByUrl('');
         this.country = countries[0];
         this.isLoading = false;
       });
+    console.log(this.isLoading);
   }
 
   public getObjectKeys(obj: { [key: string]: any }): string[] {

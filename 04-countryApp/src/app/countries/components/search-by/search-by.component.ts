@@ -5,7 +5,7 @@ import { CountriesService } from '../../services/countries.service';
 @Component({
   selector: 'countries-search-by',
   templateUrl: './search-by.component.html',
-  styles: [],
+  styleUrls: ['./search-by.component.css'],
 })
 export class SearchByComponent {
   public countries: Country[] = [];
