@@ -18,6 +18,9 @@ export class SearchBoxComponent {
   @Input()
   public placeholder: string = '';
 
+  @Input()
+  public disabled: boolean = false;
+
   @Output()
   public onSearch: EventEmitter<string> = new EventEmitter();
 

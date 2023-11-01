@@ -1,6 +1,7 @@
 <input
   type="text"
   [placeholder]="placeholder"
+  [disabled]="disabled"
   class="form-control"
   #queryInput
   (keyup.enter)="emitQuery(queryInput.value)"
