@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
-import { switchMap } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'countries-country-page',
@@ -11,6 +11,7 @@ import { switchMap } from 'rxjs';
 })
 export class CountryPageComponent implements OnInit {
   public country?: Country;
+  public isLoading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -19,12 +20,18 @@ export class CountryPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.countriesService.searchBy('alpha', id)))
+      .pipe(
+        switchMap(({ id }) => this.countriesService.searchBy('alpha', id)),
+        map((countries) => {
+          return countries;
+        })
+      )
       .subscribe((countries) => {
         if (countries.length === 0) this.router.navigateByUrl('');
-        console.log(countries);
         this.country = countries[0];
+        this.isLoading = false;
       });
   }
 

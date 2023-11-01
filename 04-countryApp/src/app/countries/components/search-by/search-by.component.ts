@@ -21,8 +21,8 @@ export class SearchByComponent {
     const type = this.type.toLowerCase();
     const data = this.countriesService.searchBy(type, term);
     data.subscribe((countries) => {
-      this.countries = countries;
       this.isLoading = false;
+      this.countries = countries;
     });
   }
 }

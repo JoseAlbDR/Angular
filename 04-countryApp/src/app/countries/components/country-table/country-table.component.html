@@ -7,7 +7,7 @@
 
 <ng-template #table>
   <div
-    class="col col-sm-6 col-lg-4 col-xxl-3 my-2"
+    class="my-2 country-card"
     *ngFor="let country of countries; let i = index"
   >
     <div class="card h-100 shadow-sm">
@@ -25,7 +25,7 @@
             </div>
             <h5 class="card-title text-center">{{ country.capital }}</h5>
           </li>
-          <li class="list-group-item">Name: {{ country.name.common }}</li>
+          <li class="list-group-item">Country: {{ country.name.common }}</li>
           <li class="list-group-item">
             Population: {{ country.population | number }}
           </li>
