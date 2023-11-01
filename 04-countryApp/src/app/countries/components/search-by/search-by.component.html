@@ -1,0 +1,16 @@
+<h2>By Capital</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <!-- Search -->
+    <shared-search-box
+      (onSearch)="searchBy($event)"
+      [placeholder]="'Search by ' + type"
+    ></shared-search-box>
+  </div>
+</div>
+
+<hr />
+
+<countries-table class="row" [countries]="countries"></countries-table>
