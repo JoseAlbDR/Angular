@@ -1,0 +1,8 @@
+@media (width> 768px) {
+  #flag {
+    width: 33% !important;
+  }
+  #coat-of-arms {
+    width: 33% !important;
+  }
+}

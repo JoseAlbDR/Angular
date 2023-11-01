@@ -10,7 +10,7 @@ export interface Country {
   independent: boolean;
   status: string;
   unMember: boolean;
-  currencies: Currencies;
+  currencies: { [key: string]: Clp };
   idd: Idd;
   capital: string[];
   altSpellings: string[];
@@ -88,10 +88,7 @@ export interface Idd {
 }
 
 export interface Languages {
-  spa?: string;
-  eng?: string;
-  ara?: string;
-  ita?: string;
+  [key: string]: string;
 }
 
 export interface Maps {

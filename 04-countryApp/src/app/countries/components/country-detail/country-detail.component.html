@@ -1,0 +1,135 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">Wait please</div>
+</ng-template>
+
+<div *ngIf="country; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        Country: <strong>{{ country.name.common }}</strong>
+        <hr />
+      </h2>
+    </div>
+  </div>
+
+  <div class="row flex-column flex-lg-row">
+    <div id="flag" class="col-4 d-flex flex-column w-100">
+      <h3>Flag</h3>
+      <img
+        [src]="country.flags.svg"
+        [alt]="country.name.common"
+        class="img-thumbnail flex-fill"
+      />
+    </div>
+    <div class="col">
+      <ul class="list-group">
+        <h3>Info</h3>
+        <li class="list-group-item">
+          <strong>Population: </strong>{{ country.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Code: </strong> {{ country.cca3 }}
+        </li>
+        <li class="list-group-item">
+          <strong>Capital: </strong> {{ country.capital }}
+        </li>
+        <li class="list-group-item">
+          <strong>Region: </strong> {{ country.region }}
+        </li>
+        <li class="list-group-item">
+          <strong>Borders: </strong>
+          <span
+            class="badge bg-info bg-gradient m-1"
+            *ngFor="let border of country.borders"
+            >{{ border }}</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <hr />
+    </div>
+  </div>
+  <div class="row mt-2 flex-column flex-lg-row">
+    <div id="coat-of-arms" class="col-4 d-flex flex-column w-100">
+      <h3>Coat of arms</h3>
+      <img
+        [src]="country.coatOfArms.svg"
+        [alt]="country.name.common"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col">
+      <ul class="list-group">
+        <h3>More Info</h3>
+        <li class="list-group-item">
+          <strong>Alt. Spellings:</strong>
+          <span>
+            {{ country.altSpellings.join(", ") }}
+          </span>
+        </li>
+        <li class="list-group-item">
+          <strong>Lat/Lng: </strong>
+          {{ country.latlng[0] }}, {{ country.latlng[1] }}
+        </li>
+        <li class="list-group-item">
+          <strong>Timezones: </strong>
+          {{ country.timezones.join(", ") }}
+        </li>
+        <li class="list-group-item">
+          <strong>Maps: </strong>
+          <a
+            class="link-info m-1"
+            [href]="country.maps.googleMaps"
+            target="_blank"
+            >Google Map</a
+          >
+          <span> - </span>
+          <a
+            class="link-info"
+            [href]="country.maps.openStreetMaps"
+            target="_blank"
+            >Open Street Map</a
+          >
+        </li>
+        <li class="list-group-item">
+          <strong>Idependent:</strong>
+          {{ country.independent ? "Yes" : "No" }}
+        </li>
+        <li class="list-group-item">
+          <strong>Languajes: </strong>
+          <span
+            class="badge bg-info bg-gradient m-1"
+            *ngFor="let value of getObjectValues(country.languages)"
+            class="badge bg-info m-1"
+            >{{ value }}</span
+          >
+        </li>
+        <li class="list-group-item">
+          <strong>Currencies: </strong>
+          <span
+            *ngFor="let key of getObjectKeys(country.currencies)"
+            class="badge bg-info m-1"
+            >{{ country.currencies[key].name }}-{{
+              country.currencies[key].symbol
+            }}</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Translations</h3>
+      <div class="d-flex flex-wrap">
+        <span
+          *ngFor="let key of getObjectKeys(country.translations)"
+          class="badge bg-info m-1"
+          >{{ country.translations[key].common }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
