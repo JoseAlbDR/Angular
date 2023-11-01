@@ -5,34 +5,39 @@
 <div *ngIf="country; else loading">
   <ul class="list-group">
     <h3>More Info</h3>
-    <li class="list-group-item">
-      <strong>Alt. Spellings:</strong>
-      <span>
-        {{ country.altSpellings.join(", ") }}
-      </span>
-    </li>
-    <li class="list-group-item">
-      <strong>Lat/Lng: </strong>
-      {{ country.latlng[0] }}, {{ country.latlng[1] }}
-    </li>
-    <li class="list-group-item">
-      <strong>Timezones: </strong>
-      {{ country.timezones.join(", ") }}
-    </li>
-    <li class="list-group-item">
-      <strong>Maps: </strong>
-      <a class="link-info m-1" [href]="country.maps.googleMaps" target="_blank"
-        >Google Map</a
-      >
-      <span> - </span>
-      <a class="link-info" [href]="country.maps.openStreetMaps" target="_blank"
-        >Open Street Map</a
-      >
-    </li>
-    <li class="list-group-item">
-      <strong>Idependent:</strong>
-      {{ country.independent ? "Yes" : "No" }}
-    </li>
+
+    <countries-country-info-item
+      [name]="'Alt. Spellings'"
+      [content]="country.altSpellings.join(', ')"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Latitude / Longitude'"
+      [content]="country.latlng.join(', ')"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Independent'"
+      [content]="country.independent ? 'Yes' : 'No'"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Timezones'"
+      [content]="country.timezones.join(', ')"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Google Maps'"
+      [link]="country.maps.googleMaps"
+      [content]="'Google Map'"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Open Street Map'"
+      [link]="country.maps.openStreetMaps"
+      [content]="'Open Street Map'"
+    ></countries-country-info-item>
+
     <li class="list-group-item">
       <strong>Languajes: </strong>
       <span
@@ -42,6 +47,7 @@
         >{{ value }}</span
       >
     </li>
+
     <li class="list-group-item">
       <strong>Currencies: </strong>
       <span

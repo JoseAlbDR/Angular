@@ -5,16 +5,27 @@
 <div *ngIf="country; else loading">
   <ul class="list-group">
     <h3>Info</h3>
-    <li class="list-group-item">
-      <strong>Population: </strong>{{ country.population | number }}
-    </li>
-    <li class="list-group-item"><strong>Code: </strong> {{ country.cca3 }}</li>
-    <li class="list-group-item">
-      <strong>Capital: </strong> {{ country.capital }}
-    </li>
-    <li class="list-group-item">
-      <strong>Region: </strong> {{ country.region }}
-    </li>
+
+    <countries-country-info-item
+      [name]="'Population'"
+      [content]="country.population | number"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Code'"
+      [content]="country.cca3"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Region'"
+      [content]="country.region"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
+      [name]="'Capital'"
+      [content]="country.capital.join(', ')"
+    ></countries-country-info-item>
+
     <li class="list-group-item" *ngIf="country.borders">
       <strong>Borders: </strong>
       <span *ngFor="let border of country.borders"
