@@ -2,6 +2,7 @@ import { Country } from './country.interface';
 import { Region } from './region.type';
 
 export interface CacheStore {
+  [key: string]: TermCountries | RegionCountries;
   byCapital: TermCountries;
   byCountry: TermCountries;
   byRegion: RegionCountries;
