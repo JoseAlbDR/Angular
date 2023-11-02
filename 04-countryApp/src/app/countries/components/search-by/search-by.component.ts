@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
 import { CountriesService } from '../../services/countries.service';
 import { Region } from '../../interfaces/region.type';
+import { TermCountries } from '../../interfaces/cache-store.interface';
 
 @Component({
   selector: 'countries-search-by',
@@ -12,7 +13,7 @@ export class SearchByComponent implements OnInit {
   public countries: Country[] = [];
   public isLoading: boolean = false;
   public activeRegion?: Region;
-  public term?: string;
+  public initialValue: string = '';
 
   public regions: Region[] = [
     'Africa',
@@ -25,18 +26,23 @@ export class SearchByComponent implements OnInit {
   constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {
-    if (this.type === 'Capital') {
-      this.countries = this.countriesService.cacheStore.byCapital.countries;
-      this.term = this.countriesService.cacheStore.byCapital.term;
-    }
+    this.countries =
+      this.countriesService.cacheStore[`by${this.type}`].countries;
+    this.initialValue =
+      this.type === 'Region'
+        ? this.countriesService.cacheStore.byRegion.region!
+        : (this.countriesService.cacheStore[`by${this.type}`] as TermCountries)
+            .term;
   }
 
   @Input()
   public type: string = '';
 
   searchBy(term: string): void {
+    this.initialValue = term;
     this.isLoading = true;
     this.activeRegion = term as Region;
+
     const type = this.type.toLowerCase();
     const data = this.countriesService.searchBy(type, term);
     data.subscribe((countries) => {

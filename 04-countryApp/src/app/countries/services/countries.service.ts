@@ -11,7 +11,7 @@ export class CountriesService {
   private serviceUrl: string = 'https://restcountries.com/v3.1';
   public cacheStore: CacheStore = {
     byCapital: { term: '', countries: [] },
-    byCountry: { term: '', countries: [] },
+    byName: { term: '', countries: [] },
     byRegion: { region: '', countries: [] },
   };
 
@@ -26,7 +26,6 @@ export class CountriesService {
           type === 'region'
             ? { region: term as Region, countries }
             : { term, countries };
-        console.log(this.cacheStore);
       })
       // delay(2000)
     );

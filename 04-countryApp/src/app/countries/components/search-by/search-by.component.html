@@ -10,7 +10,9 @@
         (click)="searchBy(region)"
         *ngFor="let region of regions"
         class="btn btn-outline-primary mx-2 my-2 my-sm-0"
-        [ngClass]="{ active: activeRegion === region }"
+        [ngClass]="{
+          active: activeRegion === region || initialValue === region
+        }"
         #regionButton
       >
         {{ region }}
@@ -23,7 +25,7 @@
         (onSearch)="searchBy($event)"
         [placeholder]="'Search by ' + type"
         [disabled]="isLoading"
-        [term]="term"
+        [initialValue]="initialValue"
       ></shared-search-box>
     </ng-template>
   </div>

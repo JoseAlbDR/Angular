@@ -11,11 +11,13 @@
     *ngFor="let country of countries; let i = index"
   >
     <div class="card h-100 shadow-sm">
-      <img
-        [src]="country.flags.svg"
+      <shared-lazy-image
+        class="d-flex align-items-center justify-content-center h-100"
         [alt]="country.name.common"
-        class="card-img-top h-50 border-bottom"
-      />
+        [url]="country.flags.svg"
+      >
+      </shared-lazy-image>
+
       <div class="col card-body">
         <ul class="list-group list-group-flush">
           <li class="d-flex justify-content-between alignt-items-center">
