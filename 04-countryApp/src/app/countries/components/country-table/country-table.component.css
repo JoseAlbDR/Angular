@@ -1,5 +1,6 @@
 .country-card {
-  width: 320px;
-  height: 400px;
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
   align-self: self-start;
 }
