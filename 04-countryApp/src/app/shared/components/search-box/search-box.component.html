@@ -4,7 +4,8 @@
   [disabled]="disabled"
   class="form-control"
   (keyup)="onKeyPress(queryInput.value)"
-  (keyup.enter)="emitQuery(queryInput.value)"
   [value]="initialValue"
   #queryInput
 />
+
+<!-- (keyup.enter)="emitQuery(queryInput.value)" -->
