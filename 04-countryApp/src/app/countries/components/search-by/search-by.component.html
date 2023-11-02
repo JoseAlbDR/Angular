@@ -2,14 +2,29 @@
 <hr />
 
 <div class="row">
-  <div class="col">
+  <div class="col text-center">
     <!-- Search -->
-    <shared-search-box
-      (onDebounce)="searchBy($event)"
-      (onSearch)="searchBy($event)"
-      [placeholder]="'Search by ' + type"
-      [disabled]="isLoading"
-    ></shared-search-box>
+
+    <ng-container *ngIf="type === 'Region'; else searchBox">
+      <button
+        (click)="searchBy(region)"
+        *ngFor="let region of regions"
+        class="btn btn-outline-primary mx-2 my-2 my-sm-0"
+        [ngClass]="{ active: activeRegion === region }"
+        #regionButton
+      >
+        {{ region }}
+      </button>
+    </ng-container>
+
+    <ng-template #searchBox>
+      <shared-search-box
+        (onDebounce)="searchBy($event)"
+        (onSearch)="searchBy($event)"
+        [placeholder]="'Search by ' + type"
+        [disabled]="isLoading"
+      ></shared-search-box>
+    </ng-template>
   </div>
 </div>
 

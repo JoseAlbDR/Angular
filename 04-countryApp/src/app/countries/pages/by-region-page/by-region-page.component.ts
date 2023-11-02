@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ByRegionPageComponent {
   public type: string = 'Region';
+  
 }
