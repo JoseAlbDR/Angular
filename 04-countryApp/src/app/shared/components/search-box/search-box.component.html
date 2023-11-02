@@ -5,5 +5,6 @@
   class="form-control"
   (keyup)="onKeyPress(queryInput.value)"
   (keyup.enter)="emitQuery(queryInput.value)"
+  [value]="term"
   #queryInput
 />

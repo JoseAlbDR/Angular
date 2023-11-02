@@ -27,6 +27,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   @Input()
   public disabled: boolean = false;
 
+  @Input()
+  public term?: string;
+
   @Output()
   public onSearch: EventEmitter<string> = new EventEmitter();
 
@@ -49,8 +52,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
     if (value === '') return;
 
     this.onSearch.emit(value);
-
-    this.searchInput.nativeElement.value = '';
   }
 
   onKeyPress(searchTerm: string) {

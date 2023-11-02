@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
 import { CountriesService } from '../../services/countries.service';
 import { Region } from '../../interfaces/region.type';
@@ -8,10 +8,11 @@ import { Region } from '../../interfaces/region.type';
   templateUrl: './search-by.component.html',
   styleUrls: ['./search-by.component.css'],
 })
-export class SearchByComponent {
+export class SearchByComponent implements OnInit {
   public countries: Country[] = [];
   public isLoading: boolean = false;
   public activeRegion?: Region;
+  public term?: string;
 
   public regions: Region[] = [
     'Africa',
@@ -22,6 +23,13 @@ export class SearchByComponent {
   ];
 
   constructor(private countriesService: CountriesService) {}
+
+  ngOnInit(): void {
+    if (this.type === 'Capital') {
+      this.countries = this.countriesService.cacheStore.byCapital.countries;
+      this.term = this.countriesService.cacheStore.byCapital.term;
+    }
+  }
 
   @Input()
   public type: string = '';
