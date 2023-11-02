@@ -25,11 +25,12 @@
     <li class="list-group-item" *ngIf="country.borders">
       <strong>Borders: </strong>
       <span *ngFor="let border of country.borders"
-        ><a
-          class="badge bg-info bg-gradient m-1"
+        ><button
+          class="btn btn-outline-primary m-1"
           [routerLink]="['/countries/by/', border]"
-          >{{ border }}</a
-        ></span
+        >
+          {{ border }}
+        </button></span
       >
     </li>
   </ul>
