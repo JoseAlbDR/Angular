@@ -3,6 +3,7 @@
   [placeholder]="placeholder"
   [disabled]="disabled"
   class="form-control"
-  #queryInput
+  (keyup)="onKeyPress(queryInput.value)"
   (keyup.enter)="emitQuery(queryInput.value)"
+  #queryInput
 />

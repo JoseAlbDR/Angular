@@ -13,8 +13,8 @@ export class CountriesService {
     const url: string = `${this.serviceUrl}/${type}/${query}`;
 
     return this.httpClient.get<Country[]>(url).pipe(
-      catchError(() => of([])),
-      delay(2000)
+      catchError(() => of([]))
+      // delay(2000)
     );
   }
 }
