@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
-import { map, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'countries-country-page',
@@ -38,7 +38,6 @@ export class CountryPageComponent implements OnInit {
         this.country = countries[0];
         this.isLoading = false;
       });
-    console.log(this.isLoading);
   }
 
   public getObjectKeys(obj: { [key: string]: any }): string[] {
