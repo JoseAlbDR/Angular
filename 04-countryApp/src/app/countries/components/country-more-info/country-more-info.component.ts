@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Country } from '../../interfaces/country';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'countries-country-more-info',
