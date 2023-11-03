@@ -20,8 +20,7 @@ export class LazyImageComponent implements OnInit, OnDestroy {
   isLoadingImage$ = this.isLoadingService.isLoadingImage$;
 
   ngOnInit(): void {
-    if (!this.url) throw new Error('URL property is required');
-
+    // if (!this.url) throw new Error('URL property is required');
     this.isLoadingService.setIsLoadingImage(false);
   }
 
@@ -30,7 +29,6 @@ export class LazyImageComponent implements OnInit, OnDestroy {
   }
 
   public onLoad() {
-    console.log('load');
     this.isLoadingService.setIsLoadingImage(true);
   }
 }
