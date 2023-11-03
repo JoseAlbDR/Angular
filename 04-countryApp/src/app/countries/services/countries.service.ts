@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, of, tap, throwError } from 'rxjs';
 
@@ -8,6 +8,16 @@ import { Region, CacheStore, Country } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
+  private saveToLocalStorage() {
+    localStorage.setItem('cacheStore', JSON.stringify(this.cacheStore));
+  }
+
+  private loadFromLocalStorage() {
+    if (!localStorage.getItem('cacheStore')) return;
+
+    this.cacheStore = JSON.parse(localStorage.getItem('cacheStore')!);
+  }
+
   private serviceUrl: string = 'https://restcountries.com/v3.1';
   public cacheStore: CacheStore = {
     byCapital: { term: '', countries: [] },
@@ -15,7 +25,9 @@ export class CountriesService {
     byRegion: { region: '', countries: [] },
   };
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    this.loadFromLocalStorage();
+  }
 
   public searchBy(type: string, term: string): Observable<Country[]> {
     const url: string = `${this.serviceUrl}/${type}/${term}`;
@@ -33,7 +45,8 @@ export class CountriesService {
           type === 'region'
             ? { region: term as Region, countries }
             : { term, countries };
-      })
+      }),
+      tap(() => this.saveToLocalStorage())
       // delay(2000)
     );
   }
