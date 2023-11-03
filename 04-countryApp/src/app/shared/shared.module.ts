@@ -9,8 +9,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchButtonComponent } from './components/search-button/search-button.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { SearchButtonComponent } from './components/search-button/search-button.
     LazyImageComponent,
     LoadingSpinnerComponent,
     SearchBoxComponent,
-    SidebarComponent,
     SearchButtonComponent,
+    SidebarComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -32,8 +32,8 @@ import { SearchButtonComponent } from './components/search-button/search-button.
     LazyImageComponent,
     LoadingSpinnerComponent,
     SearchBoxComponent,
-    SidebarComponent,
     SearchButtonComponent,
+    SidebarComponent,
   ],
 })
 export class SharedModule {}

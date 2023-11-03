@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Country } from '../interfaces/country.interface';
-import { Observable, catchError, delay, of, tap } from 'rxjs';
-import { CacheStore } from '../interfaces/cache-store.interface';
-import { Region } from '../interfaces/region.type';
+import { Observable, catchError, of, tap } from 'rxjs';
+
 import _ from 'lodash';
+
+import { Region, CacheStore, Country } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
