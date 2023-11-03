@@ -15,6 +15,7 @@ import { CountryInfoComponent } from './components/country-info/country-info.com
 import { CountryMoreInfoComponent } from './components/country-more-info/country-more-info.component';
 import { CountryInfoItemComponent } from './components/country-info-item/country-info-item.component';
 import { CountryCardComponent } from './components/country-card/country-card.component';
+import { CountryCardBodyComponent } from './components/country-card-body/country-card-body.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CountryCardComponent } from './components/country-card/country-card.com
     CountryMoreInfoComponent,
     CountryInfoItemComponent,
     CountryCardComponent,
+    CountryCardBodyComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule, SharedModule, RouterModule],
 })
