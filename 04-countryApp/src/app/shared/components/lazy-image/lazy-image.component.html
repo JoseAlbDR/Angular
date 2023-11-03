@@ -1,7 +1,7 @@
 <img
   [src]="url"
   [alt]="alt"
-  class="img-thumbnail flex-fill"
+  class="img-thumbnail w-100 d-block object-fit-cover"
   (load)="onLoad()"
   [ngClass]="{ 'd-none': !(isLoadingImage$ | async) }"
   onerror="this.src='assets/Image_not_available.png'"

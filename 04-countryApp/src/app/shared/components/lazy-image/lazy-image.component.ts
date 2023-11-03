@@ -4,6 +4,7 @@ import { IsLoadingService } from 'src/app/countries/services/is-loading.service'
 @Component({
   selector: 'shared-lazy-image',
   templateUrl: './lazy-image.component.html',
+  styleUrls: ['./lazy-image.component.css'],
 })
 export class LazyImageComponent implements OnInit, OnDestroy {
   constructor(private isLoadingService: IsLoadingService) {}
