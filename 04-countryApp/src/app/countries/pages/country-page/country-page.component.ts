@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CountriesService } from '../../services/countries.service';
-import { Country } from '../../interfaces/country.interface';
 import { switchMap } from 'rxjs';
+
+import { CountriesService } from '../../services/countries.service';
 import { IsLoadingService } from '../../services/is-loading.service';
+
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'countries-country-page',
@@ -17,7 +19,7 @@ export class CountryPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService,
-    private isLoadingservice: IsLoadingService,
+    private isLoadingService: IsLoadingService,
     private router: Router
   ) {}
 
@@ -27,7 +29,7 @@ export class CountryPageComponent implements OnInit {
         // Cancel previous subscription and activate new subscription
         // each time that activateRoute.params changes
         switchMap(({ id }) => {
-          this.isLoadingservice.setIsLoadingCountry(true);
+          this.isLoadingService.setIsLoadingCountry(true);
           return this.countriesService.searchBy('alpha', id);
         })
         // Changes data format or estructure
@@ -38,7 +40,7 @@ export class CountryPageComponent implements OnInit {
       .subscribe((countries) => {
         if (countries.length === 0) this.router.navigateByUrl('');
         this.country = countries[0];
-        this.isLoadingservice.setIsLoadingCountry(false);
+        this.isLoadingService.setIsLoadingCountry(false);
       });
   }
 
