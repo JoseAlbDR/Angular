@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Country } from '../../interfaces/country.interface';
+
+import { Country, TermCountries, Region } from '../../interfaces';
+
 import { CountriesService } from '../../services/countries.service';
-import { Region } from '../../interfaces/region.type';
-import { TermCountries } from '../../interfaces/cache-store.interface';
 import { IsLoadingService } from '../../services/is-loading.service';
 
 @Component({

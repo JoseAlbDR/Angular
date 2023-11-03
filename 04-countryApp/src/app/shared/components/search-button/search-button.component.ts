@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Region } from '../../../countries/interfaces/region.type';
 import { IsLoadingService } from '../../../countries/services/is-loading.service';
 
