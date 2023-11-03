@@ -7,7 +7,6 @@ import { TermCountries } from '../../interfaces/cache-store.interface';
 @Component({
   selector: 'countries-search-by',
   templateUrl: './search-by.component.html',
-  styleUrls: ['./search-by.component.css'],
 })
 export class SearchByComponent implements OnInit {
   public countries: Country[] = [];

@@ -1,0 +1,11 @@
+<button
+  (click)="emitQuery(region)"
+  *ngFor="let region of regions"
+  class="btn btn-outline-primary mx-2 my-2 my-sm-0"
+  [ngClass]="{
+    active: activeRegion === region || initialValue === region
+  }"
+  #regionButton
+>
+  {{ region }}
+</button>

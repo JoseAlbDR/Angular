@@ -5,24 +5,18 @@
   <div class="col text-center">
     <!-- Search -->
 
-    <ng-container *ngIf="type === 'Region'; else searchBox">
-      <button
-        (click)="searchBy(region)"
-        *ngFor="let region of regions"
-        class="btn btn-outline-primary mx-2 my-2 my-sm-0"
-        [ngClass]="{
-          active: activeRegion === region || initialValue === region
-        }"
-        #regionButton
-      >
-        {{ region }}
-      </button>
-    </ng-container>
+    <countries-button-search-by
+      *ngIf="type === 'Region'; else searchBox"
+      (onClick)="searchBy($event)"
+      [activeRegion]="activeRegion"
+      [initialValue]="initialValue"
+      [regions]="regions"
+      [type]="type"
+    ></countries-button-search-by>
 
     <ng-template #searchBox>
       <shared-search-box
         (onDebounce)="searchBy($event)"
-        (onSearch)="searchBy($event)"
         [placeholder]="'Search by ' + type"
         [disabled]="isLoading"
         [initialValue]="initialValue"

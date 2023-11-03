@@ -10,6 +10,7 @@ import { LazyImageComponent } from './components/lazy-image/lazy-image.component
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SearchButtonComponent } from './components/search-button/button-search-by.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
+    SearchButtonComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -31,6 +33,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
+    SearchButtonComponent,
   ],
 })
 export class SharedModule {}
