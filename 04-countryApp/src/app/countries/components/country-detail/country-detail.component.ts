@@ -10,6 +10,9 @@ export class CountryDetailComponent {
   @Input()
   public country?: Country;
 
+  @Input()
+  public isLoading: boolean = false;
+
   public getObjectKeys(obj: { [key: string]: any }): string[] {
     return Object.keys(obj);
   }

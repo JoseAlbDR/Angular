@@ -28,6 +28,7 @@
         ><button
           class="btn btn-outline-primary m-1"
           [routerLink]="['/countries/by/', border]"
+          [disabled]="isLoading"
         >
           {{ border }}
         </button></span
