@@ -3,9 +3,9 @@ import { Region } from '../../../countries/interfaces/region.type';
 import { IsLoadingService } from '../../../countries/services/is-loading.service';
 
 @Component({
-  selector: 'countries-button-search-by',
-  templateUrl: './button-search-by.component.html',
-  styleUrls: ['./button-search-by.component.css'],
+  selector: 'shared-search-button',
+  templateUrl: './search-button.component.html',
+  styleUrls: ['./search-button.component.css'],
 })
 export class SearchButtonComponent {
   constructor(private isLoadingService: IsLoadingService) {}

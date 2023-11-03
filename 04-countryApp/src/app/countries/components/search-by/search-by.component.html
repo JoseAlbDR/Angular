@@ -5,14 +5,14 @@
   <div class="col text-center">
     <!-- Search -->
 
-    <countries-button-search-by
+    <shared-search-button
       *ngIf="type === 'Region'; else searchBox"
       (onClick)="searchBy($event)"
       [activeRegion]="activeRegion"
       [initialValue]="initialValue"
       [regions]="regions"
       [type]="type"
-    ></countries-button-search-by>
+    ></shared-search-button>
 
     <ng-template #searchBox>
       <shared-search-box
