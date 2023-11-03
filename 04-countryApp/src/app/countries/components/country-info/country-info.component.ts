@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
+import { IsLoadingService } from '../../services/is-loading.service';
 
 @Component({
   selector: 'countries-country-info',
@@ -7,13 +8,14 @@ import { Country } from '../../interfaces/country.interface';
   styleUrls: ['./country-info.component.css'],
 })
 export class CountryInfoComponent implements OnInit {
-  @Input()
-  public country?: Country;
+  constructor(private isLoadingService: IsLoadingService) {}
 
   @Input()
-  public isLoading: boolean = false;
+  public country?: Country;
 
   ngOnInit(): void {
     if (!this.country) return;
   }
+
+  isLoading$ = this.isLoadingService.isLoading$;
 }

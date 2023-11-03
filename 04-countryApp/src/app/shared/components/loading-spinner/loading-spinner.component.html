@@ -1,4 +1,4 @@
-<div class="spinner-container">
+<div *ngIf="isLoading$ | async" class="spinner-container">
   <span>Searching </span>
   <svg
     width="45"

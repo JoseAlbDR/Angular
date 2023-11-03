@@ -18,7 +18,6 @@
       <shared-search-box
         (onDebounce)="searchBy($event)"
         [placeholder]="'Search by ' + type"
-        [disabled]="isLoading"
         [initialValue]="initialValue"
       ></shared-search-box>
     </ng-template>
@@ -27,7 +26,7 @@
 
 <hr />
 
-<shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+<shared-loading-spinner></shared-loading-spinner>
 <countries-table
   class="row align-items-center justify-content-center"
   [countries]="countries"

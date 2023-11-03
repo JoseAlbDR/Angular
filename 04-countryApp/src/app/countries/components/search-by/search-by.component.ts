@@ -3,6 +3,7 @@ import { Country } from '../../interfaces/country.interface';
 import { CountriesService } from '../../services/countries.service';
 import { Region } from '../../interfaces/region.type';
 import { TermCountries } from '../../interfaces/cache-store.interface';
+import { IsLoadingService } from '../../services/is-loading.service';
 
 @Component({
   selector: 'countries-search-by',
@@ -10,7 +11,6 @@ import { TermCountries } from '../../interfaces/cache-store.interface';
 })
 export class SearchByComponent implements OnInit {
   public countries: Country[] = [];
-  public isLoading: boolean = false;
   public activeRegion?: Region;
   public initialValue: string = '';
 
@@ -22,7 +22,10 @@ export class SearchByComponent implements OnInit {
     'Oceania',
   ];
 
-  constructor(private countriesService: CountriesService) {}
+  constructor(
+    private countriesService: CountriesService,
+    private isLoadingService: IsLoadingService
+  ) {}
 
   ngOnInit(): void {
     this.countries =
@@ -39,13 +42,13 @@ export class SearchByComponent implements OnInit {
 
   searchBy(term: string): void {
     this.initialValue = term;
-    this.isLoading = true;
+    this.isLoadingService.setIsLoadingSearch(true);
     this.activeRegion = term as Region;
 
     const type = this.type.toLowerCase();
     const data = this.countriesService.searchBy(type, term);
     data.subscribe((countries) => {
-      this.isLoading = false;
+      this.isLoadingService.setIsLoadingSearch(false);
       this.countries = countries;
     });
   }

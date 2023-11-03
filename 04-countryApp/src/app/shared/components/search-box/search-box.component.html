@@ -1,7 +1,7 @@
 <input
   type="text"
   [placeholder]="placeholder"
-  [disabled]="disabled"
+  [disabled]="isLoading$ | async"
   class="form-control"
   (keyup)="onKeyPress(queryInput.value)"
   [value]="initialValue"

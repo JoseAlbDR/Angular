@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country.interface';
 import { switchMap } from 'rxjs';
+import { IsLoadingService } from '../../services/is-loading.service';
 
 @Component({
   selector: 'countries-country-page',
@@ -16,6 +17,7 @@ export class CountryPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService,
+    private isLoadingservice: IsLoadingService,
     private router: Router
   ) {}
 
@@ -25,7 +27,7 @@ export class CountryPageComponent implements OnInit {
         // Cancel previous subscription and activate new subscription
         // each time that activateRoute.params changes
         switchMap(({ id }) => {
-          this.isLoading = true;
+          this.isLoadingservice.setIsLoadingCountry(true);
           return this.countriesService.searchBy('alpha', id);
         })
         // Changes data format or estructure
@@ -36,7 +38,7 @@ export class CountryPageComponent implements OnInit {
       .subscribe((countries) => {
         if (countries.length === 0) this.router.navigateByUrl('');
         this.country = countries[0];
-        this.isLoading = false;
+        this.isLoadingservice.setIsLoadingCountry(false);
       });
   }
 

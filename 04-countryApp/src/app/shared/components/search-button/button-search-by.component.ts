@@ -2,16 +2,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Region } from '../../../countries/interfaces/region.type';
 import { CountriesService } from '../../../countries/services/countries.service';
 import { Country } from '../../../countries/interfaces/country.interface';
+import { IsLoadingService } from '../../../countries/services/is-loading.service';
 
 @Component({
   selector: 'countries-button-search-by',
   templateUrl: './button-search-by.component.html',
 })
 export class SearchButtonComponent {
-  constructor(private countriesService: CountriesService) {}
-
-  public countries: Country[] = [];
-  public isLoading: boolean = false;
+  constructor(private isLoadingService: IsLoadingService) {}
 
   @Output()
   onClick: EventEmitter<Region> = new EventEmitter();
@@ -31,4 +29,6 @@ export class SearchButtonComponent {
   emitQuery(value: Region): void {
     this.onClick.emit(value);
   }
+
+  isLoading$ = this.isLoadingService.isLoading$;
 }

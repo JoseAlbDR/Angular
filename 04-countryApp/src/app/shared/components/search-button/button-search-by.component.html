@@ -1,4 +1,9 @@
 <button
+  [disabled]="
+    (isLoading$ | async) &&
+    activeRegion !== '' &&
+    activeRegion !== regionButton.value
+  "
   (click)="emitQuery(region)"
   *ngFor="let region of regions"
   class="btn btn-outline-primary mx-2 my-2 my-sm-0"

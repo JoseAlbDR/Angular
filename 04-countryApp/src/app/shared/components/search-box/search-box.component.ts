@@ -9,12 +9,15 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Subject, Subscription, debounceTime } from 'rxjs';
+import { IsLoadingService } from 'src/app/countries/services/is-loading.service';
 
 @Component({
   selector: 'shared-search-box',
   templateUrl: './search-box.component.html',
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
+  constructor(private isLoadingService: IsLoadingService) {}
+
   private debouncer: Subject<string> = new Subject<string>();
   private debouncerSubscription?: Subscription;
 
@@ -23,9 +26,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   @Input()
   public placeholder: string = '';
-
-  @Input()
-  public disabled: boolean = false;
 
   @Input()
   public initialValue?: string;
@@ -57,4 +57,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   onKeyPress(searchTerm: string) {
     this.debouncer.next(searchTerm);
   }
+
+  isLoading$ = this.isLoadingService.isLoading$;
 }
