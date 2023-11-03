@@ -3,6 +3,12 @@
     <h3>More Info</h3>
 
     <countries-country-info-item
+      [name]="'Wikipeda'"
+      [link]="'https://es.wikipedia.org/wiki/' + country.name.common"
+      [content]="'https://es.wikipedia.org/wiki/' + country.name.common"
+    ></countries-country-info-item>
+
+    <countries-country-info-item
       [name]="'Alt. Spellings'"
       [content]="country.altSpellings.join(', ')"
     ></countries-country-info-item>

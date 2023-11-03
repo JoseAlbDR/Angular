@@ -6,7 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class IsLoadingService {
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
+  private isLoadingSubjectImage = new BehaviorSubject<boolean>(false);
+
   isLoading$ = this.isLoadingSubject.asObservable();
+  isLoadingImage$ = this.isLoadingSubjectImage.asObservable();
 
   setIsLoadingCountry(isLoading: boolean) {
     this.isLoadingSubject.next(isLoading);
@@ -14,5 +17,9 @@ export class IsLoadingService {
 
   setIsLoadingSearch(isLoading: boolean) {
     this.isLoadingSubject.next(isLoading);
+  }
+
+  setIsLoadingImage(isLoading: boolean) {
+    this.isLoadingSubjectImage.next(isLoading);
   }
 }

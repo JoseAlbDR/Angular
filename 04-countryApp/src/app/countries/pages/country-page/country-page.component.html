@@ -1,2 +1,2 @@
-<shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+<shared-loading-spinner *ngIf="isLoading$ | async"></shared-loading-spinner>
 <countries-country-detail [country]="country"></countries-country-detail>

@@ -13,15 +13,16 @@ import { Country } from '../../interfaces/country.interface';
   styles: [],
 })
 export class CountryPageComponent implements OnInit {
-  public country?: Country;
-  public isLoading: boolean = false;
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService,
     private isLoadingService: IsLoadingService,
     private router: Router
   ) {}
+
+  public country?: Country;
+
+  isLoading$ = this.isLoadingService.isLoading$;
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -30,6 +31,7 @@ export class CountryPageComponent implements OnInit {
         // each time that activateRoute.params changes
         switchMap(({ id }) => {
           this.isLoadingService.setIsLoadingCountry(true);
+          // this.isLoadingService.setIsLoadingImage(true);
           return this.countriesService.searchBy('alpha', id);
         })
         // Changes data format or estructure
@@ -41,6 +43,7 @@ export class CountryPageComponent implements OnInit {
         if (countries.length === 0) this.router.navigateByUrl('');
         this.country = countries[0];
         this.isLoadingService.setIsLoadingCountry(false);
+        this.isLoadingService.setIsLoadingImage(false);
       });
   }
 
