@@ -40,16 +40,27 @@ export class SearchByComponent implements OnInit {
   @Input()
   public type: string = '';
 
+  public errorMsg: string = '';
+
   searchBy(term: string): void {
+    if (term === '') return;
     this.initialValue = term;
     this.isLoadingService.setIsLoadingSearch(true);
     this.activeRegion = term as Region;
 
     const type = this.type.toLowerCase();
     const data = this.countriesService.searchBy(type, term);
-    data.subscribe((countries) => {
-      this.isLoadingService.setIsLoadingSearch(false);
-      this.countries = countries;
+    data.subscribe({
+      next: (countries) => {
+        this.isLoadingService.setIsLoadingSearch(false);
+        this.countries = countries;
+        this.errorMsg = '';
+      },
+      error: (error) => {
+        this.isLoadingService.setIsLoadingSearch(false);
+        this.countries = [];
+        this.errorMsg = error.message;
+      },
     });
   }
 }

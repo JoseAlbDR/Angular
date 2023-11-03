@@ -10,4 +10,7 @@ import { Country } from '../../interfaces/country.interface';
 export class CountryTableComponent {
   @Input()
   public countries: Country[] = [];
+
+  @Input()
+  public errorMsg: string = '';
 }

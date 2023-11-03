@@ -1,9 +1,18 @@
 <div
-  *ngIf="countries.length === 0; else table"
+  *ngIf="errorMsg; else empty"
   class="col alert alert-warning text-center mx-3"
 >
-  No countries to show
+  {{ errorMsg }}
 </div>
+
+<ng-template #empty>
+  <div
+    *ngIf="countries.length === 0; else table"
+    class="col alert alert-warning text-center mx-3"
+  >
+    No countries to show
+  </div>
+</ng-template>
 
 <ng-template #table>
   <div
