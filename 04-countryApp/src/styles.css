@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/bootstrap4-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 @font-face {
   font-family: NotoColorEmojiLimited;
   unicode-range: U+1F1E6-1F1FF;
@@ -9,4 +13,8 @@ div {
   font-family: "NotoColorEmojiLimited", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+button {
+  border-radius: 4px !important;
 }

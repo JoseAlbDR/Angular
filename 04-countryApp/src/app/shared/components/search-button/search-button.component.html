@@ -1,15 +1,17 @@
-<button
+<p-button
   (click)="emitQuery(region)"
   *ngFor="let region of regions"
-  class="btn btn-outline-primary mx-2 my-2 my-sm-0"
+  [outlined]="activeRegion !== region || initialValue !== region"
+  [disabled]=""
+  class="mx-2 rounded"
+  severity="primary"
   [ngClass]="{
-    active: activeRegion === region || initialValue === region,
     disabled:
       (isLoading$ | async) &&
       activeRegion !== '' &&
-      activeRegion !== regionButton.value
+      activeRegion !== regionButton.label
   }"
+  label="{{ region }}"
   #regionButton
 >
-  {{ region }}
-</button>
+</p-button>

@@ -5,3 +5,7 @@ button.disabled {
 button.disabled:hover {
   cursor: not-allowed;
 }
+
+.p-button {
+  border-radius: 4px !important;
+}

@@ -12,6 +12,8 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+import { ButtonModule } from 'primeng/button';
+
 @NgModule({
   declarations: [
     AboutPageComponent,
@@ -24,7 +26,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     SearchButtonComponent,
     SidebarComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ButtonModule],
   exports: [
     AboutPageComponent,
     ContactPageComponent,
