@@ -11,12 +11,32 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'New',
-        icon: 'pi pi-fw pi-plus',
+        label: 'Angular Pipes',
+        icon: 'pi pi-desktop',
+        items: [
+          {
+            label: 'Text and Dates',
+            icon: 'pi pi-align-left',
+          },
+          {
+            label: 'Numbers',
+            icon: 'pi pi-dollar',
+          },
+          {
+            label: 'No common',
+            icon: 'pi pi-globe',
+          },
+        ],
       },
       {
-        label: 'Delete',
-        icon: 'pi pi-fw pi-trash',
+        label: 'Custom Pipes',
+        icon: 'pi pi-cog',
+        items: [
+          {
+            label: 'Another element',
+            icon: 'pi pi-cog',
+          },
+        ],
       },
     ];
   }
