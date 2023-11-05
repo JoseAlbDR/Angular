@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-numeric-pipes',
+  selector: 'numbers-numeric-pipes',
   templateUrl: './numeric-pipes.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class NumericPipesComponent {
-
-}
+export class NumericPipesComponent {}
