@@ -2,7 +2,7 @@
   <p>Included pipes in Angular - Usually in Common Module</p>
 </p-panel>
 
-<div class="p-inputgroup bg-[#282936] mb-4 w-96">
+<div class="p-inputgroup bg-[#282936] mb-4 w-auto md:w-[33%]">
   <span class="p-inputgroup-addon">
     <label for="input" class="p-inputgroup-addon">
       <i class="pi pi-pencil"></i>
@@ -19,20 +19,55 @@
   />
 </div>
 
-<div class="flex flex-col sm:grid sm:grid-cols-3">
-  <div>
+<div class="flex flex-col sm:grid sm:grid-cols-12 gap-3 mb-3">
+  <div class="col-span-4">
     <p-card header="| uppercase">
       {{ input | uppercase }}
     </p-card>
   </div>
-  <div>
+
+  <div class="col-span-4">
     <p-card header="| lowercase">
       {{ input | lowercase }}
     </p-card>
   </div>
-  <div>
+
+  <div class="col-span-4">
     <p-card header="| titlecase">
       {{ input | titlecase }}
+    </p-card>
+  </div>
+</div>
+
+<div class="p-inputgroup bg-[#282936] mb-4 w-auto md:w-[33%]">
+  <span class="p-inputgroup-addon">
+    <label for="input" class="p-inputgroup-addon">
+      <i class="pi pi-pencil"></i>
+    </label>
+    <label for="calendar">Try it</label>
+  </span>
+  <p-calendar
+    class="flex justify-center"
+    inputStyleClass="text-center grow w-[1000px]"
+    id="calendar"
+    [(ngModel)]="date"
+  ></p-calendar>
+</div>
+
+<div class="flex flex-col sm:grid sm:grid-cols-2 gap-3">
+  <div>
+    <p-card header="Date">
+      <ul>
+        <li>{{ date }}</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card header="| date">
+      <ul>
+        <li>{{ date | date }}</li>
+      </ul>
     </p-card>
   </div>
 </div>
