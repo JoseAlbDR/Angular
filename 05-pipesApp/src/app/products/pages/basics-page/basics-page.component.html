@@ -54,19 +54,35 @@
   ></p-calendar>
 </div>
 
-<div class="flex flex-col sm:grid sm:grid-cols-2 gap-3">
+<div class="flex flex-col sm:grid sm:grid-cols-2">
   <div>
-    <p-card header="Date">
-      <ul>
-        <li>{{ date }}</li>
+    <p-card header="Date Pipe">
+      <hr />
+      <ul class="flex flex-col divide-y divide-gray-300">
+        <li class="py-2">date</li>
+        <li class="py-2">date | date</li>
+        <li class="py-2">date | date:'short'</li>
+        <li class="py-2">date | date:'long'</li>
+        <li class="py-2">date | date:'MMMM'</li>
+        <li class="py-2">date | date:'MMMM dd, yyyy'</li>
+        <li class="py-2">date | date:'long':'GMT-6'</li>
+        <li class="py-2">date | date:'long':'GMT-4'</li>
       </ul>
     </p-card>
   </div>
 
   <div>
-    <p-card header="| date">
-      <ul>
-        <li>{{ date | date }}</li>
+    <p-card header="Result ">
+      <hr />
+      <ul class="flex flex-col divide-y divide-gray-300">
+        <li class="py-2">{{ date }}</li>
+        <li class="py-2">{{ date | date }}</li>
+        <li class="py-2">{{ date | date : "short" }}</li>
+        <li class="py-2">{{ date | date : "long" }}</li>
+        <li class="py-2">{{ date | date : "MMMM" }}</li>
+        <li class="py-2">{{ date | date : "MMMM dd, yyyy" }}</li>
+        <li class="py-2">{{ date | date : "long" : "GMT-6" }}</li>
+        <li class="py-2">{{ date | date : "long" : "GMT-4" }}</li>
       </ul>
     </p-card>
   </div>
