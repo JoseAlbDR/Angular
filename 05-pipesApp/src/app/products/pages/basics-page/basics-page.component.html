@@ -3,14 +3,20 @@
   <p>Included pipes in Angular - Usually in Common Module</p>
 </p-panel>
 
-<div>
+<div class="flex flex-col sm:grid sm:grid-cols-3">
   <div>
-    <p-card header="uppercase"> 1 </p-card>
+    <p-card header="uppercase" class="capitalize">
+      {{ nameLower | uppercase }}
+    </p-card>
   </div>
   <div>
-    <p-card header="lowercase"> 2 </p-card>
+    <p-card header="lowercase" class="capitalize">
+      {{ nameUpper | lowercase }}
+    </p-card>
   </div>
   <div>
-    <p-card header="titlecase"> 3 </p-card>
+    <p-card header="titlecase" class="capitalize">
+      {{ fullName | titlecase }}
+    </p-card>
   </div>
 </div>
