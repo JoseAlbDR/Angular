@@ -8,14 +8,21 @@ import { UncommonPageComponent } from './pages/uncommon-page/uncommon-page.compo
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule } from '@angular/forms';
 import { TextPipesComponent } from './pages/basics-page/components/text-pipes/text-pipes.component';
+import { DatePipesComponent } from './pages/basics-page/components/date-pipes/date-pipes.component';
+import { BasicsPageModule } from './pages/basics-page/basics-page.module';
 
 @NgModule({
   declarations: [
     BasicsPageComponent,
     NumbersPageComponent,
     UncommonPageComponent,
-    TextPipesComponent,
   ],
-  imports: [CommonModule, ProductsRoutingModule, PrimeNgModule, FormsModule],
+  imports: [
+    CommonModule,
+    ProductsRoutingModule,
+    PrimeNgModule,
+    FormsModule,
+    BasicsPageModule,
+  ],
 })
 export class ProductsModule {}
