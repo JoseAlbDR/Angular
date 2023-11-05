@@ -18,3 +18,10 @@ div {
 button {
   border-radius: 4px !important;
 }
+
+@media (width > 1440px) {
+  .container-fluid {
+    width: 80% !important;
+    margin: 0 auto !important;
+  }
+}
