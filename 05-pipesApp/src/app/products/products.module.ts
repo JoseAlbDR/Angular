@@ -7,12 +7,14 @@ import { NumbersPageComponent } from './pages/numbers-page/numbers-page.componen
 import { UncommonPageComponent } from './pages/uncommon-page/uncommon-page.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule } from '@angular/forms';
+import { TextPipesComponent } from './pages/basics-page/components/text-pipes/text-pipes.component';
 
 @NgModule({
   declarations: [
     BasicsPageComponent,
     NumbersPageComponent,
     UncommonPageComponent,
+    TextPipesComponent,
   ],
   imports: [CommonModule, ProductsRoutingModule, PrimeNgModule, FormsModule],
 })

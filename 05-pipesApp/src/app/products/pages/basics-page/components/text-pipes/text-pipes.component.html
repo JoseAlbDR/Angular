@@ -1,0 +1,40 @@
+<p-panel header="Text Pipes" [toggleable]="true" [collapsed]="true" class="p-1">
+  <div
+    class="flex flex-col w-full content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+  >
+    <span class="p-inputgroup-addon self-start">
+      <label for="input" class="p-inputgroup-addon">
+        <i class="pi pi-pencil"></i>
+      </label>
+      <label for="input">Try it</label>
+    </span>
+    <input
+      class="w-full p-4 sm:w-auto"
+      type="text"
+      id="input"
+      pInputText
+      [(ngModel)]="input"
+      (focusout)="onFocusOut($event)"
+    />
+  </div>
+
+  <div class="flex flex-col sm:grid sm:grid-cols-12 gap-3 mb-3">
+    <div class="col-span-4">
+      <p-card header="| uppercase">
+        {{ input | uppercase }}
+      </p-card>
+    </div>
+
+    <div class="col-span-4">
+      <p-card header="| lowercase">
+        {{ input | lowercase }}
+      </p-card>
+    </div>
+
+    <div class="col-span-4">
+      <p-card header="| titlecase">
+        {{ input | titlecase }}
+      </p-card>
+    </div>
+  </div>
+</p-panel>
