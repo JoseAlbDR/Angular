@@ -1,0 +1,77 @@
+<!-- [collapsed]="true" -->
+<p-panel header="Numeric Pipes" [toggleable]="true" class="p-1">
+  <div
+    class="flex flex-col align-middle justify-center lg:grid lg:grid-cols-12 gap-3 mb-3 divide-y lg:divide-y-0 lg:divide-x divide-stone-300"
+  >
+    <div class="col-span-4 text-center">
+      <numbers-numeric-input
+        [title]="'Net Sales'"
+        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+      >
+        <ng-container class="input">
+          <input
+            class="w-full p-4 sm:w-auto"
+            type="number"
+            min="0"
+            id="input"
+            pInputNumber
+            [(ngModel)]="totalSells"
+            (focusout)="onFocusOut($event)"
+          />
+        </ng-container>
+      </numbers-numeric-input>
+      <p-card
+        header="Net Sales"
+        subheader="| number:'1.2-2'"
+        class="border-b-stone-300"
+      >
+        {{ totalSells | number : "1.2-2" }}
+      </p-card>
+      <p-card subheader="| number:'1.4-4'">
+        {{ totalSells | number : "1.4-4" }}
+      </p-card>
+    </div>
+    <div class="col-span-4 text-center pt-2">
+      <numbers-numeric-input
+        [title]="'Gross Sales'"
+        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+      >
+        <ng-container class="input">
+          <input
+            class="w-36 p-4 sm:w-auto"
+            type="number"
+            min="0"
+            id="input"
+            pInputNumber
+            [(ngModel)]="totalSells"
+            (focusout)="onFocusOut($event)"
+          />
+        </ng-container>
+      </numbers-numeric-input>
+      <p-card header="Gross Sales" subheader="of current year">
+        {{ totalSells | number : "1.2-2" }}
+      </p-card>
+    </div>
+    <div class="col-span-4 text-center pt-2">
+      <numbers-numeric-input
+        [title]="'Gross Sales'"
+        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+      >
+        <ng-container class="input">
+          <input
+            class="w-36 p-4 sm:w-auto"
+            type="number"
+            min="0"
+            id="input"
+            pInputNumber
+            [(ngModel)]="totalSells"
+            (focusout)="onFocusOut($event)"
+          />
+        </ng-container>
+      </numbers-numeric-input>
+      <p-card header="Gross Sales" subheader="of current year">
+        {{ totalSells | number : "1.2-2" }}
+      </p-card>
+    </div>
+  </div>
+</p-panel>
