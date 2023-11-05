@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./basics-page.component.css'],
 })
 export class BasicsPageComponent {
-  public nameLower: string = 'alberto';
-  public nameUpper: string = 'ALBERTO';
-  public fullName: string = 'jOse aLbERtO';
+  public input: string = 'wRiTe HeRe';
+
+  public onFocusOut(event: FocusEvent) {
+    if (event?.target instanceof HTMLInputElement) {
+      if (event.target.value === '') {
+        this.input = 'wRiTe HeRe';
+      }
+    }
+  }
 }

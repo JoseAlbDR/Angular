@@ -5,6 +5,7 @@ import { MenubarModule } from 'primeng/menubar';
 // import { MenuModule } from 'primeng/menu';
 import { NgModule } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   exports: [
@@ -14,6 +15,7 @@ import { PanelModule } from 'primeng/panel';
     MenubarModule,
     // MenuModule,
     PanelModule,
+    InputTextModule,
   ],
 })
 export class PrimeNgModule {}
