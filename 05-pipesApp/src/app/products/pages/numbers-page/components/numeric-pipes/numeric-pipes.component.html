@@ -13,7 +13,7 @@
       >
       </numbers-numeric-input>
       <h3 class="text-[1.5rem] pt-4">Net Sales</h3>
-      <div class="flex flex-wrap align-middle justify-center">
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <p-card subheader="| number:'1.2-2'">
           {{ netSales | number : "1.2-2" }}
         </p-card>
@@ -32,7 +32,7 @@
       >
       </numbers-numeric-input>
       <h3 class="text-[1.5rem] pt-4">Gross Sales</h3>
-      <div class="flex flex-wrap align-middle justify-center">
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <p-card subheader="| currency">
           {{ grossSales | currency }}
         </p-card>
@@ -60,9 +60,12 @@
       >
       </numbers-numeric-input>
       <h3 class="text-[1.5rem] pt-4">Percentage Profit</h3>
-      <div class="flex flex-wrap align-middle justify-center">
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <p-card subheader="| percent">
           {{ percentage | percent }}
+        </p-card>
+        <p-card subheader="| percent:'1.2-2'">
+          {{ percentage | percent : "1.2-2" }}
         </p-card>
       </div>
     </div>
