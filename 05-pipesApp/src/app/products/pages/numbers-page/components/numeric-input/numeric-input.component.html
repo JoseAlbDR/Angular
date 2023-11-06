@@ -13,4 +13,6 @@
   pInputNumber
   [(ngModel)]="value"
   (focusout)="onFocusOut($event, type)"
+  (change)="changeValue()"
+  (keyup)="changeValue()"
 />

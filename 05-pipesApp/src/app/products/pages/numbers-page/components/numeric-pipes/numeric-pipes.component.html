@@ -8,6 +8,7 @@
         [title]="'Net Sales'"
         [value]="netSales"
         [type]="'net'"
+        (onChange)="onValueChange($event)"
         class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
       </numbers-numeric-input>
@@ -26,6 +27,7 @@
         [title]="'Gross Sales'"
         [value]="grossSales"
         [type]="'gross'"
+        (onChange)="onValueChange($event)"
         class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
       </numbers-numeric-input>
@@ -37,23 +39,32 @@
         <p-card subheader="| currency:'CAD'">
           {{ grossSales | currency : "CAD" }}
         </p-card>
-        <p-card subheader="| currency:'EUR'">
-          {{ grossSales | currency : "EUR" }}
+        <p-card subheader="| currency:'CAD':'symbol-narrow'">
+          {{ grossSales | currency : "CAD" : "symbol-narrow" }}
         </p-card>
-        <p-card subheader="| currency:'JPY'">
-          {{ grossSales | currency : "JPY" }}
+        <p-card subheader="| currency:'EUR':'':1.3-3">
+          {{ grossSales | currency : "EUR" : "" : "1.3-3" }}
+        </p-card>
+        <p-card subheader="| currency:'JPY':'symbol-narrow':'1.4-4'">
+          {{ grossSales | currency : "JPY" : "symbol-narrow" : "1.4-4" }}
         </p-card>
       </div>
     </div>
     <div class="col-span-4 text-center pt-2 lg:pt-0">
       <numbers-numeric-input
-        [title]="'Gross Sales'"
+        [title]="'% Profit'"
+        [type]="'percent'"
+        [value]="percentage"
+        (onChange)="onValueChange($event)"
         class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
       </numbers-numeric-input>
-      <p-card header="Gross Sales" subheader="of current year">
-        {{ netSales | number : "1.2-2" }}
-      </p-card>
+      <h3 class="text-[1.5rem] pt-4">Percentage Profit</h3>
+      <div class="flex flex-wrap align-middle justify-center">
+        <p-card subheader="| percent">
+          {{ percentage | percent }}
+        </p-card>
+      </div>
     </div>
   </div>
 </p-panel>
