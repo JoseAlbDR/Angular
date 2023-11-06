@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class NumericPipesComponent {
-  public totalSells: number = 2567789.5567;
+  public netSales: number = 2567789.5567;
+  public grossSales: number = 4984987.19487;
   public percentage: number = 0.4856;
 
-  public input: number = this.totalSells;
-
-  public onFocusOut(event: FocusEvent) {
+  public onFocusOut(event: FocusEvent, type: string) {
     if (event?.target instanceof HTMLInputElement) {
       if (+event.target.value === 0) {
-        this.totalSells = 2567789.5567;
+        if (type === 'net') this.netSales = 2567789.5567;
+        if (type === 'gross') this.grossSales = 4984987.19487;
       }
     }
   }

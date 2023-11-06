@@ -4,4 +4,13 @@
   </label>
   <label for="input">{{ title }}</label>
 </span>
-<ng-content select=".input"></ng-content>
+<input
+  class="w-full sm:w-auto h-12 p-4"
+  type="number"
+  step="0.1"
+  min="0"
+  id="input"
+  pInputNumber
+  [(ngModel)]="value"
+  (focusout)="onFocusOut($event, type)"
+/>

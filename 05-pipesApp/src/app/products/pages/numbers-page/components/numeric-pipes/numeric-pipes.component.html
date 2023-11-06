@@ -6,71 +6,53 @@
     <div class="col-span-4 text-center">
       <numbers-numeric-input
         [title]="'Net Sales'"
-        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+        [value]="netSales"
+        [type]="'net'"
+        class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
-        <ng-container class="input">
-          <input
-            class="w-full p-4 sm:w-auto"
-            type="number"
-            min="0"
-            id="input"
-            pInputNumber
-            [(ngModel)]="totalSells"
-            (focusout)="onFocusOut($event)"
-          />
-        </ng-container>
       </numbers-numeric-input>
-      <p-card
-        header="Net Sales"
-        subheader="| number:'1.2-2'"
-        class="border-b-stone-300"
-      >
-        {{ totalSells | number : "1.2-2" }}
-      </p-card>
-      <p-card subheader="| number:'1.4-4'">
-        {{ totalSells | number : "1.4-4" }}
-      </p-card>
+      <h3 class="text-[1.5rem] pt-4">Net Sales</h3>
+      <div class="flex flex-wrap align-middle justify-center">
+        <p-card subheader="| number:'1.2-2'">
+          {{ netSales | number : "1.2-2" }}
+        </p-card>
+        <p-card subheader="| number:'1.4-4'">
+          {{ netSales | number : "1.4-4" }}
+        </p-card>
+      </div>
     </div>
-    <div class="col-span-4 text-center pt-2">
+    <div class="col-span-4 text-center pt-2 lg:pt-0">
       <numbers-numeric-input
         [title]="'Gross Sales'"
-        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+        [value]="grossSales"
+        [type]="'gross'"
+        class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
-        <ng-container class="input">
-          <input
-            class="w-36 p-4 sm:w-auto"
-            type="number"
-            min="0"
-            id="input"
-            pInputNumber
-            [(ngModel)]="totalSells"
-            (focusout)="onFocusOut($event)"
-          />
-        </ng-container>
       </numbers-numeric-input>
-      <p-card header="Gross Sales" subheader="of current year">
-        {{ totalSells | number : "1.2-2" }}
-      </p-card>
+      <h3 class="text-[1.5rem] pt-4">Gross Sales</h3>
+      <div class="flex flex-wrap align-middle justify-center">
+        <p-card subheader="| currency">
+          {{ grossSales | currency }}
+        </p-card>
+        <p-card subheader="| currency:'CAD'">
+          {{ grossSales | currency : "CAD" }}
+        </p-card>
+        <p-card subheader="| currency:'EUR'">
+          {{ grossSales | currency : "EUR" }}
+        </p-card>
+        <p-card subheader="| currency:'JPY'">
+          {{ grossSales | currency : "JPY" }}
+        </p-card>
+      </div>
     </div>
-    <div class="col-span-4 text-center pt-2">
+    <div class="col-span-4 text-center pt-2 lg:pt-0">
       <numbers-numeric-input
         [title]="'Gross Sales'"
-        class="flex flex-col col-span-4 content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row"
+        class="flex flex-col col-span-4 content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
       >
-        <ng-container class="input">
-          <input
-            class="w-36 p-4 sm:w-auto"
-            type="number"
-            min="0"
-            id="input"
-            pInputNumber
-            [(ngModel)]="totalSells"
-            (focusout)="onFocusOut($event)"
-          />
-        </ng-container>
       </numbers-numeric-input>
       <p-card header="Gross Sales" subheader="of current year">
-        {{ totalSells | number : "1.2-2" }}
+        {{ netSales | number : "1.2-2" }}
       </p-card>
     </div>
   </div>
