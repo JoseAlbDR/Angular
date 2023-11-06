@@ -6,7 +6,7 @@
     class="p-1 w-full"
   >
     <div
-      class="flex flex-col content-center align-middle p-inputgroup mb-4 w-auto sm:flex-row sm:w-[33%]"
+      class="flex flex-col items-center justify-center p-inputgroup mb-4 w-auto sm:flex-row sm:w-[33%]"
     >
       <span class="p-inputgroup-addon self-start">
         <label for="input" class="p-inputgroup-addon">
@@ -16,7 +16,7 @@
       </span>
       <p-calendar
         class="flex justify-center w-full sm:w-[33%]"
-        inputStyleClass="text-center w-[1000px] p-4 sm:p-0"
+        inputStyleClass="text-center  p-4 sm:p-0 sm:min-w-[205px]"
         id="calendar"
         [(ngModel)]="date"
       ></p-calendar>
