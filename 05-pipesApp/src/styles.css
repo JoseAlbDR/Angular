@@ -6,3 +6,8 @@
 @import "primeicons/primeicons.css";
 @import "primeng/resources/themes/soho-dark/theme.css";
 @import "primeng/resources/primeng.css";
+
+.card {
+  background: var(--surface-card);
+  border-radius: 10px;
+}
