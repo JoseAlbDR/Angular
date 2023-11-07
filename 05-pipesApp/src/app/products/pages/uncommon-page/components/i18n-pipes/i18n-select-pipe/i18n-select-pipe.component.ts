@@ -35,5 +35,7 @@ export class I18nSelectPipeComponent implements OnInit {
     };
   }
 
-  changeLanguaje(): void {}
+  redirect(url: string) {
+    window.open(url, '_blank');
+  }
 }
