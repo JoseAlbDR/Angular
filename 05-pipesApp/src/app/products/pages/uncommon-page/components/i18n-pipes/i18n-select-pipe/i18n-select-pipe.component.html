@@ -1,1 +1,10 @@
-<p-fieldset legend="i18nSelect Pipe" [toggleable]="true"></p-fieldset>
+<p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+  <h4>languaje | i18nSelect: languageMap</h4>
+  <p>{{ selectedLanguage.code | i18nSelect : languageMap }}</p>
+  <p-dropdown
+    [options]="languages"
+    [(ngModel)]="selectedLanguage"
+    optionLabel="name"
+    placeholder="Select a Language"
+  ></p-dropdown>
+</p-fieldset>
