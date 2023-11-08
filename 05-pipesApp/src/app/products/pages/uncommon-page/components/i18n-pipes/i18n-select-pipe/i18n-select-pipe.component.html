@@ -7,13 +7,9 @@
     optionLabel="name"
     placeholder="Select a Language"
   ></p-dropdown>
-  <p-button
-    label="Check Code"
-    [link]="true"
-    (onClick)="
-      redirect(
-        'https://github.com/JoseAlbDR/Angular/blob/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-select-pipe/i18n-select-pipe.component.ts'
-      )
+  <uncommon-check-code-btn
+    [url]="
+      'https://github.com/JoseAlbDR/Angular/blob/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-select-pipe/i18n-select-pipe.component.ts'
     "
-  ></p-button>
+  ></uncommon-check-code-btn>
 </p-fieldset>

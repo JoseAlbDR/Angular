@@ -1,1 +1,19 @@
-<p-fieldset legend="i18nPlural Pipe" [toggleable]="true"></p-fieldset>
+<p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+  <h4>languaje | i18nSelect: languageMap</h4>
+  <p>Currently we have 10 clients waiting</p>
+  <!-- <p-dropdown
+    [options]="languages"
+    [(ngModel)]="selectedLanguage"
+    optionLabel="name"
+    placeholder="Select a Language"
+  ></p-dropdown> -->
+  <p-button
+    label="Check Code"
+    [link]="true"
+    (onClick)="
+      redirect(
+        'https://github.com/JoseAlbDR/Angular/blob/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-plural-pipe/i18n-plural-pipe.component.ts'
+      )
+    "
+  ></p-button>
+</p-fieldset>

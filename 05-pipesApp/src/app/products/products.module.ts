@@ -15,6 +15,7 @@ import { SlicePipeComponent } from './pages/uncommon-page/components/slice-pipe/
 import { JsonPipeComponent } from './pages/uncommon-page/components/json-pipe/json-pipe.component';
 import { KeyValuePipeComponent } from './pages/uncommon-page/components/key-value-pipe/key-value-pipe.component';
 import { AsyncPipeComponent } from './pages/uncommon-page/components/async-pipe/async-pipe.component';
+import { CheckCodeBtnComponent } from './pages/uncommon-page/shared/components/check-code-btn/check-code-btn.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AsyncPipeComponent } from './pages/uncommon-page/components/async-pipe/
     JsonPipeComponent,
     KeyValuePipeComponent,
     AsyncPipeComponent,
+    CheckCodeBtnComponent,
   ],
   imports: [
     CommonModule,
