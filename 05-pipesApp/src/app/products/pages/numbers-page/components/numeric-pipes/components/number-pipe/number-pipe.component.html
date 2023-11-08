@@ -4,11 +4,11 @@
     [value]="value"
     [type]="'net'"
     (onChange)="onValueChange($event)"
-    class="flex flex-col content-center items-center p-inputgroup mb-4 w-auto sm:flex-row"
+    class="card flex flex-wrap justify-content-center gap-3"
   >
   </numbers-numeric-input>
   <h3 class="text-[1.5rem] pt-4">Number</h3>
-  <div class="flex flex-wrap items-center justify-center gap-2">
+  <div class="flex flex-wrap items-center justify-around gap-2">
     <p-card subheader="| number:'1.2-2'">
       {{ value | number : "1.2-2" }}
     </p-card>

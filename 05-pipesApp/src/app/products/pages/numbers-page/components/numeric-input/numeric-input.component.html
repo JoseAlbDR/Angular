@@ -1,17 +1,15 @@
-<span class="p-inputgroup-addon self-start">
-  <label for="input" class="p-inputgroup-addon">
-    <i class="pi pi-dollar"> Try it</i>
-  </label>
+<span class="p-input-icon-left">
+  <i class="pi pi-pencil"></i>
+  <input
+    class="text-center p-2"
+    type="number"
+    step="0.1"
+    min="0"
+    id="input"
+    pInputNumber
+    [(ngModel)]="value"
+    (focusout)="onFocusOut($event, type)"
+    (change)="changeValue()"
+    (keyup)="changeValue()"
+  />
 </span>
-<input
-  class="w-full p-4 sm:w-auto"
-  type="number"
-  step="0.1"
-  min="0"
-  id="input"
-  pInputNumber
-  [(ngModel)]="value"
-  (focusout)="onFocusOut($event, type)"
-  (change)="changeValue()"
-  (keyup)="changeValue()"
-/>
