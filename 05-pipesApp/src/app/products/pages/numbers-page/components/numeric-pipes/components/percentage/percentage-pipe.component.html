@@ -1,1 +1,24 @@
-<p>percentage works!</p>
+<p-fieldset
+  legend="Percentage Pipe"
+  [toggleable]="true"
+  [collapsed]="true"
+  class="p-1 w-full"
+>
+  <numbers-numeric-input
+    [title]="'% Profit'"
+    [type]="'percent'"
+    [value]="percentage"
+    (onChange)="onValueChange($event)"
+    class="card flex flex-wrap justify-content-center gap-3"
+  >
+  </numbers-numeric-input>
+  <h3 class="text-[1.5rem] pt-4">Percentage</h3>
+  <div class="flex flex-wrap items-center justify-around gap-2">
+    <p-card subheader="| percent">
+      {{ percentage | percent }}
+    </p-card>
+    <p-card subheader="| percent:'1.2-2'">
+      {{ percentage | percent : "1.2-2" }}
+    </p-card>
+  </div>
+</p-fieldset>

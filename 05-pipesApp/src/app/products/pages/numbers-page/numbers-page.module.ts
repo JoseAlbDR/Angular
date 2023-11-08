@@ -15,6 +15,6 @@ import { PercentageComponent } from './components/numeric-pipes/components/perce
     PercentageComponent,
   ],
   imports: [CommonModule, PrimeNgModule, FormsModule],
-  exports: [NumericPipesComponent, NumberPipeComponent],
+  exports: [NumericPipesComponent, NumberPipeComponent, PercentageComponent],
 })
 export class NumbersPageModule {}
