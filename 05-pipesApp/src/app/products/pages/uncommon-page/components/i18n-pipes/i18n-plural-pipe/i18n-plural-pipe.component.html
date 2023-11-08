@@ -1,19 +1,37 @@
 <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+  <div class="flex flex-wrap gap-2">
+    <p-button
+      *ngFor="let client of clients"
+      [label]="client"
+      icon="pi pi-times"
+      severity="danger"
+      [outlined]="true"
+      (click)="deleteClient(client)"
+    ></p-button>
+  </div>
+
   <h4>languaje | i18nSelect: languageMap</h4>
-  <p>Currently we have 10 clients waiting</p>
-  <!-- <p-dropdown
-    [options]="languages"
-    [(ngModel)]="selectedLanguage"
-    optionLabel="name"
-    placeholder="Select a Language"
-  ></p-dropdown> -->
-  <p-button
-    label="Check Code"
-    [link]="true"
-    (onClick)="
-      redirect(
+  <p>
+    Currently we have
+    <strong class="underline">{{
+      clients.length | i18nPlural : clientsMap
+    }}</strong>
+  </p>
+  <div class="flex flex-wrap gap-2 mt-10">
+    <p-button
+      label="Restore Clients"
+      (click)="restoreClients()"
+      severity="success"
+    ></p-button>
+    <p-button
+      label="Delete Client"
+      (click)="deleteClient()"
+      severity="danger"
+    ></p-button>
+    <uncommon-check-code-btn
+      [url]="
         'https://github.com/JoseAlbDR/Angular/blob/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-plural-pipe/i18n-plural-pipe.component.ts'
-      )
-    "
-  ></p-button>
+      "
+    ></uncommon-check-code-btn>
+  </div>
 </p-fieldset>
