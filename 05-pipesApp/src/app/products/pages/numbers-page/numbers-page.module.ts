@@ -4,10 +4,15 @@ import { NumericPipesComponent } from './components/numeric-pipes/numeric-pipes.
 import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 import { FormsModule } from '@angular/forms';
 import { NumericInputComponent } from './components/numeric-input/numeric-input.component';
+import { NumberPipeComponent } from './components/numeric-pipes/components/number-pipe/number-pipe.component';
 
 @NgModule({
-  declarations: [NumericPipesComponent, NumericInputComponent],
+  declarations: [
+    NumericPipesComponent,
+    NumericInputComponent,
+    NumberPipeComponent,
+  ],
   imports: [CommonModule, PrimeNgModule, FormsModule],
-  exports: [NumericPipesComponent],
+  exports: [NumericPipesComponent, NumberPipeComponent],
 })
 export class NumbersPageModule {}
