@@ -5,22 +5,17 @@
     [collapsed]="true"
     class="p-1 w-full"
   >
-    <div
-      class="flex flex-col w-full content-center justify-center p-inputgroup mb-4 w-auto sm:flex-row"
-    >
-      <span class="p-inputgroup-addon self-start">
-        <label for="input" class="p-inputgroup-addon">
-          <i class="pi pi-pencil"> Try it</i>
-        </label>
+    <div class="card flex flex-wrap justify-content-center gap-3">
+      <span class="p-input-icon-left">
+        <i class="pi pi-pencil"></i>
+        <input
+          type="text"
+          id="input"
+          pInputText
+          [(ngModel)]="input"
+          (focusout)="onFocusOut($event)"
+        />
       </span>
-      <input
-        class="w-full p-4 sm:w-auto"
-        type="text"
-        id="input"
-        pInputText
-        [(ngModel)]="input"
-        (focusout)="onFocusOut($event)"
-      />
     </div>
 
     <div
