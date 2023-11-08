@@ -23,8 +23,7 @@ export class I18nPluralPipeComponent {
     '=3': 'three clients waiting',
     '=4': 'four clients waiting',
     '=5': 'five clients waiting',
-    '=6': 'six clients waiting',
-    '=7': 'seven clients waiting',
+    other: '# clients waiting',
   };
 
   deleteClient(client = ''): void {
