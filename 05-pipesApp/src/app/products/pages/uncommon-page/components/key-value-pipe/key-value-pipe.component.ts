@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './key-value-pipe.component.html',
   styles: [],
 })
-export class KeyValuePipeComponent {}
+export class KeyValuePipeComponent {
+  public person = {
+    name: 'Michael',
+    age: 39,
+    address: '13 Rue del Perdebe',
+  };
+}

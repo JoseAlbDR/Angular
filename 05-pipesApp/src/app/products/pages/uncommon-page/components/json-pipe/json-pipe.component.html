@@ -1,1 +1,9 @@
-<p-fieldset legend="Json Pipe" [toggleable]="true"></p-fieldset>
+<p-fieldset legend="Json Pipe" [toggleable]="true">
+  <b>Print Object without Pipe - person</b>
+  <p>{{ person }}</p>
+  <div class="flex flex-wrap gap-4 mb-4">
+    <p-card subheader="| json">
+      {{ person | json }}
+    </p-card>
+  </div>
+</p-fieldset>

@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './json-pipe.component.html',
   styles: [],
 })
-export class JsonPipeComponent {}
+export class JsonPipeComponent {
+  public person = {
+    name: 'Michael',
+    age: 39,
+    address: '13 Rue del Perdebe',
+  };
+}
