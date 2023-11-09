@@ -1,1 +1,28 @@
-<p-fieldset legend="Slice Pipe" [toggleable]="true"></p-fieldset>
+<p-fieldset legend="Slice Pipe" [toggleable]="true">
+  <b>Original</b>
+  <p>{{ renderClients().join(" | ") }}</p>
+
+  <div class="flex flex-wrap gap-4">
+    <p-card subheader="| slice: 0">
+      <p>{{ (renderClients() | slice : 0).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 1">
+      <p>{{ (renderClients() | slice : 1).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 0 : 2">
+      <p>{{ (renderClients() | slice : 0 : 2).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 1 : 2">
+      <p>{{ (renderClients() | slice : 1 : 2).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 1 : 3">
+      <p>{{ (renderClients() | slice : 1 : 3).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 3 : 4">
+      <p>{{ (renderClients() | slice : 3 : 4).join(" | ") }}</p>
+    </p-card>
+    <p-card subheader="| slice: 0 : -1">
+      <p>{{ (renderClients() | slice : 0 : -1).join(" | ") }}</p>
+    </p-card>
+  </div>
+</p-fieldset>

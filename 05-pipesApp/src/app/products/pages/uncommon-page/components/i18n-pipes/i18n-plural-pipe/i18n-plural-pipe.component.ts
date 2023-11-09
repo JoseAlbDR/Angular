@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'uncommon-i18n-plural-pipe',
@@ -6,15 +6,8 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class I18nPluralPipeComponent {
-  public clients: string[] = [
-    'Maria',
-    'Peter',
-    'John',
-    'Michael',
-    'Ed',
-    'Melissa',
-    'Natalie',
-  ];
+  @Input()
+  public clients: string[] = [];
 
   public clientsMap: { [key: string]: string } = {
     '=0': 'no clients waiting',
