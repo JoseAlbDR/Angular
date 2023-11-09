@@ -15,4 +15,6 @@ export class UncommonPageComponent {
     'Melissa',
     'Natalie',
   ];
+
+  public person = { name: 'Michael', age: 39, address: '13 Rue del Perdebe' };
 }

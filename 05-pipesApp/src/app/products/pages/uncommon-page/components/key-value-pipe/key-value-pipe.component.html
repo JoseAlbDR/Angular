@@ -1,1 +1,27 @@
-<p-fieldset legend="Key Value Pipe" [toggleable]="true"> </p-fieldset>
+<p-fieldset legend="Key Value Pipe" [toggleable]="true">
+  <b>Print Object without Pipe - person</b>
+  <p>{{ person }}</p>
+  <div class="flex flex-wrap gap-4 mb-4">
+    <p-card subheader="ngFor='let item of person | keyvalue'">
+      <b class="mb-4">item | json</b>
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          {{ item | json }}
+        </li>
+      </ul>
+    </p-card>
+    <p-card subheader="ngFor='let item of person | keyvalue'">
+      <b>item.key | titlecase : item.value</b>
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b> {{ item.key | titlecase }}</b> : {{ item.value }}
+        </li>
+      </ul>
+    </p-card>
+  </div>
+  <uncommon-check-code-btn
+    [url]="
+      'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/key-value-pipe'
+    "
+  ></uncommon-check-code-btn>
+</p-fieldset>

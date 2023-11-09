@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'uncommon-json-pipe',
@@ -6,9 +6,6 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class JsonPipeComponent {
-  public person = {
-    name: 'Michael',
-    age: 39,
-    address: '13 Rue del Perdebe',
-  };
+  @Input()
+  public person!: { name: string; age:number, address: string };
 }
