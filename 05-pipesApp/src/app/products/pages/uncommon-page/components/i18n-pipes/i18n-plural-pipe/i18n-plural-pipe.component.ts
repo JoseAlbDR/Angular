@@ -16,7 +16,7 @@ export class I18nPluralPipeComponent {
     'Natalie',
   ];
 
-  public clientsMap = {
+  public clientsMap: { [key: string]: string } = {
     '=0': 'no clients waiting',
     '=1': 'one client waiting',
     '=2': 'two clients waiting',
