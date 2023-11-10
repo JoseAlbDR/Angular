@@ -15,7 +15,7 @@ import { SlicePipeComponent } from './pages/uncommon-page/components/slice-pipe/
 import { JsonPipeComponent } from './pages/uncommon-page/components/json-pipe/json-pipe.component';
 import { KeyValuePipeComponent } from './pages/uncommon-page/components/key-value-pipe/key-value-pipe.component';
 import { AsyncPipeComponent } from './pages/uncommon-page/components/async-pipe/async-pipe.component';
-import { CheckCodeBtnComponent } from './pages/uncommon-page/shared/components/check-code-btn/check-code-btn.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { CheckCodeBtnComponent } from './pages/uncommon-page/shared/components/c
     JsonPipeComponent,
     KeyValuePipeComponent,
     AsyncPipeComponent,
-    CheckCodeBtnComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +36,7 @@ import { CheckCodeBtnComponent } from './pages/uncommon-page/shared/components/c
     FormsModule,
     BasicsPageModule,
     NumbersPageModule,
+    SharedModule,
   ],
 })
 export class ProductsModule {}

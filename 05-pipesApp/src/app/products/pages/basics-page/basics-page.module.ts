@@ -6,6 +6,7 @@ import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 import { FormsModule } from '@angular/forms';
 import { DatePipesLocaleComponent } from './components/date-pipes-locale/date-pipes-locale.component';
 import { HighlightJsModule } from 'ngx-highlight-js';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,13 @@ import { HighlightJsModule } from 'ngx-highlight-js';
     TextPipesComponent,
     DatePipesLocaleComponent,
   ],
-  imports: [CommonModule, PrimeNgModule, FormsModule, HighlightJsModule],
+  imports: [
+    CommonModule,
+    PrimeNgModule,
+    FormsModule,
+    HighlightJsModule,
+    SharedModule,
+  ],
   exports: [DatePipesComponent, TextPipesComponent, DatePipesLocaleComponent],
 })
 export class BasicsPageModule {}

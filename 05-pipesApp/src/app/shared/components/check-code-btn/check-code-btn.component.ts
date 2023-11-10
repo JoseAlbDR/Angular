@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'uncommon-check-code-btn',
+  selector: 'shared-check-code-btn',
   templateUrl: './check-code-btn.component.html',
   styles: [],
 })
