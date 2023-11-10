@@ -4,7 +4,7 @@
   <div class="flex flex-wrap gap-4 mb-4">
     <p-card subheader="ngFor='let item of person | keyvalue'">
       <b class="mb-4">item | json</b>
-      <ul>
+      <ul class="list-none p-0">
         <li *ngFor="let item of person | keyvalue">
           {{ item | json }}
         </li>
@@ -12,7 +12,7 @@
     </p-card>
     <p-card subheader="ngFor='let item of person | keyvalue'">
       <b>item.key | titlecase : item.value</b>
-      <ul>
+      <ul class="list-none p-0">
         <li *ngFor="let item of person | keyvalue">
           <b> {{ item.key | titlecase }}</b> : {{ item.value }}
         </li>
