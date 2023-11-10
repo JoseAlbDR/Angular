@@ -1,1 +1,31 @@
-<p-fieldset legend="Async Pipe" [toggleable]="true"></p-fieldset>
+<p-fieldset legend="Async Pipe" [toggleable]="true">
+  <b>Observable without pipe</b>
+  <p>{{ myObservableTimer }}</p>
+  <div class="flex flex-wrap justify-between gap-4 mb-4">
+    <p-card subheader="observable | json">
+      {{ myObservableTimer | json }}
+    </p-card>
+    <p-card subheader="observable | async">
+      <p *ngIf="!(myObservableTimer | async); else resolving">
+        Resolving Observable
+      </p>
+      <ng-template #resolving>
+        <p>Observable running</p>
+      </ng-template>
+      {{ myObservableTimer | async }}
+      {{ (myObservableTimer | async) && "secs" }}
+    </p-card>
+    <p-card subheader="observable | async">
+      <p *ngIf="!(observableTime | async); else timer">Resolving Observable</p>
+      <ng-template #timer>
+        <p>Observable running</p>
+      </ng-template>
+      {{ observableTime | async }}
+    </p-card>
+  </div>
+  <uncommon-check-code-btn
+    [url]="
+      'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/async-pipe'
+    "
+  ></uncommon-check-code-btn>
+</p-fieldset>
