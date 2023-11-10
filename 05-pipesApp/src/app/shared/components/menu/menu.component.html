@@ -2,4 +2,18 @@
   <ng-template pTemplate="start">
     <img src="./favicon.ico" alt="angular icon" />
   </ng-template>
+  <ng-template pTemplate="end">
+    <p-button
+      *ngIf="lightTheme; else light"
+      icon="pi pi-moon"
+      (click)="changeTheme('soho-dark')"
+    ></p-button>
+    <ng-template #light>
+      <p-button
+        icon="pi pi-sun"
+        severity="warning"
+        (click)="changeTheme('soho-light')"
+      ></p-button>
+    </ng-template>
+  </ng-template>
 </p-menubar>

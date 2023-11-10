@@ -15,6 +15,7 @@ import localeDE from '@angular/common/locales/de';
 import localeJA from '@angular/common/locales/ja';
 import localeITA from '@angular/common/locales/it';
 import { registerLocaleData } from '@angular/common';
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
 registerLocaleData(localeEsHN);
 registerLocaleData(localeFrCA);
@@ -30,6 +31,7 @@ registerLocaleData(localeITA);
     BrowserModule,
     SharedModule,
     ProductsModule,
+    PrimeNgModule,
   ],
   providers: [
     // {

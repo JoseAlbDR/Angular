@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ThemeService } from 'src/app/theme.service';
 
 @Component({
   selector: 'shared-menu',
@@ -7,6 +8,18 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuComponent implements OnInit {
   public items: MenuItem[] = [];
+  public currentTheme: string = this.themeService.getCurrentTheme;
+  public lightTheme: boolean = this.currentTheme === 'soho-light';
+
+  constructor(private themeService: ThemeService) {}
+
+  changeTheme(theme: string) {
+    theme === 'soho-light'
+      ? (this.lightTheme = true)
+      : (this.lightTheme = false);
+    this.themeService.switchTheme(theme);
+    console.log(this.themeService.getCurrentTheme);
+  }
 
   ngOnInit(): void {
     this.items = [
