@@ -19,6 +19,14 @@ export class SlicePipeComponent {
     return this.clients.map((client, index) => `${index}-${client}`);
   }
 
+  deleteClient(client = ''): void {
+    if (client) {
+      this.clients = this.clients.filter((name) => client !== name);
+    } else {
+      this.clients.pop();
+    }
+  }
+
   restoreClients(): void {
     this.onRestoreSliceClients.emit();
   }

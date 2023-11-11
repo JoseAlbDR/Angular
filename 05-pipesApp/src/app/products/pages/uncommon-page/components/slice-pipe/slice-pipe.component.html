@@ -5,14 +5,38 @@
     [collapsed]="isCollapsed"
     class="w-full"
   >
-    <b>Original</b>
-    <p>{{ renderClients().join(" | ") }}</p>
-    <p-button
-      label="Restore Clients"
-      severity="success"
-      (click)="restoreClients()"
-      styleClass="mb-4"
-    ></p-button>
+    <div class="flex flex-wrap gap-2">
+      <p-button
+        *ngFor="let client of clients"
+        [label]="client"
+        icon="pi pi-times"
+        severity="danger"
+        [outlined]="true"
+        (click)="deleteClient(client)"
+      ></p-button>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-2 mt-2">
+      <p-button
+        label="Restore Clients"
+        severity="success"
+        (click)="restoreClients()"
+        styleClass="mb-4"
+      ></p-button>
+
+      <p-button
+        label="Delete Client"
+        (click)="deleteClient()"
+        severity="danger"
+      ></p-button>
+
+      <shared-check-code-btn
+        [url]="
+          'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/slice-pipe'
+        "
+      ></shared-check-code-btn>
+    </div>
+
     <div class="flex flex-wrap gap-4 mb-4">
       <p-card subheader="| slice: 0">
         <p>{{ (renderClients() | slice : 0).join(" | ") }}</p>
@@ -36,10 +60,5 @@
         <p>{{ (renderClients() | slice : 0 : -1).join(" | ") }}</p>
       </p-card>
     </div>
-    <shared-check-code-btn
-      [url]="
-        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/slice-pipe'
-      "
-    ></shared-check-code-btn>
   </p-fieldset>
 </div>
