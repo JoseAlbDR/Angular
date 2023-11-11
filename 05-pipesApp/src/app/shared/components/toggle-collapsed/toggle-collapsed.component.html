@@ -1,0 +1,8 @@
+<p-button
+  *ngIf="isCollapsed; else closeAll"
+  label="Open All"
+  (click)="togglePanels(false)"
+></p-button>
+<ng-template #closeAll>
+  <p-button label="Close All" (click)="togglePanels(true)"></p-button>
+</ng-template>
