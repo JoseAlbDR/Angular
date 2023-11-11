@@ -16,6 +16,7 @@ import localeJA from '@angular/common/locales/ja';
 import localeITA from '@angular/common/locales/it';
 import { registerLocaleData } from '@angular/common';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { InfoComponent } from './info/info.component';
 
 registerLocaleData(localeEsHN);
 registerLocaleData(localeFrCA);
@@ -24,7 +25,7 @@ registerLocaleData(localeDE);
 registerLocaleData(localeITA);
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, InfoComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
