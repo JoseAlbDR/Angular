@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class KeyValuePipeComponent {
   @Input()
   public person!: { name: string; age: number; address: String };
+
+  @Input()
+  public isCollapsed: boolean = true;
 }

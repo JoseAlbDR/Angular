@@ -9,6 +9,9 @@ export class SlicePipeComponent {
   @Input()
   public clients: string[] = [];
 
+  @Input()
+  public isCollapsed: boolean = true;
+
   @Output()
   public onRestoreSliceClients: EventEmitter<void> = new EventEmitter();
 

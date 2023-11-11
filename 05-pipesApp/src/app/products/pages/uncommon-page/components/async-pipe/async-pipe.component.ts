@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, from, interval, map, tap } from 'rxjs';
 
 @Component({
@@ -7,6 +7,9 @@ import { Observable, from, interval, map, tap } from 'rxjs';
   styles: [],
 })
 export class AsyncPipeComponent implements OnInit {
+  @Input()
+  public isCollapsed: boolean = true;
+
   public myObservableTimer = interval(1000).pipe(tap((v) => v));
 
   public observableTime?: Observable<string>;

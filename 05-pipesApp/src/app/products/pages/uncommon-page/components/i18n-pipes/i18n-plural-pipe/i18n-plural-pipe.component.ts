@@ -9,6 +9,9 @@ export class I18nPluralPipeComponent {
   @Input()
   public clients: string[] = [];
 
+  @Input()
+  public isCollapsed!: boolean;
+
   @Output()
   public onRestorePluralClients: EventEmitter<void> = new EventEmitter();
 

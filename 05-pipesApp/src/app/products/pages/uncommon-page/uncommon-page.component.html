@@ -1,5 +1,13 @@
 <p-panel header="Uncommon pipes" class="p-1">
   <p>Included pipes in Angular - Usually in Common Module</p>
+  <p-button
+    *ngIf="isCollapsed; else closeAll"
+    label="Open All"
+    (click)="togglePanels(false)"
+  ></p-button>
+  <ng-template #closeAll>
+    <p-button label="Close All" (click)="togglePanels(true)"></p-button>
+  </ng-template>
 </p-panel>
 
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">
@@ -8,24 +16,34 @@
       [clients]="clients"
       class="w-full"
       (onRestorePluralClients)="restoreClients()"
+      [isCollapsed]="isCollapsed"
     ></uncommon-i18n-plural-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
-    <uncommon-i18n-select-pipe></uncommon-i18n-select-pipe>
+    <uncommon-i18n-select-pipe
+      [isCollapsed]="isCollapsed"
+    ></uncommon-i18n-select-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
     <uncommon-slice-pipe
       [clients]="clients"
       (onRestoreSliceClients)="restoreClients()"
+      [isCollapsed]="isCollapsed"
     ></uncommon-slice-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
-    <uncommon-json-pipe [person]="person"></uncommon-json-pipe>
+    <uncommon-json-pipe
+      [person]="person"
+      [isCollapsed]="isCollapsed"
+    ></uncommon-json-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
-    <uncommon-key-value-pipe [person]="person"></uncommon-key-value-pipe>
+    <uncommon-key-value-pipe
+      [person]="person"
+      [isCollapsed]="isCollapsed"
+    ></uncommon-key-value-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
-    <uncommon-async-pipe></uncommon-async-pipe>
+    <uncommon-async-pipe [isCollapsed]="isCollapsed"></uncommon-async-pipe>
   </p-card>
 </div>

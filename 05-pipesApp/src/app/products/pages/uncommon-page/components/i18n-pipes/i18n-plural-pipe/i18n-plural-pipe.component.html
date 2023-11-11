@@ -1,4 +1,8 @@
-<p-fieldset legend="i18nPlural Pipe" [toggleable]="true" [collapsed]="true">
+<p-fieldset
+  legend="i18nPlural Pipe"
+  [toggleable]="true"
+  [collapsed]="isCollapsed"
+>
   <div class="flex flex-wrap gap-2">
     <p-button
       *ngFor="let client of clients"

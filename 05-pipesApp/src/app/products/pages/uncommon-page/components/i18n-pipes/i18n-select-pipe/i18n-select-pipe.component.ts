@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 interface Language {
   name: string;
@@ -14,6 +14,9 @@ export class I18nSelectPipeComponent implements OnInit {
   public name: string = 'Alberto';
   public languages: Language[] | undefined;
   public selectedLanguage: Language = { name: 'English', code: 'en' };
+
+  @Input()
+  public isCollapsed: boolean = true;
 
   ngOnInit(): void {
     this.languages = [

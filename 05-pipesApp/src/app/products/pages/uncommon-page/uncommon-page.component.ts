@@ -17,6 +17,7 @@ export class UncommonPageComponent {
   ];
 
   public person = { name: 'Michael', age: 39, address: '13 Rue del Perdebe' };
+  public isCollapsed = true;
 
   restoreClients(): void {
     this.clients = [
@@ -28,5 +29,9 @@ export class UncommonPageComponent {
       'Melissa',
       'Natalie',
     ];
+  }
+
+  togglePanels(value: boolean): void {
+    this.isCollapsed = value;
   }
 }

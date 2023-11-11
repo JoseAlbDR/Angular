@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class JsonPipeComponent {
   @Input()
-  public person!: { name: string; age:number, address: string };
+  public person!: { name: string; age: number; address: string };
+
+  @Input()
+  public isCollapsed: boolean = true;
 }
