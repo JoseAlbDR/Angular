@@ -1,7 +1,12 @@
 <p-panel header="Basic Pipes" class="p-1">
   <p>Included pipes in Angular - Usually in Common Module</p>
+  <shared-toggle-collapsed
+    (togglePanel)="togglePanels($event)"
+  ></shared-toggle-collapsed>
 </p-panel>
 
-<basics-text-pipes></basics-text-pipes>
-<basics-date-pipes></basics-date-pipes>
-<basics-date-pipes-locale></basics-date-pipes-locale>
+<basics-text-pipes [isCollapsed]="isCollapsed"></basics-text-pipes>
+<basics-date-pipes [isCollapsed]="isCollapsed"></basics-date-pipes>
+<basics-date-pipes-locale
+  [isCollapsed]="isCollapsed"
+></basics-date-pipes-locale>

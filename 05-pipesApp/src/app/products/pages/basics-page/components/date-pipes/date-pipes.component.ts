@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'basics-date-pipes',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class DatePipesComponent {
+  @Input()
+  public isCollapsed: boolean = true;
+
   public date: Date = new Date();
 }

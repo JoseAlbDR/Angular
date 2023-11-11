@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './basics-page.component.html',
   styleUrls: ['./basics-page.component.css'],
 })
-export class BasicsPageComponent {}
+export class BasicsPageComponent {
+  public isCollapsed: boolean = true;
+
+  togglePanels(value: boolean): void {
+    this.isCollapsed = value;
+  }
+}

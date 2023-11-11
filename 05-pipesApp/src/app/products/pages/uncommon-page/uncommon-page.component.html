@@ -1,13 +1,8 @@
 <p-panel header="Uncommon pipes" class="p-1">
   <p>Included pipes in Angular - Usually in Common Module</p>
-  <p-button
-    *ngIf="isCollapsed; else closeAll"
-    label="Open All"
-    (click)="togglePanels(false)"
-  ></p-button>
-  <ng-template #closeAll>
-    <p-button label="Close All" (click)="togglePanels(true)"></p-button>
-  </ng-template>
+  <shared-toggle-collapsed
+    (togglePanel)="togglePanels($event)"
+  ></shared-toggle-collapsed>
 </p-panel>
 
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">

@@ -5,4 +5,10 @@ import { NumericEvent } from './components/numeric-pipes/interfaces/numeric-even
   selector: 'app-numbers-page',
   templateUrl: './numbers-page.component.html',
 })
-export class NumbersPageComponent {}
+export class NumbersPageComponent {
+  public isCollapsed: boolean = true;
+
+  togglePanels(value: boolean): void {
+    this.isCollapsed = value;
+  }
+}

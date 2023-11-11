@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'basics-text-pipes',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class TextPipesComponent {
+  @Input()
+  public isCollapsed: boolean = true;
+
   public input: string = 'wRiTe HeRe';
   public date: Date = new Date();
 

@@ -7,6 +7,9 @@ import { NumericEvent } from '../../interfaces/numeric-event.type';
   styles: [],
 })
 export class NumberPipeComponent {
+  @Input()
+  public isCollapsed: boolean = true;
+
   public value: number = 2567789.5567;
 
   onValueChange(event: NumericEvent): void {
