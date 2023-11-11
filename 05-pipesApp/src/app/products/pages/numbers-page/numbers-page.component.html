@@ -6,19 +6,18 @@
 </p-panel>
 
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2">
-  <p-card class="md:col-span-6 w-full">
-    <numberic-number-pipe [isCollapsed]="isCollapsed"></numberic-number-pipe>
-  </p-card>
-  <p-card class="md:col-span-6 w-full">
-    <numberic-percentage-pipe
-      [isCollapsed]="isCollapsed"
-    ></numberic-percentage-pipe>
-  </p-card>
-  <p-card class="md:col-span-12 w-full">
-    <numberic-currency-pipe
-      [isCollapsed]="isCollapsed"
-    ></numberic-currency-pipe>
-  </p-card>
+  <numeric-number-pipe
+    [isCollapsed]="isCollapsed"
+    class="col-span-6"
+  ></numeric-number-pipe>
+  <numeric-percentage-pipe
+    class="col-span-6"
+    [isCollapsed]="isCollapsed"
+  ></numeric-percentage-pipe>
+  <numeric-currency-pipe
+    [isCollapsed]="isCollapsed"
+    class="col-span-12"
+  ></numeric-currency-pipe>
 </div>
 
 <!-- <numbers-numeric-pipes></numbers-numeric-pipes> -->

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NumericEvent } from '../../interfaces/numeric-event.type';
 
 @Component({
-  selector: 'numberic-currency-pipe',
+  selector: 'numeric-currency-pipe',
   templateUrl: './currency-pipe.component.html',
   styles: [],
 })

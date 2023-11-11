@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NumericEvent } from '../../interfaces/numeric-event.type';
 
 @Component({
-  selector: 'numberic-percentage-pipe',
+  selector: 'numeric-percentage-pipe',
   templateUrl: './percentage-pipe.component.html',
   styles: [],
 })

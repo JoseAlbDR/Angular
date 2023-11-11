@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NumericEvent } from '../../interfaces/numeric-event.type';
 
 @Component({
-  selector: 'numberic-number-pipe',
+  selector: 'numeric-number-pipe',
   templateUrl: './number-pipe.component.html',
   styles: [],
 })
