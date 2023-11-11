@@ -6,39 +6,39 @@
 </p-panel>
 
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">
-  <p-card class="col-span-6 w-full">
-    <uncommon-i18n-plural-pipe
-      [clients]="clients"
-      class="w-full"
-      (onRestorePluralClients)="restoreClients()"
-      [isCollapsed]="isCollapsed"
-    ></uncommon-i18n-plural-pipe>
-  </p-card>
-  <p-card class="col-span-6 w-full">
-    <uncommon-i18n-select-pipe
-      [isCollapsed]="isCollapsed"
-    ></uncommon-i18n-select-pipe>
-  </p-card>
-  <p-card class="col-span-6 w-full">
-    <uncommon-slice-pipe
-      [clients]="clients"
-      (onRestoreSliceClients)="restoreClients()"
-      [isCollapsed]="isCollapsed"
-    ></uncommon-slice-pipe>
-  </p-card>
-  <p-card class="col-span-6 w-full">
-    <uncommon-json-pipe
-      [person]="person"
-      [isCollapsed]="isCollapsed"
-    ></uncommon-json-pipe>
-  </p-card>
-  <p-card class="col-span-6 w-full">
-    <uncommon-key-value-pipe
-      [person]="person"
-      [isCollapsed]="isCollapsed"
-    ></uncommon-key-value-pipe>
-  </p-card>
-  <p-card class="col-span-6 w-full">
-    <uncommon-async-pipe [isCollapsed]="isCollapsed"></uncommon-async-pipe>
-  </p-card>
+  <uncommon-i18n-plural-pipe
+    [clients]="clients"
+    class="col-span-6"
+    (onRestorePluralClients)="restoreClients()"
+    [isCollapsed]="isCollapsed"
+  ></uncommon-i18n-plural-pipe>
+
+  <uncommon-i18n-select-pipe
+    class="col-span-6"
+    [isCollapsed]="isCollapsed"
+  ></uncommon-i18n-select-pipe>
+
+  <uncommon-slice-pipe
+    class="col-span-12"
+    [clients]="clients"
+    (onRestoreSliceClients)="restoreClients()"
+    [isCollapsed]="isCollapsed"
+  ></uncommon-slice-pipe>
+
+  <uncommon-key-value-pipe
+    class="col-span-6"
+    [person]="person"
+    [isCollapsed]="isCollapsed"
+  ></uncommon-key-value-pipe>
+
+  <uncommon-async-pipe
+    [isCollapsed]="isCollapsed"
+    class="col-span-6"
+  ></uncommon-async-pipe>
+
+  <uncommon-json-pipe
+    class="col-span-6"
+    [person]="person"
+    [isCollapsed]="isCollapsed"
+  ></uncommon-json-pipe>
 </div>

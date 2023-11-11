@@ -1,14 +1,16 @@
-<p-fieldset legend="Json Pipe" [toggleable]="true" [collapsed]="isCollapsed">
-  <b>Print Object without Pipe - person</b>
-  <p>{{ person }}</p>
-  <div class="flex flex-wrap gap-4 mb-4">
-    <p-card subheader="| json">
-      {{ person | json }}
-    </p-card>
-  </div>
-  <shared-check-code-btn
-    [url]="
-      'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/json-pipe'
-    "
-  ></shared-check-code-btn>
-</p-fieldset>
+<div class="card flex w-full mb-2">
+  <p-fieldset legend="Json Pipe" [toggleable]="true" [collapsed]="isCollapsed">
+    <b>Print Object without Pipe - person</b>
+    <p>{{ person }}</p>
+    <div class="flex flex-wrap gap-4 mb-4">
+      <p-card subheader="| json">
+        {{ person | json }}
+      </p-card>
+    </div>
+    <shared-check-code-btn
+      [url]="
+        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/json-pipe'
+      "
+    ></shared-check-code-btn>
+  </p-fieldset>
+</div>

@@ -1,21 +1,23 @@
-<p-fieldset
-  legend="i18nSelect Pipe"
-  [toggleable]="true"
-  [collapsed]="isCollapsed"
->
-  <h4>languaje | i18nSelect: languageMap</h4>
-  <p>{{ selectedLanguage.code | i18nSelect : languageMap }}</p>
-  <div class="flex flex-wrap gap-2 mt-10">
-    <p-dropdown
-      [options]="languages"
-      [(ngModel)]="selectedLanguage"
-      optionLabel="name"
-      placeholder="Select a Language"
-    ></p-dropdown>
-    <shared-check-code-btn
-      [url]="
-        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-select-pipe'
-      "
-    ></shared-check-code-btn>
-  </div>
-</p-fieldset>
+<div class="card flex w-full mb-2">
+  <p-fieldset
+    legend="i18nSelect Pipe"
+    [toggleable]="true"
+    [collapsed]="isCollapsed"
+  >
+    <h4>languaje | i18nSelect: languageMap</h4>
+    <p>{{ selectedLanguage.code | i18nSelect : languageMap }}</p>
+    <div class="flex flex-wrap gap-2 mt-10">
+      <p-dropdown
+        [options]="languages"
+        [(ngModel)]="selectedLanguage"
+        optionLabel="name"
+        placeholder="Select a Language"
+      ></p-dropdown>
+      <shared-check-code-btn
+        [url]="
+          'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/i18n-pipes/i18n-select-pipe'
+        "
+      ></shared-check-code-btn>
+    </div>
+  </p-fieldset>
+</div>

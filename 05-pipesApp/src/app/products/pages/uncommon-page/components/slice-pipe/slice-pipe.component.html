@@ -1,38 +1,40 @@
-<p-fieldset legend="Slice Pipe" [toggleable]="true" [collapsed]="isCollapsed">
-  <b>Original</b>
-  <p>{{ renderClients().join(" | ") }}</p>
-  <p-button
-    label="Restore Clients"
-    severity="success"
-    (click)="restoreClients()"
-    styleClass="mb-4"
-  ></p-button>
-  <div class="flex flex-wrap gap-4 mb-4">
-    <p-card subheader="| slice: 0">
-      <p>{{ (renderClients() | slice : 0).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 1">
-      <p>{{ (renderClients() | slice : 1).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 0 : 2">
-      <p>{{ (renderClients() | slice : 0 : 2).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 1 : 2">
-      <p>{{ (renderClients() | slice : 1 : 2).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 1 : 3">
-      <p>{{ (renderClients() | slice : 1 : 3).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 3 : 4">
-      <p>{{ (renderClients() | slice : 3 : 4).join(" | ") }}</p>
-    </p-card>
-    <p-card subheader="| slice: 0 : -1">
-      <p>{{ (renderClients() | slice : 0 : -1).join(" | ") }}</p>
-    </p-card>
-  </div>
-  <shared-check-code-btn
-    [url]="
-      'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/slice-pipe'
-    "
-  ></shared-check-code-btn>
-</p-fieldset>
+<div class="card flex w-full mb-2">
+  <p-fieldset legend="Slice Pipe" [toggleable]="true" [collapsed]="isCollapsed">
+    <b>Original</b>
+    <p>{{ renderClients().join(" | ") }}</p>
+    <p-button
+      label="Restore Clients"
+      severity="success"
+      (click)="restoreClients()"
+      styleClass="mb-4"
+    ></p-button>
+    <div class="flex flex-wrap gap-4 mb-4">
+      <p-card subheader="| slice: 0">
+        <p>{{ (renderClients() | slice : 0).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 1">
+        <p>{{ (renderClients() | slice : 1).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 0 : 2">
+        <p>{{ (renderClients() | slice : 0 : 2).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 1 : 2">
+        <p>{{ (renderClients() | slice : 1 : 2).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 1 : 3">
+        <p>{{ (renderClients() | slice : 1 : 3).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 3 : 4">
+        <p>{{ (renderClients() | slice : 3 : 4).join(" | ") }}</p>
+      </p-card>
+      <p-card subheader="| slice: 0 : -1">
+        <p>{{ (renderClients() | slice : 0 : -1).join(" | ") }}</p>
+      </p-card>
+    </div>
+    <shared-check-code-btn
+      [url]="
+        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/uncommon-page/components/slice-pipe'
+      "
+    ></shared-check-code-btn>
+  </p-fieldset>
+</div>
