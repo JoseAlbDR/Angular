@@ -1,5 +1,10 @@
 <div class="card flex w-full mb-2">
-  <p-fieldset legend="Slice Pipe" [toggleable]="true" [collapsed]="isCollapsed">
+  <p-fieldset
+    legend="Slice Pipe"
+    [toggleable]="true"
+    [collapsed]="isCollapsed"
+    class="w-full"
+  >
     <b>Original</b>
     <p>{{ renderClients().join(" | ") }}</p>
     <p-button
