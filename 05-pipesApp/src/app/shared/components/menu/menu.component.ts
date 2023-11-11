@@ -18,7 +18,6 @@ export class MenuComponent implements OnInit {
       ? (this.lightTheme = true)
       : (this.lightTheme = false);
     this.themeService.switchTheme(theme);
-    console.log(this.themeService.getCurrentTheme);
   }
 
   ngOnInit(): void {

@@ -10,11 +10,13 @@ import { ThemeService } from './theme.service';
 export class AppComponent implements OnInit {
   constructor(
     private primengConfig: PrimeNGConfig,
-
+    private themeService: ThemeService
   ) {}
 
-
   ngOnInit(): void {
+    this.themeService.switchTheme(
+      localStorage.getItem('theme') || 'soho-light'
+    );
     this.primengConfig.ripple = true;
   }
 }
