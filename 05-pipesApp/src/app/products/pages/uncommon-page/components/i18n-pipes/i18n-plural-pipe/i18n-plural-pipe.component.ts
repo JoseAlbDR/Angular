@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'uncommon-i18n-plural-pipe',
@@ -8,6 +8,9 @@ import { Component, Input } from '@angular/core';
 export class I18nPluralPipeComponent {
   @Input()
   public clients: string[] = [];
+
+  @Output()
+  public onRestorePluralClients: EventEmitter<void> = new EventEmitter();
 
   public clientsMap: { [key: string]: string } = {
     '=0': 'no clients waiting',
@@ -28,15 +31,7 @@ export class I18nPluralPipeComponent {
   }
 
   restoreClients(): void {
-    this.clients = [
-      'Maria',
-      'Peter',
-      'John',
-      'Michael',
-      'Ed',
-      'Melissa',
-      'Natalie',
-    ];
+    this.onRestorePluralClients.emit();
   }
 
   redirect(url: string) {

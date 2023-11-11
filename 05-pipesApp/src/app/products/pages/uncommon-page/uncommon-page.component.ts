@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -17,4 +17,16 @@ export class UncommonPageComponent {
   ];
 
   public person = { name: 'Michael', age: 39, address: '13 Rue del Perdebe' };
+
+  restoreClients(): void {
+    this.clients = [
+      'Maria',
+      'Peter',
+      'John',
+      'Michael',
+      'Ed',
+      'Melissa',
+      'Natalie',
+    ];
+  }
 }

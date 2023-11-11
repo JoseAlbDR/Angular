@@ -7,13 +7,17 @@
     <uncommon-i18n-plural-pipe
       [clients]="clients"
       class="w-full"
+      (onRestorePluralClients)="restoreClients()"
     ></uncommon-i18n-plural-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
     <uncommon-i18n-select-pipe></uncommon-i18n-select-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
-    <uncommon-slice-pipe [clients]="clients"></uncommon-slice-pipe>
+    <uncommon-slice-pipe
+      [clients]="clients"
+      (onRestoreSliceClients)="restoreClients()"
+    ></uncommon-slice-pipe>
   </p-card>
   <p-card class="col-span-6 w-full">
     <uncommon-json-pipe [person]="person"></uncommon-json-pipe>
