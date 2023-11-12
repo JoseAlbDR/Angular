@@ -94,4 +94,13 @@ export class LangService {
 
     return linkButtons;
   }
+
+  get openButtonsMap() {
+    const openButtons = {
+      es: 'Abrir Todos',
+      en: 'Open All',
+    };
+
+    return openButtons;
+  }
 }
