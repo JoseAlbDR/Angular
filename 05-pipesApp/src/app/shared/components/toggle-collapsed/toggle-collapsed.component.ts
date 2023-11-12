@@ -14,7 +14,7 @@ export class ToggleCollapsedComponent implements OnInit {
 
   constructor(private langService: LangService) {}
 
-  public selectedLanguage = this.langService.getSelectedLanguage;
+  public selectedLanguage = this.langService.selectedLanguage;
   public languageMap = this.langService.openButtonsMap;
 
   ngOnInit(): void {

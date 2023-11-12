@@ -17,7 +17,7 @@ export class CheckCodeBtnComponent implements OnInit {
   ) {}
 
   public languageMap = this.langService.linkButtonsMap;
-  public selectedLanguage = this.langService.getSelectedLanguage;
+  public selectedLanguage = this.langService.selectedLanguage;
 
   @Input()
   public content: string = this.translateService.instant(

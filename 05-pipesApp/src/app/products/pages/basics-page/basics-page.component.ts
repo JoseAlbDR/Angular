@@ -18,7 +18,7 @@ export class BasicsPageComponent implements OnInit {
   }
 
   public languageMap = this.langService.basicPipesMap;
-  public selectedLanguage = this.langService.getSelectedLanguage;
+  public selectedLanguage = this.langService.selectedLanguage;
 
   togglePanels(value: boolean): void {
     this.isCollapsed = value;

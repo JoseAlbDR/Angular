@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
     private translateService: TranslateService
   ) {}
 
-  private selectedLanguage: string = this.langService.getSelectedLanguage;
+  private selectedLanguage: string = this.langService.selectedLanguage;
   private languageMap = this.langService.menuLanguageMap;
   public items: MenuItem[] = this.renderMenu();
 
@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
   }
 
   setLanguage(value: string) {
-    this.langService.setSelectedLanguage = value;
+    this.langService.selectedLanguage = value;
   }
 
   private translate(item: string) {

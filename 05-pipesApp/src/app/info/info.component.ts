@@ -11,7 +11,7 @@ export class InfoComponent implements OnInit {
   constructor(private langService: LangService) {}
 
   public languageMap = this.langService.infoLanguageMap;
-  public selectedLanguage = this.langService.getSelectedLanguage;
+  public selectedLanguage = this.langService.selectedLanguage;
 
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
