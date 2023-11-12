@@ -24,7 +24,6 @@ export class LangService {
   }
 
   private loadLanguage() {
-    console.log(this.currentLanguage);
     return localStorage.getItem('language');
   }
 

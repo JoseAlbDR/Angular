@@ -17,7 +17,7 @@ export class CheckCodeBtnComponent implements OnInit {
   ) {}
 
   public languageMap = this.langService.linkButtonsMap;
-  public selectedLanguage = this.langService.selectedLanguage;
+  public selectedLanguage: string = '';
 
   @Input()
   public content: string = this.translateService.instant(
@@ -26,6 +26,7 @@ export class CheckCodeBtnComponent implements OnInit {
 
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
+      this.selectedLanguage = language;
       const content =
         this.content === 'Check Code' || this.content === 'Revisar Código'
           ? 'linkContent'
