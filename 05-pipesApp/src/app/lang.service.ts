@@ -9,7 +9,7 @@ interface Language {
   providedIn: 'root',
 })
 export class LangService {
-  languajeChanged = new EventEmitter<string>();
+  languageChanged = new EventEmitter<string>();
 
   constructor() {}
 
@@ -21,7 +21,7 @@ export class LangService {
 
   set setSelectedLanguage(value: string) {
     this.selectedLanguage = value;
-    this.languajeChanged.emit(value);
+    this.languageChanged.emit(value);
   }
 
   get infoLanguageMap() {
@@ -40,7 +40,7 @@ export class LangService {
   }
 
   get menuLanguageMap() {
-    const menu = {
+    const menu: { [key: string]: { [key: string]: string } } = {
       title: {
         es: 'Pipes de Angular',
         en: 'Angular Pipes',
@@ -56,6 +56,10 @@ export class LangService {
       uncommon: {
         es: 'Poco comúnes',
         en: 'Uncommon',
+      },
+      custom: {
+        es: 'Pipes Personalizados',
+        en: 'Custom Pipes',
       },
     };
     return menu;
