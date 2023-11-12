@@ -14,21 +14,23 @@
     >
     </numbers-numeric-input>
     <h3 class="text-[1.5rem] pt-4">{{ percentage }}</h3>
-    <div class="flex flex-wrap items-center sm:justify-around gap-2">
-      <p-card subheader="| percent">
+    <div class="flex flex-wrap items-center justify-around gap-2">
+      <p-card subheader="| percent" class="flex-1">
         {{ percentage | percent }}
       </p-card>
-      <p-card subheader="| percent:'1.2-2'">
+      <p-card subheader="| percent:'1.2-2'" class="flex-1">
         {{ percentage | percent : "1.2-2" }}
       </p-card>
-      <p-card subheader="| percent:'1.4-4'">
+      <p-card subheader="| percent:'1.4-4'" class="flex-1">
         {{ percentage | percent : "1.4-4" }}
       </p-card>
     </div>
-    <shared-check-code-btn
-      [url]="
-        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/numbers-page/components/numeric-pipes/components/percentage'
-      "
-    ></shared-check-code-btn>
+    <div class="mt-4">
+      <shared-check-code-btn
+        [url]="
+          'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/numbers-page/components/numeric-pipes/components/percentage'
+        "
+      ></shared-check-code-btn>
+    </div>
   </p-fieldset>
 </div>

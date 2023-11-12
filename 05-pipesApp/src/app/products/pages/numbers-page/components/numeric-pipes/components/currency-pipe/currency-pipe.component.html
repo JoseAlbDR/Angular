@@ -15,26 +15,31 @@
     </numbers-numeric-input>
     <h3 class="text-[1.5rem] pt-4">{{ value }}</h3>
     <div class="flex flex-wrap items-center sm:justify-around gap-2">
-      <p-card subheader="| currency">
+      <p-card subheader="| currency" class="flex-1">
         {{ value | currency }}
       </p-card>
-      <p-card subheader="| currency:'CAD'">
+      <p-card subheader="| currency:'CAD'" class="flex-1">
         {{ value | currency : "CAD" }}
       </p-card>
-      <p-card subheader="| currency:'CAD':'symbol-narrow'">
+      <p-card subheader="| currency:'CAD':'symbol-narrow'" class="flex-1">
         {{ value | currency : "CAD" : "symbol-narrow" }}
       </p-card>
-      <p-card subheader="| currency:'EUR':'':1.3-3">
+      <p-card subheader="| currency:'EUR':'':1.3-3" class="flex-1">
         {{ value | currency : "EUR" : "" : "1.3-3" }}
       </p-card>
-      <p-card subheader="| currency:'JPY':'symbol-narrow':'1.4-4'">
+      <p-card
+        subheader="| currency:'JPY':'symbol-narrow':'1.4-4'"
+        class="flex-1"
+      >
         {{ value | currency : "JPY" : "symbol-narrow" : "1.4-4" }}
       </p-card>
     </div>
-    <shared-check-code-btn
-      [url]="
-        'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/numbers-page/components/numeric-pipes/components/currency-pipe'
-      "
-    ></shared-check-code-btn>
+    <div class="mt-4">
+      <shared-check-code-btn
+        [url]="
+          'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/numbers-page/components/numeric-pipes/components/currency-pipe'
+        "
+      ></shared-check-code-btn>
+    </div>
   </p-fieldset>
 </div>
