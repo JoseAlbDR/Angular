@@ -19,7 +19,15 @@ export class LangService {
 
   constructor() {}
 
-  private currentLanguage: string = 'en';
+  private currentLanguage: string = this.loadLanguage() || 'en';
+
+  private loadLanguage() {
+    return localStorage.getItem('language');
+  }
+
+  private saveLanguage() {
+    localStorage.setItem('language', this.currentLanguage);
+  }
 
   get selectedLanguage(): string {
     return this.currentLanguage;
@@ -27,6 +35,7 @@ export class LangService {
 
   set selectedLanguage(value: string) {
     this.currentLanguage = value;
+    this.saveLanguage();
     this.languageChanged.emit(value);
   }
 
