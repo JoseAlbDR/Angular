@@ -20,4 +20,7 @@
 ></basics-date-pipes>
 <basics-date-pipes-locale
   [isCollapsed]="isCollapsed"
+  [colTitle]="selectedLanguage | i18nSelect : languageMap.datePipes.title"
+  [title]="selectedLanguage | i18nSelect : languageMap.datePipesLocale"
+  [result]="selectedLanguage | i18nSelect : languageMap.result"
 ></basics-date-pipes-locale>
