@@ -79,4 +79,19 @@ export class LangService {
 
     return basicPipes;
   }
+
+  get linkButtonsMap() {
+    const linkButtons: { [key: string]: { [key: string]: string } } = {
+      infoContent: {
+        es: 'Más Info',
+        en: 'More Info',
+      },
+      linkContent: {
+        es: 'Revisar Código',
+        en: 'Check Code',
+      },
+    };
+
+    return linkButtons;
+  }
 }
