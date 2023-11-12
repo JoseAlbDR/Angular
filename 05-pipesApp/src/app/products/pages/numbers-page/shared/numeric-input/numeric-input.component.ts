@@ -20,7 +20,7 @@ export class NumericInputComponent {
 
   public onFocusOut(event: FocusEvent, type: string) {
     if (event?.target instanceof HTMLInputElement) {
-      if (+event.target.value === 0) {
+      if (event.target.value === '') {
         if (type === 'net') this.value = 2567789.5567;
         if (type === 'gross') this.value = 4984987.19487;
         if (type === 'percent') this.value = 0.37895;

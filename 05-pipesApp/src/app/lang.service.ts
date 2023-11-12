@@ -87,11 +87,11 @@ export class LangService {
       },
       percentagePipe: {
         title: {
-          es: 'Pipe de Porcentage',
+          es: 'Pipe de Porcentaje',
           en: 'Percentage Pipe',
         },
         name: {
-          es: 'Porcentage',
+          es: 'Porcentaje',
           en: 'Percentage',
         },
       },

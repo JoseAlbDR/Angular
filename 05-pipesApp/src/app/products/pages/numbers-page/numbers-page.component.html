@@ -18,6 +18,8 @@
   <numeric-percentage-pipe
     class="col-span-6"
     [isCollapsed]="isCollapsed"
+    [title]="selectedLanguage | i18nSelect : languageMap.percentagePipe.title"
+    [name]="selectedLanguage | i18nSelect : languageMap.percentagePipe.name"
   ></numeric-percentage-pipe>
   <numeric-currency-pipe
     [isCollapsed]="isCollapsed"
