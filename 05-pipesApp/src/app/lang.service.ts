@@ -64,4 +64,19 @@ export class LangService {
     };
     return menu;
   }
+
+  get basicPipesMap() {
+    const basicPipes = {
+      title: {
+        es: 'Pipes Básicos',
+        en: 'Basic Pipes',
+      },
+      content: {
+        es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
+        en: 'Included pipes in Angular - Usually in Common Module',
+      },
+    };
+
+    return basicPipes;
+  }
 }
