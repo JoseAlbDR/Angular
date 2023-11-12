@@ -65,6 +65,21 @@ export class LangService {
     return menu;
   }
 
+  get uncommonPipesMap() {
+    const uncommonPipes = {
+      title: {
+        es: 'Pipes Poco Comunes',
+        en: 'Uncommon Pipes',
+      },
+      content: {
+        es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
+        en: 'Included pipes in Angular - Usually in Common Module',
+      },
+    };
+
+    return uncommonPipes;
+  }
+
   get numberPipesMap() {
     const numbersPipes = {
       title: {

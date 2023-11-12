@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LangService } from 'src/app/lang.service';
 
 @Component({
   selector: 'app-uncommon-page',
   templateUrl: './uncommon-page.component.html',
   styleUrls: ['./uncommon-page.component.css'],
 })
-export class UncommonPageComponent {
+export class UncommonPageComponent implements OnInit {
   public clients: string[] = [
     'Maria',
     'Peter',
@@ -18,6 +19,17 @@ export class UncommonPageComponent {
 
   public person = { name: 'Michael', age: 39, address: '13 Rue del Perdebe' };
   public isCollapsed = true;
+
+  constructor(private langService: LangService) {}
+
+  ngOnInit(): void {
+    this.langService.languageChanged.subscribe((language: string) => {
+      this.selectedLanguage = language;
+    });
+  }
+
+  public selectedLanguage = this.langService.selectedLanguage;
+  public languageMap = this.langService.uncommonPipesMap;
 
   restoreClients(): void {
     this.clients = [
