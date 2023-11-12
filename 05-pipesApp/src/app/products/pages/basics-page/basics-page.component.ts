@@ -11,14 +11,14 @@ export class BasicsPageComponent implements OnInit {
 
   constructor(private langService: LangService) {}
 
+  public languageMap = this.langService.basicPipesMap;
+  public selectedLanguage = this.langService.selectedLanguage;
+
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
       this.selectedLanguage = language;
     });
   }
-
-  public languageMap = this.langService.basicPipesMap;
-  public selectedLanguage = this.langService.selectedLanguage;
 
   togglePanels(value: boolean): void {
     this.isCollapsed = value;

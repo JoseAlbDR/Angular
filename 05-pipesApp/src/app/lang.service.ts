@@ -65,6 +65,50 @@ export class LangService {
     return menu;
   }
 
+  get numberPipesMap() {
+    const numbersPipes = {
+      title: {
+        es: 'Pipes de Números',
+        en: 'Numbers Pipes',
+      },
+      content: {
+        es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
+        en: 'Included pipes in Angular - Usually in Common Module',
+      },
+      numberPipe: {
+        title: {
+          es: 'Pipe de Número',
+          en: 'Number Pipe',
+        },
+        name: {
+          es: 'Número',
+          en: 'Number',
+        },
+      },
+      percentagePipe: {
+        title: {
+          es: 'Pipe de Porcentage',
+          en: 'Percentage Pipe',
+        },
+        name: {
+          es: 'Porcentage',
+          en: 'Percentage',
+        },
+      },
+      currencyPipe: {
+        title: {
+          es: 'Pipe de Moneeda',
+          en: 'Currency Pipe',
+        },
+        name: {
+          es: 'Moneda',
+          en: 'Currency',
+        },
+      },
+    };
+    return numbersPipes;
+  }
+
   get basicPipesMap() {
     const basicPipes = {
       title: {
