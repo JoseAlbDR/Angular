@@ -21,14 +21,16 @@
         <p-card [header]="title">
           <hr />
           <ol class="flex flex-col divide-y divide-gray-300 list-decimal">
-            <li class="py-2">date</li>
-            <li class="py-2">date | date</li>
-            <li class="py-2">date | date:'short'</li>
-            <li class="py-2">date | date:'long'</li>
-            <li class="py-2">date | date:'MMMM'</li>
-            <li class="py-2">date | date:'MMMM dd, yyyy'</li>
-            <li class="py-2">date | date:'long':'GMT-6'</li>
-            <li class="py-2">date | date:'long':'GMT-4'</li>
+            <div class="py-2">{{ date }}</div>
+            <div class="sm:self-end">
+              <li class="py-2 w-48 text-left">| date</li>
+              <li class="py-2 w-48 text-left">| date:'short'</li>
+              <li class="py-2 w-48 text-left">| date:'long'</li>
+              <li class="py-2 w-48 text-left">| date:'MMMM'</li>
+              <li class="py-2 w-48 text-left">| date:'MMMM dd, yyyy'</li>
+              <li class="py-2 w-48 text-left">| date:'long':'GMT-6'</li>
+              <li class="py-2 w-48 text-left">| date:'long':'GMT-4'</li>
+            </div>
           </ol>
         </p-card>
       </div>
@@ -37,7 +39,7 @@
         <p-card [header]="result">
           <hr />
           <ol class="flex flex-col divide-y divide-gray-300 list-decimal">
-            <li class="py-2">{{ date }}</li>
+            <div class="py-2">{{ date }}</div>
             <li class="py-2">{{ date | date }}</li>
             <li class="py-2">{{ date | date : "short" }}</li>
             <li class="py-2">{{ date | date : "long" }}</li>

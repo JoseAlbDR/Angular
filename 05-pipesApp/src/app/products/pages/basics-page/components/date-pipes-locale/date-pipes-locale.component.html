@@ -21,12 +21,14 @@
         <p-card [header]="colTitle">
           <hr />
           <ol class="flex flex-col divide-y divide-gray-300 list-decimal">
-            <li class="py-2">date</li>
-            <li class="py-2">date | date:'long':'':'es-HN'</li>
-            <li class="py-2">date | date:'long':'':'fr-CA'</li>
-            <li class="py-2">date | date:'long':'':'it'</li>
-            <li class="py-2">date | date:'long':'':'de'</li>
-            <li class="py-2">date | date:'long':'':'ja'</li>
+            <li class="py-2">{{ date }}</li>
+            <div class="sm:self-end">
+              <li class="py-2 w-48 text-left">date | date:'long':'':'es-HN'</li>
+              <li class="py-2 w-48 text-left">date | date:'long':'':'fr-CA'</li>
+              <li class="py-2 w-48 text-left">date | date:'long':'':'it'</li>
+              <li class="py-2 w-48 text-left">date | date:'long':'':'de'</li>
+              <li class="py-2 w-48 text-left">date | date:'long':'':'ja'</li>
+            </div>
           </ol>
         </p-card>
       </div>
