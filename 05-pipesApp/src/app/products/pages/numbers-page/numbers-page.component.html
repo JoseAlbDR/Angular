@@ -11,6 +11,8 @@
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2">
   <numeric-number-pipe
     [isCollapsed]="isCollapsed"
+    [title]="selectedLanguage | i18nSelect : languageMap.numberPipe.title"
+    [name]="selectedLanguage | i18nSelect : languageMap.numberPipe.name"
     class="col-span-6"
   ></numeric-number-pipe>
   <numeric-percentage-pipe
