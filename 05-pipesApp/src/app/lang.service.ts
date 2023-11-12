@@ -5,6 +5,12 @@ interface Language {
   code: string;
 }
 
+type ClientsMap = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -74,6 +80,32 @@ export class LangService {
       content: {
         es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
         en: 'Included pipes in Angular - Usually in Common Module',
+      },
+      i18nPlural: {
+        content: <{ [key: string]: string }>{
+          es: 'Actualmente',
+          en: 'Currently we have',
+        },
+        clientsMap: <ClientsMap>{
+          en: {
+            '=0': 'no clients waiting',
+            '=1': 'one client waiting',
+            '=2': 'two clients waiting',
+            '=3': 'three clients waiting',
+            '=4': 'four clients waiting',
+            '=5': 'five clients waiting',
+            other: '# clients waiting',
+          },
+          es: {
+            '=0': 'no tenemos clientes esperando',
+            '=1': 'tenemos un cliente esperando',
+            '=2': 'tenemos dos clientes esperando',
+            '=3': 'tenemos tres clientes esperando',
+            '=4': 'tenemos cuatro clientes esperando',
+            '=5': 'tenemos cinco clientes esperando',
+            other: 'tenemos # clientes esperando',
+          },
+        },
       },
     };
 
