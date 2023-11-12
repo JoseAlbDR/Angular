@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { LangService } from 'src/app/lang.service';
 import { ThemeService } from 'src/app/theme.service';
 
 @Component({
@@ -11,13 +12,20 @@ export class MenuComponent implements OnInit {
   public currentTheme: string = this.themeService.getCurrentTheme;
   public lightTheme: boolean = this.currentTheme === 'soho-light';
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private langService: LangService
+  ) {}
 
   changeTheme(theme: string) {
     theme === 'soho-light'
       ? (this.lightTheme = true)
       : (this.lightTheme = false);
     this.themeService.switchTheme(theme);
+  }
+
+  setLanguage(value: string) {
+    this.langService.setSelectedLanguage = value;
   }
 
   ngOnInit(): void {

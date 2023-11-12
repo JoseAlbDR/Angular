@@ -5,8 +5,18 @@
   <ng-template pTemplate="end">
     <div class="flex gap-3">
       <div class="flags">
-        <p-button icon="fi fi-gb" [rounded]="true" [text]="true"></p-button>
-        <p-button icon="fi fi-es" [rounded]="true" [text]="true"></p-button>
+        <p-button
+          icon="fi fi-gb"
+          [rounded]="true"
+          [text]="true"
+          (click)="setLanguage('en')"
+        ></p-button>
+        <p-button
+          icon="fi fi-es"
+          [rounded]="true"
+          [text]="true"
+          (click)="setLanguage('es')"
+        ></p-button>
       </div>
       <p-button
         *ngIf="lightTheme; else light"
