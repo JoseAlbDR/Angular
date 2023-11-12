@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LangService } from 'src/app/lang.service';
 import { ThemeService } from 'src/app/theme.service';
@@ -12,20 +12,33 @@ export class MenuComponent implements OnInit {
   public currentTheme: string = this.themeService.getCurrentTheme;
   public lightTheme: boolean = this.currentTheme === 'soho-light';
 
+  public selectedLanguage: string = '';
+  private languageMap = this.langService.menuLanguageMap;
+  public items: MenuItem[] = this.renderMenu();
+
   constructor(
     private themeService: ThemeService,
     private langService: LangService,
     private translateService: TranslateService
   ) {}
 
-  private selectedLanguage: string = this.langService.selectedLanguage;
-  private languageMap = this.langService.menuLanguageMap;
-  public items: MenuItem[] = this.renderMenu();
+  ngOnInit(): void {
+    this.langService.languageChanged.subscribe((language: string) => {
+      if (this.selectedLanguage !== language) {
+        this.updateSelectedLanguage(language);
+      }
+    });
+
+    this.updateSelectedLanguage(this.langService.selectedLanguage);
+  }
+
+  private updateSelectedLanguage(language: string): void {
+    this.selectedLanguage = language;
+    this.items = this.renderMenu(language);
+  }
 
   changeTheme(theme: string) {
-    theme === 'soho-light'
-      ? (this.lightTheme = true)
-      : (this.lightTheme = false);
+    this.lightTheme = theme === 'soho-light';
     this.themeService.switchTheme(theme);
   }
 
@@ -83,11 +96,5 @@ export class MenuComponent implements OnInit {
     ];
 
     return items;
-  }
-
-  ngOnInit(): void {
-    this.langService.languageChanged.subscribe((language: string) => {
-      this.items = this.renderMenu(language);
-    });
   }
 }

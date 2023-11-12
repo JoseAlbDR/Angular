@@ -10,12 +10,14 @@
           [rounded]="true"
           [text]="true"
           (click)="setLanguage('en')"
+          [styleClass]="selectedLanguage === 'en' ? 'bg-indigo-200' : ''"
         ></p-button>
         <p-button
           icon="fi fi-es"
           [rounded]="true"
           [text]="true"
           (click)="setLanguage('es')"
+          [styleClass]="selectedLanguage === 'es' ? 'bg-indigo-200' : ''"
         ></p-button>
       </div>
       <p-button

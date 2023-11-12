@@ -17,15 +17,18 @@ type ClientsMap = {
 export class LangService {
   languageChanged = new EventEmitter<string>();
 
-  constructor() {}
+  private currentLanguage: string;
 
-  private currentLanguage: string = this.loadLanguage() || 'en';
+  constructor() {
+    this.currentLanguage = this.loadLanguage() || 'en';
+  }
 
   private loadLanguage() {
+    console.log(this.currentLanguage);
     return localStorage.getItem('language');
   }
 
-  private saveLanguage() {
+  private saveLanguage(): void {
     localStorage.setItem('language', this.currentLanguage);
   }
 
@@ -34,9 +37,11 @@ export class LangService {
   }
 
   set selectedLanguage(value: string) {
-    this.currentLanguage = value;
-    this.saveLanguage();
-    this.languageChanged.emit(value);
+    if (this.currentLanguage !== value) {
+      this.currentLanguage = value;
+      this.saveLanguage();
+      this.languageChanged.emit(value);
+    }
   }
 
   get infoLanguageMap() {
