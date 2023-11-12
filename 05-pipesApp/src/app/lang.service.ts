@@ -81,6 +81,16 @@ export class LangService {
         es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
         en: 'Included pipes in Angular - Usually in Common Module',
       },
+      buttons: {
+        restore: <{ [key: string]: string }>{
+          es: 'Restaurar Clientes',
+          en: 'Restore Clients',
+        },
+        delete: <{ [key: string]: string }>{
+          es: 'Borrar Cliente',
+          en: 'Delete Client',
+        },
+      },
       i18nPlural: {
         content: <{ [key: string]: string }>{
           es: 'Actualmente',

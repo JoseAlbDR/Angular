@@ -30,6 +30,12 @@ export class I18nPluralPipeComponent implements OnInit {
         this.langService.uncommonPipesMap.i18nPlural.content[
           this.selectedLanguage
         ];
+      this.restoreBtn =
+        this.langService.uncommonPipesMap.buttons.restore[
+          this.selectedLanguage
+        ];
+      this.deleteBtn =
+        this.langService.uncommonPipesMap.buttons.delete[this.selectedLanguage];
     });
   }
 
@@ -42,6 +48,10 @@ export class I18nPluralPipeComponent implements OnInit {
     this.langService.uncommonPipesMap.i18nPlural.clientsMap[
       this.selectedLanguage
     ];
+  public restoreBtn =
+    this.langService.uncommonPipesMap.buttons.restore[this.selectedLanguage];
+  public deleteBtn =
+    this.langService.uncommonPipesMap.buttons.delete[this.selectedLanguage];
 
   deleteClient(client = ''): void {
     if (client) {

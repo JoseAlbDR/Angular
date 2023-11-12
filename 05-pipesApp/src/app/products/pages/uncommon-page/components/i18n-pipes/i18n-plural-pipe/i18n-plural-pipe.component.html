@@ -25,12 +25,12 @@
     </p>
     <div class="flex flex-wrap gap-2 mt-10">
       <p-button
-        label="Restore Clients"
+        [label]="restoreBtn"
         severity="success"
         (click)="restoreClients()"
       ></p-button>
       <p-button
-        label="Delete Client"
+        [label]="deleteBtn"
         (click)="deleteClient()"
         severity="danger"
       ></p-button>
