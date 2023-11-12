@@ -12,17 +12,16 @@
   <numeric-number-pipe
     [isCollapsed]="isCollapsed"
     [title]="selectedLanguage | i18nSelect : languageMap.numberPipe.title"
-    [name]="selectedLanguage | i18nSelect : languageMap.numberPipe.name"
     class="col-span-6"
   ></numeric-number-pipe>
   <numeric-percentage-pipe
     class="col-span-6"
     [isCollapsed]="isCollapsed"
     [title]="selectedLanguage | i18nSelect : languageMap.percentagePipe.title"
-    [name]="selectedLanguage | i18nSelect : languageMap.percentagePipe.name"
   ></numeric-percentage-pipe>
   <numeric-currency-pipe
     [isCollapsed]="isCollapsed"
+    [title]="selectedLanguage | i18nSelect : languageMap.currencyPipe.title"
     class="col-span-12"
   ></numeric-currency-pipe>
 </div>

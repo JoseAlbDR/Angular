@@ -10,6 +10,9 @@ export class CurrencyPipeComponent {
   @Input()
   public isCollapsed: boolean = true;
 
+  @Input()
+  public title: string = '';
+
   public value: number = 4984987.19487;
 
   onValueChange(event: NumericEvent): void {

@@ -97,7 +97,7 @@ export class LangService {
       },
       currencyPipe: {
         title: {
-          es: 'Pipe de Moneeda',
+          es: 'Pipe de Moneda',
           en: 'Currency Pipe',
         },
         name: {
