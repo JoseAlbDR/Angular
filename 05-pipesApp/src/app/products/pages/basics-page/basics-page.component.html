@@ -13,7 +13,11 @@
   [title]="selectedLanguage | i18nSelect : languageMap.textPipes.title"
   [input]="selectedLanguage | i18nSelect : languageMap.placeholder"
 ></basics-text-pipes>
-<basics-date-pipes [isCollapsed]="isCollapsed"></basics-date-pipes>
+<basics-date-pipes
+  [isCollapsed]="isCollapsed"
+  [title]="selectedLanguage | i18nSelect : languageMap.datePipes.title"
+  [result]="selectedLanguage | i18nSelect : languageMap.result"
+></basics-date-pipes>
 <basics-date-pipes-locale
   [isCollapsed]="isCollapsed"
 ></basics-date-pipes-locale>
