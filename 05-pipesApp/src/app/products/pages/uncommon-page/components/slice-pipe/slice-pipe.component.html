@@ -18,14 +18,14 @@
 
     <div class="flex flex-col sm:flex-row gap-2 mt-2">
       <p-button
-        label="Restore Clients"
+        [label]="restoreBtn"
         severity="success"
         (click)="restoreClients()"
         styleClass="mb-4"
       ></p-button>
 
       <p-button
-        label="Delete Client"
+        [label]="deleteBtn"
         (click)="deleteClient()"
         severity="danger"
       ></p-button>
