@@ -75,6 +75,30 @@ export class LangService {
         es: 'Pipes incluidos en Angular - Normalmente en el Módulo Common',
         en: 'Included pipes in Angular - Usually in Common Module',
       },
+      placeholder: {
+        es: 'eScRibE AquI',
+        en: 'wRiTe HeRe',
+      },
+      result: {
+        es: 'Resultado',
+        en: 'Result',
+      },
+      textPipes: {
+        title: {
+          es: 'Pipes de Texto',
+          en: 'Text Pipes',
+        },
+      },
+      datePipes: {
+        title: {
+          es: 'Pipes de Fecha',
+          en: 'Date Pipes',
+        },
+      },
+      datePipesLocale: {
+        es: 'Pipes de Fecha Locales (idioma)',
+        en: 'Date Pipes Locale (language)',
+      },
     };
 
     return basicPipes;

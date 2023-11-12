@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { LangService } from 'src/app/lang.service';
 
 @Component({
   selector: 'basics-text-pipes',
@@ -9,8 +10,15 @@ export class TextPipesComponent {
   @Input()
   public isCollapsed: boolean = true;
 
-  public input: string = 'wRiTe HeRe';
+  @Input()
+  public title: string = '';
+
+  @Input()
+  public input: string = '';
+
   public date: Date = new Date();
+
+  constructor() {}
 
   public onFocusOut(event: FocusEvent) {
     if (event?.target instanceof HTMLInputElement) {

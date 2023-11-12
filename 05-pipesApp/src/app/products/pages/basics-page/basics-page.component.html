@@ -8,7 +8,11 @@
   ></shared-toggle-collapsed>
 </p-panel>
 
-<basics-text-pipes [isCollapsed]="isCollapsed"></basics-text-pipes>
+<basics-text-pipes
+  [isCollapsed]="isCollapsed"
+  [title]="selectedLanguage | i18nSelect : languageMap.textPipes.title"
+  [input]="selectedLanguage | i18nSelect : languageMap.placeholder"
+></basics-text-pipes>
 <basics-date-pipes [isCollapsed]="isCollapsed"></basics-date-pipes>
 <basics-date-pipes-locale
   [isCollapsed]="isCollapsed"
