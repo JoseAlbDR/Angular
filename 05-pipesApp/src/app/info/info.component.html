@@ -1,10 +1,6 @@
-<p-card header="What is an Angular pipe?">
+<p-card [header]="selectedLanguaje | i18nSelect : languageMap.title">
   <p>
-    Angular pipes are a feature in the Angular framework that allows you to
-    transform and format data in your templates. They are used to apply simple
-    transformations to values before displaying them in the user interface.
-    Pipes are a convenient way to perform common operations, such as formatting
-    dates, converting text to uppercase or lowercase, and filtering arrays.
+    {{ selectedLanguaje | i18nSelect : languageMap.content }}
   </p>
   <shared-check-code-btn
     [content]="'More Info'"
