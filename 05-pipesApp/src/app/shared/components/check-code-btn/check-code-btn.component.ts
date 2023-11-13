@@ -21,7 +21,7 @@ export class CheckCodeBtnComponent implements OnInit {
 
   @Input()
   public content: string = this.translateService.instant(
-    this.languageMap['linkContent']['en']
+    this.languageMap['linkContent'][this.langService.selectedLanguage]
   );
 
   ngOnInit(): void {

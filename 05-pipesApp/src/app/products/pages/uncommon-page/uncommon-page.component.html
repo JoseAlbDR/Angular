@@ -43,6 +43,7 @@
   <uncommon-json-pipe
     class="col-span-6"
     [person]="person"
+    [message]="selectedLanguage | i18nSelect : languageMap.keyValueJson.message"
     [isCollapsed]="isCollapsed"
   ></uncommon-json-pipe>
 </div>
