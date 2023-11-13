@@ -10,6 +10,9 @@ export class AsyncPipeComponent implements OnInit {
   @Input()
   public isCollapsed: boolean = true;
 
+  @Input()
+  public message: string = '';
+
   public myObservableTimer = interval(1000).pipe(tap((v) => v));
 
   public observableTime?: Observable<string>;

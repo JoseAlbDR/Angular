@@ -140,6 +140,12 @@ export class LangService {
           en: 'Print Object without Pipe - person',
         },
       },
+      async: {
+        message: {
+          es: 'Observable sin Pipe',
+          en: 'Observable without Pipe',
+        },
+      },
     };
 
     return uncommonPipes;
