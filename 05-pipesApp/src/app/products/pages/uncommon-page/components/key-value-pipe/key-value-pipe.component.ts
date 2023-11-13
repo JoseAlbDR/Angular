@@ -11,4 +11,7 @@ export class KeyValuePipeComponent {
 
   @Input()
   public isCollapsed: boolean = true;
+
+  @Input()
+  public message: string = '';
 }

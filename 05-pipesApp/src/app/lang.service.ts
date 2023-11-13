@@ -130,6 +130,12 @@ export class LangService {
           },
         },
       },
+      keyValueJson: {
+        message: {
+          es: 'Imprimir objeto sin Pipe - person',
+          en: 'Print Object without Pipe - person',
+        },
+      },
     };
 
     return uncommonPipes;

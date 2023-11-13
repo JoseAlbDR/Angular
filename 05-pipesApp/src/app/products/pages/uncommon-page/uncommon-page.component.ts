@@ -25,6 +25,7 @@ export class UncommonPageComponent implements OnInit {
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
       this.selectedLanguage = language;
+      this.languageMap = this.langService.uncommonPipesMap;
     });
   }
 

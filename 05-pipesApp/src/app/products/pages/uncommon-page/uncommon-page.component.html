@@ -31,6 +31,7 @@
   <uncommon-key-value-pipe
     class="col-span-6"
     [person]="person"
+    [message]="selectedLanguage | i18nSelect : languageMap.keyValueJson.message"
     [isCollapsed]="isCollapsed"
   ></uncommon-key-value-pipe>
 
