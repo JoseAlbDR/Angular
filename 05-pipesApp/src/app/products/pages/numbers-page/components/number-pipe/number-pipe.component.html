@@ -1,0 +1,36 @@
+<div class="card flex w-full mb-2">
+  <p-fieldset
+    [legend]="title"
+    [toggleable]="true"
+    [collapsed]="isCollapsed"
+    class="p-1 w-full"
+  >
+    <numbers-numeric-input
+      [title]="'Net Sales'"
+      [value]="value"
+      [type]="'net'"
+      (onChange)="onValueChange($event)"
+      class="card flex flex-wrap justify-content-center gap-3"
+    >
+    </numbers-numeric-input>
+    <h3 class="text-[1.5rem] pt-4">{{ value }}</h3>
+    <div class="flex flex-wrap items-center justify-around gap-2">
+      <p-card subheader="| number" class="flex-1">
+        {{ value | number }}
+      </p-card>
+      <p-card subheader="| number:'1.2-2'" class="flex-1">
+        {{ value | number : "1.2-2" }}
+      </p-card>
+      <p-card subheader="| number:'1.4-4'" class="flex-1">
+        {{ value | number : "1.4-4" }}
+      </p-card>
+    </div>
+    <div class="mt-4">
+      <shared-check-code-btn
+        [url]="
+          'https://github.com/JoseAlbDR/Angular/tree/main/05-pipesApp/src/app/products/pages/numbers-page/components/numeric-pipes/components/number-pipe'
+        "
+      ></shared-check-code-btn>
+    </div>
+  </p-fieldset>
+</div>
