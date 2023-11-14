@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { DatePipesLocaleComponent } from './components/date-pipes-locale/date-pipes-locale.component';
 import { HighlightJsModule } from 'ngx-highlight-js';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { InfoComponent } from 'src/app/info/info.component';
 
 @NgModule({
   declarations: [

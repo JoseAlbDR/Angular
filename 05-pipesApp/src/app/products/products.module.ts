@@ -12,6 +12,7 @@ import { NumbersPageModule } from './pages/numbers-page/numbers-page.module';
 import { SharedModule } from '../shared/shared.module';
 import { UncommonPageModule } from './pages/uncommon-page/uncommon-page.module';
 import { CustomPageComponent } from './pages/custom-page/custom-page.component';
+import { InfoComponent } from '../info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CustomPageComponent } from './pages/custom-page/custom-page.component';
     NumbersPageComponent,
     UncommonPageComponent,
     CustomPageComponent,
+    InfoComponent,
   ],
   imports: [
     CommonModule,

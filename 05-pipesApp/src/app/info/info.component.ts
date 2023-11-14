@@ -1,6 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LangService } from '../lang.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-info',
@@ -10,7 +9,13 @@ import { Subscription } from 'rxjs';
 export class InfoComponent implements OnInit {
   constructor(private langService: LangService) {}
 
-  public languageMap = this.langService.infoLanguageMap;
+  @Input()
+  public type: string = '';
+
+  public languageMap =
+    this.type === 'common'
+      ? this.langService.infoLanguageMap.common
+      : this.langService.infoLanguageMap.custom;
   public selectedLanguage = this.langService.selectedLanguage;
 
   public message: string =
@@ -19,7 +24,10 @@ export class InfoComponent implements OnInit {
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
       this.selectedLanguage = language;
-      this.languageMap = this.langService.infoLanguageMap;
+      this.languageMap =
+        this.type === 'common'
+          ? this.langService.infoLanguageMap.common
+          : this.langService.infoLanguageMap.custom;
     });
   }
 }

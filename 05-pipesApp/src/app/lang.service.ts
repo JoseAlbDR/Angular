@@ -45,13 +45,25 @@ export class LangService {
 
   get infoLanguageMap() {
     const info = {
-      title: {
-        es: '¿Qué es un Pipe de Angular?',
-        en: 'What is an Angular pipe?',
+      common: {
+        title: {
+          es: '¿Qué es un Pipe de Angular?',
+          en: 'What is an Angular pipe?',
+        },
+        content: {
+          es: 'Los pipes de Angular son una característica de Angular que te permite transformar y dar formato a los datos en tus plantillas. Se utilizan para aplicar transformaciones simples a los valores antes de mostrarlos en la interfaz de usuario. Los pipes son una forma conveniente de realizar operaciones comunes, como dar formato a fechas, convertir texto a mayúsculas o minúsculas y filtrar matrices.',
+          en: 'Angular pipes are a feature in the Angular framework that allows you to transform and format data in your templates. They are used to apply simple transformations to values before displaying them in the user interface. Pipes are a convenient way to perform common operations, such as formatting dates, converting text to uppercase or lowercase, and filtering arrays.',
+        },
       },
-      content: {
-        es: 'Los pipes de Angular son una característica de Angular que te permite transformar y dar formato a los datos en tus plantillas. Se utilizan para aplicar transformaciones simples a los valores antes de mostrarlos en la interfaz de usuario. Los pipes son una forma conveniente de realizar operaciones comunes, como dar formato a fechas, convertir texto a mayúsculas o minúsculas y filtrar matrices.',
-        en: 'Angular pipes are a feature in the Angular framework that allows you to transform and format data in your templates. They are used to apply simple transformations to values before displaying them in the user interface. Pipes are a convenient way to perform common operations, such as formatting dates, converting text to uppercase or lowercase, and filtering arrays.',
+      custom: {
+        title: {
+          es: '¿Qué es un Pipe de Angular Personalizado?',
+          en: 'What is a Custom Angular pipe?',
+        },
+        content: {
+          es: 'Un Pipe Personalizado de Angular es un Pipe que creas tú mismo para realizar una transformación específica que no está cubierta por los Pipes ya incluidos en Angular. Para crear un Pipe Personalizado, típicamente implementarás la interfaz PipeTransform y definirás la lógica de transformación en el método transform.',
+          en: 'A custom Angular pipe is a pipe that you create yourself to perform a specific transformation that is not covered by the built-in pipes. To create a custom pipe, you will typically implement the PipeTransform interface and define the transformation logic in the transform method.',
+        },
       },
       link: <{ [key: string]: string }>{
         es: 'Más info',

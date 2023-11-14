@@ -26,7 +26,7 @@ registerLocaleData(localeDE);
 registerLocaleData(localeITA);
 
 @NgModule({
-  declarations: [AppComponent, InfoComponent],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
