@@ -104,6 +104,20 @@ export class LangService {
     return menu;
   }
 
+  get customPipesMap() {
+    const customPipes = {
+      title: {
+        es: 'Pipes Personalizados',
+        en: 'Custom Pipes',
+      },
+      content: {
+        es: 'Pipes creados por el usuario',
+        en: 'Pipes created by user',
+      },
+    };
+    return customPipes;
+  }
+
   get uncommonPipesMap() {
     const uncommonPipes = {
       title: {

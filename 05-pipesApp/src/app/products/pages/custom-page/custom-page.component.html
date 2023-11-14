@@ -1,1 +1,10 @@
 <app-info [type]="'custom'"></app-info>
+<p-panel
+  [header]="selectedLanguage | i18nSelect : languageMap.title"
+  class="p-1"
+>
+  <p>{{ selectedLanguage | i18nSelect : languageMap.content }}</p>
+  <shared-toggle-collapsed
+    (togglePanel)="togglePanels($event)"
+  ></shared-toggle-collapsed>
+</p-panel>
