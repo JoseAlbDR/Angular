@@ -16,18 +16,13 @@ import { JsonPipeComponent } from './pages/uncommon-page/components/json-pipe/js
 import { KeyValuePipeComponent } from './pages/uncommon-page/components/key-value-pipe/key-value-pipe.component';
 import { AsyncPipeComponent } from './pages/uncommon-page/components/async-pipe/async-pipe.component';
 import { SharedModule } from '../shared/shared.module';
+import { UncommonPageModule } from './pages/uncommon-page/uncommon-page.module';
 
 @NgModule({
   declarations: [
     BasicsPageComponent,
     NumbersPageComponent,
     UncommonPageComponent,
-    I18nSelectPipeComponent,
-    I18nPluralPipeComponent,
-    SlicePipeComponent,
-    JsonPipeComponent,
-    KeyValuePipeComponent,
-    AsyncPipeComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +31,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     BasicsPageModule,
     NumbersPageModule,
+    UncommonPageModule,
     SharedModule,
   ],
 })
