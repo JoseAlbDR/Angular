@@ -4,10 +4,11 @@ import { ToggleCasePipeComponent } from './components/toggle-case-pipe/toggle-ca
 import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ToggleCasePipe } from '../pipes/toggle-case.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ToggleCasePipeComponent, ToggleCasePipe],
-  imports: [CommonModule, PrimeNgModule, SharedModule],
+  imports: [CommonModule, PrimeNgModule, SharedModule, FormsModule],
   exports: [ToggleCasePipeComponent],
 })
 export class CustomPageModule {}

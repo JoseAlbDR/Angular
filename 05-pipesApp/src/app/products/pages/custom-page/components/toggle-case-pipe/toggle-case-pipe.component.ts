@@ -8,4 +8,14 @@ import { Component, Input } from '@angular/core';
 export class ToggleCasePipeComponent {
   @Input()
   public isCollapsed: boolean = true;
+
+  public input: string = 'Write Something';
+
+  public onFocusOut(event: FocusEvent) {
+    if (event?.target instanceof HTMLInputElement) {
+      if (event.target.value === '') {
+        this.input = 'wRiTe HeRe';
+      }
+    }
+  }
 }
