@@ -122,6 +122,20 @@ export class LangService {
         es: 'Revisar Código Pipe',
         en: 'Check Pipe Code',
       },
+      toggleCase: {
+        name: {
+          es: 'Por Nombre',
+          en: 'By Name',
+        },
+        fly: {
+          es: 'Por Volar',
+          en: 'By Fly',
+        },
+        color: {
+          es: 'Por Color',
+          en: 'By Color',
+        },
+      },
     };
     return customPipes;
   }

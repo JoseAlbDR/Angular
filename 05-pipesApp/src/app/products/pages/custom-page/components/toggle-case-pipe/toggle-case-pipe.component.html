@@ -2,7 +2,7 @@
   <p-fieldset
     legend="ToggleCase Pipe"
     [toggleable]="true"
-    [collapsed]="isCollapsed"
+    [collapsed]="false"
     class="w-full"
   >
     <div class="card flex flex-wrap justify-content-center gap-3 mb-2">
@@ -28,6 +28,32 @@
       <div class="col-span-6 text-center">
         <p-card subheader="| togglecase: 'upper'">
           <p>{{ input | toggleCase : "upper" }}</p>
+        </p-card>
+      </div>
+      <div class="col-span-12 text-center">
+        <p-card subheader="| togglecase: 'upper'">
+          <p-toolbar>
+            <div class="p-toobar-group-start">
+              <p-button label="ToggleCase" icon="pi pi-search"></p-button>
+            </div>
+            <div class="p-toolbar-group-end flex gap-2">
+              <p-button
+                [label]="selectedLanguage | i18nSelect : languageMap.name"
+                icon="pi pi-sort"
+                styleClass="p-button-success"
+              ></p-button>
+              <p-button
+                [label]="selectedLanguage | i18nSelect : languageMap.fly"
+                icon="pi pi-sort"
+                styleClass="p-button-danger"
+              ></p-button>
+              <p-button
+                [label]="selectedLanguage | i18nSelect : languageMap.color"
+                icon="pi pi-sort"
+                styleClass="p-button-help"
+              ></p-button>
+            </div>
+          </p-toolbar>
         </p-card>
       </div>
     </div>
