@@ -27,6 +27,12 @@ export class ToggleCasePipeComponent implements OnInit {
   public selectedLanguage: string = this.langService.selectedLanguage;
   public languageMap = this.langService.customPipesMap.toggleCase;
 
+  public isUpperCase: boolean = false;
+
+  toggleUpperCase() {
+    this.isUpperCase = !this.isUpperCase;
+  }
+
   public onFocusOut(event: FocusEvent) {
     if (event?.target instanceof HTMLInputElement) {
       if (event.target.value === '') {
