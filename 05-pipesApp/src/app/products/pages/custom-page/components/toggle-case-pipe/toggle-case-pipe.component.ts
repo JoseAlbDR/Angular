@@ -16,6 +16,9 @@ export class ToggleCasePipeComponent implements OnInit {
   @Input()
   public linkContent: string = '';
 
+  @Input()
+  public title: string = '';
+
   constructor(private langService: LangService) {}
 
   ngOnInit(): void {
