@@ -119,8 +119,8 @@ export class LangService {
         en: 'wRiTe HeRe',
       },
       pipeLink: {
-        es: 'Revisar Código Pipe',
-        en: 'Check Pipe Code',
+        es: 'Revisar Código Pipes',
+        en: 'Check Pipes Code',
       },
       toggleCase: {
         name: {
