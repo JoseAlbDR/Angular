@@ -118,6 +118,10 @@ export class LangService {
         es: 'eScRibE AquI',
         en: 'wRiTe HeRe',
       },
+      pipeLink: {
+        es: 'Revisar Código Pipe',
+        en: 'Check Pipe Code',
+      },
     };
     return customPipes;
   }

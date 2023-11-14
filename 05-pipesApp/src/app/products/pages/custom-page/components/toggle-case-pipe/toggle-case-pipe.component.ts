@@ -12,6 +12,9 @@ export class ToggleCasePipeComponent {
   @Input()
   public input: string = '';
 
+  @Input()
+  public linkContent: string = '';
+
   public onFocusOut(event: FocusEvent) {
     if (event?.target instanceof HTMLInputElement) {
       if (event.target.value === '') {

@@ -12,6 +12,7 @@
   <custom-toggle-case-pipe
     class="col-span-6"
     [input]="selectedLanguage | i18nSelect : languageMap.placeholder"
+    [linkContent]="selectedLanguage | i18nSelect : languageMap.pipeLink"
     [isCollapsed]="isCollapsed"
   ></custom-toggle-case-pipe>
 </div>

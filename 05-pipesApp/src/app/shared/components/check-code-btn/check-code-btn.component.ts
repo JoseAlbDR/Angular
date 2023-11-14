@@ -27,10 +27,15 @@ export class CheckCodeBtnComponent implements OnInit {
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
       this.selectedLanguage = language;
-      const content =
+
+      let content =
         this.content === 'Check Code' || this.content === 'Revisar Código'
           ? 'linkContent'
+          : this.content === 'Check Pipe Code' ||
+            this.content === 'Revisar Código Pipe'
+          ? 'pipeContent'
           : 'infoContent';
+
       this.content = this.translateService.instant(
         this.languageMap[content][language]
       );
