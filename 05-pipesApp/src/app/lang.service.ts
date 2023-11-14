@@ -122,18 +122,38 @@ export class LangService {
         es: 'Revisar Código Pipes',
         en: 'Check Pipes Code',
       },
-      toggleCase: {
-        name: {
-          es: 'Por Nombre',
-          en: 'By Name',
+      customPipes: {
+        buttons: {
+          name: {
+            es: 'Por Nombre',
+            en: 'By Name',
+          },
+          fly: {
+            es: 'Por Volar',
+            en: 'By Fly',
+          },
+          color: {
+            es: 'Por Color',
+            en: 'By Color',
+          },
         },
-        fly: {
-          es: 'Por Volar',
-          en: 'By Fly',
-        },
-        color: {
-          es: 'Por Color',
-          en: 'By Color',
+        table: {
+          name: {
+            es: 'Nombre',
+            en: 'Name',
+          },
+          fly: {
+            es: 'Puede Volar',
+            en: 'Can Fly',
+          },
+          color: {
+            es: 'Color',
+            en: 'Color',
+          },
+          yes: <{ [key: string]: string }>{
+            es: 'Sí',
+            en: 'Yes',
+          },
         },
       },
     };
