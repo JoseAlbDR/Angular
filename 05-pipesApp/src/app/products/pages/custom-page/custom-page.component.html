@@ -11,6 +11,7 @@
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">
   <custom-toggle-case-pipe
     class="col-span-6"
+    [input]="selectedLanguage | i18nSelect : languageMap.placeholder"
     [isCollapsed]="isCollapsed"
   ></custom-toggle-case-pipe>
 </div>

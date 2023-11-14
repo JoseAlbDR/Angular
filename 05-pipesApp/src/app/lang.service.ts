@@ -114,6 +114,10 @@ export class LangService {
         es: 'Pipes creados por el usuario',
         en: 'Pipes created by user',
       },
+      placeholder: {
+        es: 'eScRibE AquI',
+        en: 'wRiTe HeRe',
+      },
     };
     return customPipes;
   }
@@ -273,6 +277,10 @@ export class LangService {
       linkContent: {
         es: 'Revisar Código',
         en: 'Check Code',
+      },
+      pipeContent: {
+        es: 'Revisar Código Pipe',
+        en: 'Check Pipe Code',
       },
     };
 

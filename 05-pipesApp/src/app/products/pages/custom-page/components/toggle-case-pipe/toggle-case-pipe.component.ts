@@ -9,7 +9,8 @@ export class ToggleCasePipeComponent {
   @Input()
   public isCollapsed: boolean = true;
 
-  public input: string = 'Write Something';
+  @Input()
+  public input: string = '';
 
   public onFocusOut(event: FocusEvent) {
     if (event?.target instanceof HTMLInputElement) {
