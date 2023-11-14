@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LangService } from 'src/app/lang.service';
 
 @Component({
-  selector: 'custom-toggle-case-pipe',
-  templateUrl: './toggle-case-pipe.component.html',
+  selector: 'custom-pipes',
+  templateUrl: './custom-pipes.component.html',
   styles: [],
 })
-export class ToggleCasePipeComponent implements OnInit {
+export class CustomPipesComponent implements OnInit {
   @Input()
   public isCollapsed: boolean = true;
 

@@ -9,11 +9,11 @@
   ></shared-toggle-collapsed>
 </p-panel>
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">
-  <custom-toggle-case-pipe
+  <custom-pipes
     class="col-span-12"
     [input]="selectedLanguage | i18nSelect : languageMap.placeholder"
     [linkContent]="selectedLanguage | i18nSelect : languageMap.pipeLink"
     [title]="selectedLanguage | i18nSelect : languageMap.title"
     [isCollapsed]="isCollapsed"
-  ></custom-toggle-case-pipe>
+  ></custom-pipes>
 </div>
