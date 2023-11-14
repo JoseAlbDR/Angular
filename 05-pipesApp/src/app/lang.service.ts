@@ -142,8 +142,12 @@ export class LangService {
             es: 'Nombre',
             en: 'Name',
           },
+          flyHeader: <{ [key: string]: string }>{
+            es: '¿Puede Volar?',
+            en: 'Can Fly?',
+          },
           fly: <{ [key: string]: string }>{
-            es: 'Puede Volar',
+            es: 'Vuela',
             en: 'Can Fly',
           },
           cantFly: <{ [key: string]: string }>{
