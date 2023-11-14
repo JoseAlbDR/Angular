@@ -10,24 +10,25 @@ export class InfoComponent implements OnInit {
   constructor(private langService: LangService) {}
 
   @Input()
-  public type: string = '';
+  public type!: string;
 
-  public languageMap =
-    this.type === 'common'
-      ? this.langService.infoLanguageMap.common
-      : this.langService.infoLanguageMap.custom;
+  public languageMap!: {
+    [key: string]: { [key: string]: string };
+  };
+
   public selectedLanguage = this.langService.selectedLanguage;
 
-  public message: string =
-    this.langService.infoLanguageMap.link[this.langService.selectedLanguage];
+  public message =
+    this.langService.infoLanguageMap['button']['link']['message'];
 
   ngOnInit(): void {
+    this.message =
+      this.langService.infoLanguageMap['button']['link'][this.selectedLanguage];
+    this.languageMap = this.langService.infoLanguageMap[this.type];
+
     this.langService.languageChanged.subscribe((language: string) => {
       this.selectedLanguage = language;
-      this.languageMap =
-        this.type === 'common'
-          ? this.langService.infoLanguageMap.common
-          : this.langService.infoLanguageMap.custom;
+      this.languageMap = this.langService.infoLanguageMap[this.type];
     });
   }
 }

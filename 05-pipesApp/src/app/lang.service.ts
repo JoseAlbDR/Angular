@@ -44,7 +44,9 @@ export class LangService {
   }
 
   get infoLanguageMap() {
-    const info = {
+    const info: {
+      [key: string]: { [key: string]: { [key: string]: string } };
+    } = {
       common: {
         title: {
           es: '¿Qué es un Pipe de Angular?',
@@ -65,9 +67,11 @@ export class LangService {
           en: 'A custom Angular pipe is a pipe that you create yourself to perform a specific transformation that is not covered by the built-in pipes. To create a custom pipe, you will typically implement the PipeTransform interface and define the transformation logic in the transform method.',
         },
       },
-      link: <{ [key: string]: string }>{
-        es: 'Más info',
-        en: 'More info',
+      button: {
+        link: {
+          es: 'Más info',
+          en: 'More info',
+        },
       },
     };
 

@@ -1,6 +1,6 @@
-<p-card [header]="selectedLanguage | i18nSelect : languageMap.title">
+<p-card [header]="selectedLanguage | i18nSelect : languageMap['title']">
   <p>
-    {{ selectedLanguage | i18nSelect : languageMap.content }}
+    {{ selectedLanguage | i18nSelect : languageMap["content"] }}
   </p>
   <shared-check-code-btn
     [content]="message"
