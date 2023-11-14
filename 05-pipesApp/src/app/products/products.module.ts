@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { UncommonPageModule } from './pages/uncommon-page/uncommon-page.module';
 import { CustomPageComponent } from './pages/custom-page/custom-page.component';
 import { InfoComponent } from '../info/info.component';
+import { ToggleCasePipeComponent } from './pages/custom-page/components/toggle-case-pipe/toggle-case-pipe.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InfoComponent } from '../info/info.component';
     UncommonPageComponent,
     CustomPageComponent,
     InfoComponent,
+    ToggleCasePipeComponent,
   ],
   imports: [
     CommonModule,
