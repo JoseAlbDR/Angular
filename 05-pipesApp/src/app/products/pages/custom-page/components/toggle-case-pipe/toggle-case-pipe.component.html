@@ -22,19 +22,23 @@
     >
       <div class="col-span-6 text-center">
         <p-card subheader="| togglecase: 'lower'">
-          <p>{{ input | toggleCase : false }}</p>
+          <p>{{ input | toggleCase : true }}</p>
         </p-card>
       </div>
       <div class="col-span-6 text-center">
         <p-card subheader="| togglecase: 'upper'">
-          <p>{{ input | toggleCase : true }}</p>
+          <p>{{ input | toggleCase : false }}</p>
         </p-card>
       </div>
       <div class="col-span-12 text-center">
-        <p-card subheader="| togglecase: 'upper'">
+        <p-card [header]="input | toggleCase : isUpperCase">
           <p-toolbar>
             <div class="p-toobar-group-start">
-              <p-button label="ToggleCase" icon="pi pi-search"></p-button>
+              <p-button
+                label="ToggleCase"
+                icon="pi pi-search"
+                (click)="toggleUpperCase()"
+              ></p-button>
             </div>
             <div class="p-toolbar-group-end flex gap-2">
               <p-button
