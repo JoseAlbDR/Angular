@@ -1,4 +1,9 @@
-export type Color = 'red' | 'black' | 'blue' | 'green' | 'yellow';
+export type Color =
+  | 'red'
+  | 'lightblack'
+  | 'lightblue'
+  | 'lightgreen'
+  | 'lightyellow';
 
 export interface Hero {
   name: string;

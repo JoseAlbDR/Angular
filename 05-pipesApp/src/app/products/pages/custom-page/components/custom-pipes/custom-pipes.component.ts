@@ -38,7 +38,7 @@ export class CustomPipesComponent implements OnInit {
     {
       name: 'Superman',
       canFly: true,
-      color: 'blue',
+      color: 'lightblue',
     },
     {
       name: 'Spiderman',
@@ -53,17 +53,17 @@ export class CustomPipesComponent implements OnInit {
     {
       name: 'Robin',
       canFly: false,
-      color: 'green',
+      color: 'lightgreen',
     },
     {
       name: 'Hulk',
       canFly: false,
-      color: 'green',
+      color: 'lightgreen',
     },
     {
       name: 'Thor',
       canFly: true,
-      color: 'yellow',
+      color: 'lightyellow',
     },
   ];
 

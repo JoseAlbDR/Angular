@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomPipesComponent } from './components/toggle-case-pipe/custom-pipes.component';
+import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
 import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ToggleCasePipe } from '../pipes/toggle-case.pipe';
