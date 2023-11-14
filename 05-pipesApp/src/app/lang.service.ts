@@ -137,22 +137,22 @@ export class LangService {
             en: 'By Color',
           },
         },
-        table: {
+        table: <{ [key: string]: { [key: string]: string } }>{
           name: {
             es: 'Nombre',
             en: 'Name',
           },
-          fly: {
+          fly: <{ [key: string]: string }>{
             es: 'Puede Volar',
             en: 'Can Fly',
+          },
+          cantFly: <{ [key: string]: string }>{
+            es: 'No Vuela',
+            en: "Can't Fly",
           },
           color: {
             es: 'Color',
             en: 'Color',
-          },
-          yes: <{ [key: string]: string }>{
-            es: 'Sí',
-            en: 'Yes',
           },
         },
       },

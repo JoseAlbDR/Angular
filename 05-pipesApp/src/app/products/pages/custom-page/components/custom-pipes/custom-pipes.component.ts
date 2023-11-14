@@ -21,10 +21,7 @@ export class CustomPipesComponent implements OnInit {
   @Input()
   public title: string = '';
 
-  constructor(
-    private langService: LangService,
-    private translateService: TranslateService
-  ) {}
+  constructor(private langService: LangService) {}
 
   ngOnInit(): void {
     this.langService.languageChanged.subscribe((language: string) => {
@@ -44,9 +41,9 @@ export class CustomPipesComponent implements OnInit {
       color: 'blue',
     },
     {
-      name: 'Batman',
+      name: 'Spiderman',
       canFly: false,
-      color: 'black',
+      color: 'red',
     },
     {
       name: 'Daredevil',
@@ -72,16 +69,6 @@ export class CustomPipesComponent implements OnInit {
 
   toggleUpperCase() {
     this.isUpperCase = !this.isUpperCase;
-  }
-
-  canFlyMessage(canFly: boolean): string {
-    const message =
-      canFly &&
-      this.translateService.instant(
-        this.languageMap.table.yes[this.selectedLanguage]
-      );
-
-    return canFly ? message : 'No';
   }
 
   onFocusOut(event: FocusEvent) {

@@ -64,40 +64,50 @@
               ></p-button>
             </div>
           </p-toolbar>
-          <div class="grid">
+          <div class="grid mt-2">
             <div>
-              <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
-                <ng-template pTemplate="header">
-                  <tr>
-                    <th>
-                      {{
-                        selectedLanguage | i18nSelect : languageMap.table.name
-                      }}
-                    </th>
-                    <th>
-                      {{
-                        selectedLanguage | i18nSelect : languageMap.table.fly
-                      }}
-                    </th>
-                    <th>
-                      {{
-                        selectedLanguage | i18nSelect : languageMap.table.color
-                      }}
-                    </th>
-                  </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-hero>
-                  <tr>
-                    <td>{{ hero.name }}</td>
-                    <td>{{ canFlyMessage(hero.canFly) }}</td>
-                    <td
-                      [ngStyle]="{
-                        'background-color': hero.color
-                      }"
-                    ></td>
-                  </tr>
-                </ng-template>
-              </p-table>
+              <p-panel header="Heroes">
+                <p-table
+                  [value]="heroes"
+                  [tableStyle]="{ 'min-width': '50rem' }"
+                >
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        {{
+                          selectedLanguage
+                            | i18nSelect : languageMap.table["name"]
+                        }}
+                      </th>
+                      <th>
+                        {{
+                          selectedLanguage
+                            | i18nSelect : languageMap.table["fly"]
+                        }}
+                      </th>
+                      <th>
+                        {{
+                          selectedLanguage
+                            | i18nSelect : languageMap.table["color"]
+                        }}
+                      </th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-hero>
+                    <tr>
+                      <td>{{ hero.name }}</td>
+                      <td>
+                        {{
+                          selectedLanguage
+                            | i18nSelect
+                              : languageMap.table[hero.canFly | canFly]
+                        }}
+                      </td>
+                      <td [class]="'bg-' + hero.color + '-200'"></td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </p-panel>
             </div>
           </div>
         </p-card>
