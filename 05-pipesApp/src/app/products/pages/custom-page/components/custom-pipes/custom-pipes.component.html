@@ -32,7 +32,7 @@
       </div>
       <div class="col-span-12 text-center">
         <p-card [header]="input | toggleCase : isUpperCase">
-          <p-toolbar>
+          <p-toolbar class="flex-wrap">
             <div class="p-toobar-group-start">
               <p-button
                 label="ToggleCase"
@@ -40,7 +40,7 @@
                 (click)="toggleUpperCase()"
               ></p-button>
             </div>
-            <div class="p-toolbar-group-end flex gap-2">
+            <div class="p-toolbar-group-end flex flex-wrap gap-2">
               <h3>
                 {{ selectedLanguage | i18nSelect : languageMap.orderBy }}:
               </h3>
@@ -73,11 +73,8 @@
           <div class="grid mt-2">
             <div>
               <p-panel header="Heroes">
-                <p-table
-                  [value]="heroes | sortBy : sortBy"
-                  [tableStyle]="{ 'min-width': '50rem' }"
-                >
-                  <ng-template pTemplate="header">
+                <p-table [value]="heroes | sortBy : sortBy">
+                  <ng-template pTemplate="header" let-columns>
                     <tr>
                       <th>
                         {{
@@ -86,13 +83,6 @@
                         }}
                       </th>
                       <th>
-                        <p
-                          [style]="
-                            'color: rgba(255, 255, 255, 0.6); font-weight: 400'
-                          "
-                        >
-                          hero.canFly | canFly
-                        </p>
                         {{
                           selectedLanguage
                             | i18nSelect : languageMap.table["flyHeader"]
@@ -106,7 +96,7 @@
                       </th>
                     </tr>
                   </ng-template>
-                  <ng-template pTemplate="body" let-hero>
+                  <ng-template pTemplate="body" let-hero let-columns="columns">
                     <tr>
                       <td>{{ hero.name }}</td>
                       <td>
