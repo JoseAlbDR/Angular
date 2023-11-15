@@ -41,12 +41,16 @@
               ></p-button>
             </div>
             <div class="p-toolbar-group-end flex gap-2">
+              <h3>
+                {{ selectedLanguage | i18nSelect : languageMap.orderBy }}:
+              </h3>
               <p-button
                 [label]="
                   selectedLanguage | i18nSelect : languageMap.buttons.name
                 "
                 icon="pi pi-sort"
                 styleClass="p-button-success"
+                (click)="sortedBy('name')"
               ></p-button>
               <p-button
                 [label]="
@@ -54,6 +58,7 @@
                 "
                 icon="pi pi-sort"
                 styleClass="p-button-danger"
+                (click)="sortedBy('canFly')"
               ></p-button>
               <p-button
                 [label]="
@@ -61,6 +66,7 @@
                 "
                 icon="pi pi-sort"
                 styleClass="p-button-help"
+                (click)="sortedBy('color')"
               ></p-button>
             </div>
           </p-toolbar>
@@ -68,7 +74,7 @@
             <div>
               <p-panel header="Heroes">
                 <p-table
-                  [value]="heroes"
+                  [value]="heroes | sortBy : sortBy"
                   [tableStyle]="{ 'min-width': '50rem' }"
                 >
                   <ng-template pTemplate="header">
@@ -80,7 +86,13 @@
                         }}
                       </th>
                       <th>
-                        <p>hero.canFly | canFly</p>
+                        <p
+                          [style]="
+                            'color: rgba(255, 255, 255, 0.6); font-weight: 400'
+                          "
+                        >
+                          hero.canFly | canFly
+                        </p>
                         {{
                           selectedLanguage
                             | i18nSelect : languageMap.table["flyHeader"]

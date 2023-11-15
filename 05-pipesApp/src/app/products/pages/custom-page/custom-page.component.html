@@ -4,9 +4,6 @@
   class="p-1"
 >
   <p>{{ selectedLanguage | i18nSelect : languageMap.content }}</p>
-  <shared-toggle-collapsed
-    (togglePanel)="togglePanels($event)"
-  ></shared-toggle-collapsed>
 </p-panel>
 <div class="flex flex-wrap md:grid md:grid-cols-12 gap-2 w-full">
   <custom-pipes

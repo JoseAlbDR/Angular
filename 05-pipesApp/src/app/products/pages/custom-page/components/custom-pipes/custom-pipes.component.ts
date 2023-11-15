@@ -33,6 +33,7 @@ export class CustomPipesComponent implements OnInit {
   public languageMap = this.langService.customPipesMap.customPipes;
 
   public isUpperCase: boolean = false;
+  public sortBy: keyof Hero | '' | undefined = '';
 
   public heroes: Hero[] = [
     {
@@ -66,6 +67,10 @@ export class CustomPipesComponent implements OnInit {
       color: 'lightyellow',
     },
   ];
+
+  sortedBy(by: keyof Hero | '' | undefined) {
+    this.sortBy = by;
+  }
 
   toggleUpperCase() {
     this.isUpperCase = !this.isUpperCase;

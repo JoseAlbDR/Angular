@@ -123,6 +123,10 @@ export class LangService {
         en: 'Check Pipes Code',
       },
       customPipes: {
+        orderBy: {
+          es: 'Ordenar',
+          en: 'Order',
+        },
         buttons: {
           name: {
             es: 'Por Nombre',

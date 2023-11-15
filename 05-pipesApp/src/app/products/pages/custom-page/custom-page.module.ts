@@ -6,9 +6,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ToggleCasePipe } from '../pipes/toggle-case.pipe';
 import { FormsModule } from '@angular/forms';
 import { CanFlyPipe } from '../pipes/can-fly.pipe';
+import { SortByPipe } from '../pipes/sort-by.pipe';
 
 @NgModule({
-  declarations: [CustomPipesComponent, ToggleCasePipe, CanFlyPipe],
+  declarations: [CustomPipesComponent, ToggleCasePipe, CanFlyPipe, SortByPipe],
   imports: [CommonModule, PrimeNgModule, SharedModule, FormsModule],
   exports: [CustomPipesComponent],
 })
