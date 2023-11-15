@@ -335,8 +335,14 @@ export class LangService {
 
   get openButtonsMap() {
     const openButtons = {
-      es: 'Abrir Todos',
-      en: 'Open All',
+      open: {
+        es: 'Abrir Todos',
+        en: 'Open All',
+      },
+      close: {
+        es: 'Cerrar Todos',
+        en: 'Close All',
+      },
     };
 
     return openButtons;

@@ -1,8 +1,11 @@
 <p-button
   *ngIf="isCollapsed; else closeAll"
-  [label]="selectedLanguage | i18nSelect : languageMap"
+  [label]="selectedLanguage | i18nSelect : languageMap.open"
   (click)="togglePanels(false)"
 ></p-button>
 <ng-template #closeAll>
-  <p-button label="Close All" (click)="togglePanels(true)"></p-button>
+  <p-button
+    [label]="selectedLanguage | i18nSelect : languageMap.close"
+    (click)="togglePanels(true)"
+  ></p-button>
 </ng-template>
